@@ -1,13 +1,77 @@
 import React from 'react'
-
+import tus from '../image/tus.svg';
+import vector from '../image/Vector.svg'
+import vect1 from '../image/vect1.svg'
+import vect2 from '../image/vect2.svg'
 const Footer = () => {
   return (
     <>
-       <div>
-        <h1 className='mt-3'>Foot</h1>
-        <button type="button" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Purple</button>
-       </div>
-     </>
+      <div className="main_foot">
+        <div className="footer">
+          <footer className='foot'>
+            <div className="foot_flex">
+              <div className="first_flex">
+                <div className="imn">
+                  <img src={tus} alt="tus" />
+                  <div className="tus_para">
+                    <p>4517 Washington Ave. Manchester,</p>
+                    <p>Kentucky 39495</p>
+                  </div>
+                </div>
+              </div>
+              <div className="second_flex">
+                <h3>About</h3>
+                <div className="second_para">
+                  <p>For Owners</p>
+                  <p>Careers</p>
+                  <p>Contact Us</p>
+                </div>
+              </div>
+              <div className="third_flex">
+                <h3>Company</h3>
+                <div className="third_para">
+                  <p>Browse all services</p>
+                  <p>Get Listed</p>
+                  <p>Help Center</p>
+                </div>
+              </div>
+              <div className="fourth_flex">
+                <h3>Get in touch</h3>
+                <div className="social_links">
+                  <div className="svgs">
+                    <img src={vector} alt="" />
+                  </div>
+                  <div className="svgs">
+                    <img src={vect1} alt="" />
+                  </div>
+                  <div className="svgs">
+                    <img src={vect2} alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <div className="lower_footer">
+         <div className="lower_sect">
+             <div className="lower_sect1">
+                 <span>2024 © BuildLink Network. All rights reserved.</span>
+             </div>
+             <div className="lower_sect2">
+                <div className="item1">
+                   <p>Terms of Services</p>
+                </div>
+               
+             </div>
+             <div className="lower_sect3">
+             <div className="item2">
+                    <p>Privacy Policy</p>
+                </div>
+             </div>
+         </div>
+      </div>
+    </>
   )
 }
 

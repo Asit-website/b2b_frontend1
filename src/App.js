@@ -8,15 +8,26 @@ import {
 import Home from './components/Home';
 import Navbar from './common/Navbar'
 import Footer from './common/Footer';
+import { useState } from 'react';
 function App() {
+  const [pop, setPop] = useState(false);
+  const [signupPop, setSignupPop] = useState(false);
+  const [forgot, setForgot] = useState(false);
   return (
     <>
       <Router>
-          <Navbar/>
-         <Routes>
-             <Route path='/' element={<Home/>}/>
-         </Routes>
-          <Footer/>
+        <Navbar
+          pop={pop}
+          setPop={setPop}
+          signupPop={signupPop}
+          setSignupPop={setSignupPop}
+          forgot={forgot}
+          setForgot={setForgot}
+        />
+        <Routes>
+          <Route path='/' element={<Home pop={pop} setPop={setPop} />} />
+        </Routes>
+        <Footer />
       </Router>
     </>
   );

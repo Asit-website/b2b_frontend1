@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import left1 from "../image/home_left1.png";
 import join1 from "../image/join1.png";
 import join2 from "../image/join2.png";
@@ -7,10 +7,34 @@ import join4 from "../image/join4.png";
 import join5 from "../image/join5.png";
 import join6 from "../image/join6.png";
 import right1 from "../image/right_home.png";
-
-const Home = () => {
+import { Button, Modal } from 'flowbite-react';
+const Home = ({pop,setPop}) => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <>
+      {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button>
+      <Modal show={openModal} onClose={() => setOpenModal(false)}>
+        <Modal.Header>Terms of Service</Modal.Header>
+        <Modal.Body>
+          <div className="space-y-6">
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+              With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
+              companies around the world are updating their terms of service agreements to comply.
+            </p>
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+              The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant
+              to ensure a common set of data rights in the European Union. It requires organizations to notify users as
+              soon as possible of high-risk data breaches that could personally affect them.
+            </p>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => setOpenModal(false)}>I accept</Button>
+          <Button color="gray" onClick={() => setOpenModal(false)}>
+            Decline
+          </Button>
+        </Modal.Footer>
+      </Modal> */}
       <div id="home_banner">
         <div className="home_banner-back">
           <div className="home_banner-back1">
