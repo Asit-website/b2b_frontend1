@@ -113,7 +113,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 33px 160px;
+  padding: 33px 150px;
   max-width: 1440px;
   width: 100%;
   margin: auto;
@@ -182,7 +182,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 47px 160px;
+  padding: 47px 150px;
   max-width: 1440px;
   width: 100%;
   margin: auto;
@@ -246,7 +246,7 @@ body {
 }
 
 #home_partner .home_partner_container {
-  padding: 40px 160px;
+  padding: 40px 150px;
   max-width: 1440px;
   width: 100%;
   display: block;
@@ -317,7 +317,7 @@ body {
 }
 
 #home_Join .home_join_container {
-  padding: 34px 160px;
+  padding: 34px 150px;
   max-width: 1440px;
   width: 100%;
   display: block;
@@ -351,7 +351,7 @@ body {
 }
 
 #home_product .home_product_container {
-  padding: 70px 160px;
+  padding: 70px 150px;
   max-width: 1440px;
   width: 100%;
   display: block;
@@ -454,7 +454,7 @@ body {
 }
 
 #home_solution .home_solution_container {
-  padding: 67px 160px;
+  padding: 67px 150px;
   max-width: 1440px;
   width: 100%;
   display: block;
@@ -631,7 +631,7 @@ body {
 }
 
 #home_last_section .home_last_section_container {
-  padding: 80px 160px;
+  padding: 80px 150px;
   max-width: 1440px;
   width: 100%;
   display: block;
@@ -719,7 +719,7 @@ body {
 }
 
 .foot {
-  padding: 40px 160px;
+  padding: 40px 150px;
 }
 
 .main_foot {
@@ -774,7 +774,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  padding: 20px 160px;
+  padding: 20px 150px;
   padding-bottom: 35px;
 }
 .lower_sect2{
@@ -988,3 +988,225 @@ input[type=checkbox]{
 .login_btns{
   padding-bottom: 15px;
 }
+.inp11{
+  margin: 0px 15px;
+}
+
+/* =================about page css start================ */
+.about_main{
+  background-color: transparent;
+}
+.about{
+  max-width: 1440px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 50px 150px;
+}
+.about_flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about_left_content h2{
+   color: #161B32;
+   font-weight: bold;
+   font-family: 'Plus Jakarta Sans', sans-serif;
+   font-size: 48px;
+   line-height: 60.48px;
+}
+.about_left_content p{
+  color: #303550;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif !important;
+  width: 28em;
+  margin-top: 12px;
+  line-height: 19.36px;
+}
+.get_in{
+  background-color: #2C868F;
+  max-width: 100%;
+  width: 193px;
+  max-width: 100%;
+  height: 51px;
+  border-radius: 8px;
+  padding: 16px, 20px, 16px, 20px;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif !important;
+  margin-top: 22px;
+}
+.builLink_network{
+  background-color: transparent;
+}
+.builLink_sect{
+  max-width: 1440px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 50px 150px;
+}
+.main_buildLink h2{
+  color: #2C868F;
+  font-weight: bold;
+  font-size: 46.4px;
+  line-height: 58.46px;
+  text-align: center;
+}
+.main_buildLink p{
+  color: #303550;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.78px;
+  text-align: center;
+  width: 43em;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+.buildLink_flex{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 40px;
+}
+.buildLink_box{
+  width: 100%;
+  margin: 0px 10px;
+  height: 304px;
+  max-height: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 24px;
+  padding: 0px 28px;
+}
+.buildLink_box h3{
+  /* color: #FCFDFD; */
+  font-weight: 700;
+  font-size: 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.buildLink_box p{
+  /* color: #FCFDFD; */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 30px;
+}
+.buildLink_box1{
+  background-color: #1B1B1B;
+  color: #FCFDFD;
+}
+.buildLink_box2{
+  background-color: #F5F5F5;
+}
+.buildLink_box3{
+  background-color: #2C868F;
+  color: #FCFDFD;
+}
+.main_intro{
+  background-color: transparent;
+}
+.intro{
+  max-width: 1440px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 50px 150px;
+}
+.intro_flex{
+  background-color: #FAFAFA;
+  border: 1px solid #D8DBEB;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+.intro_div h2{
+  color: #161B32;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40.32px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.intro_div p{
+  color: #596080;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.78px;
+  font-family: 'Inter', sans-serif !important;
+  margin-top: 20px;
+}
+.intro_btn button{
+  background-color: #2C868F;
+  height: 51px;
+  padding: 0px 22px;
+  border-radius: 8px;
+  margin-top: 26px;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 19.36px;
+}
+.intro_left{
+  width: 50%;
+}
+.intro_right{
+  width: 50%;
+}
+.home_joint{
+  background: transparent !important;
+  padding-top: 20px !important;
+  padding-bottom: 80px !important;
+}
+.ready_main{
+  background-color: #161B32;
+}
+.ready{
+  max-width: 1440px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 75px 150px;
+}
+.ready_div h4{
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30.24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-align: center;
+}
+.ready_div h2{
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 32px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-align: center;
+  margin-top: 10px;
+}
+.ready_div button{
+  background-color: #2C868F;
+  width: 193px;
+  max-width: 100%;
+  height: 51px;
+  display: block;
+  margin: auto;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+/* .about_left{
+  width: 50%;
+}
+.about_right{
+  width: 50%;
+} */
+/* ================about page css end================= */

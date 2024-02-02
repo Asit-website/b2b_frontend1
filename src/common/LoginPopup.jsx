@@ -33,7 +33,7 @@ const LoginPopup = ({setSignupPop,setPop,setForgot}) => {
                         <div onClick={()=>{
                             setForgot(true);
                             setPop(false);
-                        }} className="forgot_pass">
+                        }} className="forgot_pass cursor-pointer">
                             <p>Forgot your password?</p>
                         </div>
 

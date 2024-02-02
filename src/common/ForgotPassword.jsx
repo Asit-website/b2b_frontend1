@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ForgotPassword = () => {
+const ForgotPassword = ({setOtpPop,setForgot}) => {
   return (
    <>
         <div className='login_pop'>
@@ -18,7 +18,10 @@ const ForgotPassword = () => {
                             </div>
                         </div>
                         <div className="login_btn login_btns">
-                            <button>Send Password Reset Link</button>
+                            <button type='button' onClick={()=> {
+                                setOtpPop(true);
+                                setForgot(false)
+                                }}>Send Password Reset Link</button>
                         </div>
                     </form>
                 </div>

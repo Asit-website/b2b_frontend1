@@ -3,7 +3,9 @@ import LoginPopup from './LoginPopup';
 import SignupPop from './SignupPop';
 import ForgotPassword from './ForgotPassword';
 import loho from '../image/loho.svg';
-const Navbar = ({pop,setPop,signupPop,setSignupPop,forgot,setForgot}) => {
+import Otp from './Otp';
+import ResetPassword from './ResetPassword';
+const Navbar = ({pop,setPop,signupPop,setSignupPop,forgot,setForgot,otpPop,setOtpPop,reset,setReset}) => {
 
   return (
     <>
@@ -80,7 +82,13 @@ const Navbar = ({pop,setPop,signupPop,setSignupPop,forgot,setForgot}) => {
         signupPop && <SignupPop pop={pop} setPop={setPop} signupPop={signupPop} setSignupPop={setSignupPop}/>
       }
       {
-        forgot && <ForgotPassword/>
+        forgot && <ForgotPassword setOtpPop={setOtpPop} setForgot={setForgot}/>
+      }
+      {
+        otpPop && <Otp reset={reset} setReset={setReset} setOtpPop={setOtpPop}/>
+      }
+      {
+        reset && <ResetPassword/>
       }
     </>
   )
