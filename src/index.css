@@ -1120,7 +1120,7 @@ input[type=checkbox]{
   padding: 50px 150px;
 }
 .intro_flex{
-  background-color: #FAFAFA;
+  background-color: #FCFDFD;
   border: 1px solid #D8DBEB;
   border-radius: 24px;
   display: flex;
@@ -1130,28 +1130,47 @@ input[type=checkbox]{
 }
 .intro_div h2{
   color: #161B32;
-  font-weight: 700;
-  font-size: 32px;
+  font-weight: 800;
+  font-size: 24px;
   line-height: 40.32px;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .intro_div p{
   color: #596080;
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 21.78px;
   font-family: 'Inter', sans-serif !important;
-  margin-top: 20px;
+  margin-top: 10px;
 }
-.intro_btn button{
+.intro_btn .try_btn {
+  display: flex;
   background-color: #2C868F;
   height: 51px;
   padding: 0px 22px;
   border-radius: 8px;
-  margin-top: 26px;
   color: #FFFFFF;
   font-size: 16px;
   line-height: 19.36px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  font-family: 'Inter';
+}
+.intro_btn{
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+.intro_btn .Learn_btn {
+  height: 51px;
+  padding: 0px 22px;
+  color:  #596080;
+  font-size: 16px;
+  line-height: 19.36px;
+  font-weight: 500;
+ gap: 9px;
+  font-family: 'Inter';
 }
 .intro_left{
   width: 50%;
@@ -1210,3 +1229,99 @@ input[type=checkbox]{
   width: 50%;
 } */
 /* ================about page css end================= */
+
+#Accordion_section_pricing .Accordion_section_pricing_detail {
+  max-width: 1440px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 0px 150px 50px;
+}
+
+#Accordion_section_pricing .Accordion_section_pricing_detail h2 button span{
+  font-family: inter !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+}
+
+#Accordion_section_pricing .Accordion_section_pricing_detail .inner_div{
+  margin: 0px !important;
+  padding-top: 0px !important;
+ border-top: none !important;
+}
+#Accordion_section_pricing .Accordion_section_pricing_detail .inner_div p{
+  line-height: 19.39px;
+}
+
+#Accordion_section_pricing .Accordion_section_pricing_detail .acc_div{ 
+  margin-bottom: 10px;
+
+}
+#Accordion_section_pricing .Accordion_section_pricing_detail  .Accordion_section_pricing_head h2{
+  text-align: center;
+  color:  #161B32;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Plus Jakarta Sans;
+  line-height: 30.24px;
+  margin-bottom: 50px;
+  margin-top: 0px;
+}
+#procard_section {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+#procard{
+  width: 334px !important;
+}
+#procard .proh5{
+  color: #3C716A;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: Plus Jakarta sans-serif;
+}
+#procard .proh2{
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 500;
+  font-family: Inter;
+  margin-bottom: 13px;
+  margin-top: 30px;
+
+}
+#procard .proh2 ul li span{
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 19.36px !important;
+  font-family: inter !important;
+  color: #303550 !important;
+}
+
+#procard .probutton{
+  color: #2C868F;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #2C868F;
+
+}
+
+#procard .propara{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  font-family: Inter;
+  text-align: center;
+margin: 15px;
+}
+#procard .propara a{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  font-family: Inter;
+  text-decoration: underline;
+
+}
+

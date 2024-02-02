@@ -1,223 +1,814 @@
-import React, { useState } from 'react'
-import gt1 from '../image/gt1.svg'
+import React, { useState } from "react";
+import gt1 from "../image/pricing_img.svg";
+import t from "../image/try.svg";
 const Pricing = () => {
-    const [open,setOpen] = useState(false);
-    const [open1,setOpen1] = useState(false);
-    const [open2,setOpen2] = useState(false);
-    const stylePerr = {
-        display: open ? "block" : "none"
-    }
-    const stylePerr1 = {
-        display: open1 ? "block" : "none"
-    }
-    const stylePerr2 = {
-        display: open2 ? "block" : "none"
-    }
-    return (
-        <>
-
-<div className="main_intro">
-                <div className="intro">
-                    <div className="intro_flex">
-                        <div className="intro-left">
-                            <div className="intro_div">
-                                <h2>Introducing the new AI Stylist</h2>
-                                <p>Create an AI-powered project brief and send to best-fit services providers all at once</p>
-                                <div className="intro_btn">
-                                    <button>Get in touch learn more about construction</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="intro_right">
-                            <div className="intro_img">
-                                <img src={gt1} alt="gt1" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  const [open, setOpen] = useState(false);
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
+  const [open4, setOpen4] = useState(false);
+  const [open5, setOpen5] = useState(false);
+  const stylePerr = {
+    display: open ? "block" : "none",
+  };
+  const stylePerr1 = {
+    display: open1 ? "block" : "none",
+  };
+  const stylePerr2 = {
+    display: open2 ? "block" : "none",
+  };
+  const stylePerr3 = {
+    display: open3 ? "block" : "none",
+  };
+  const stylePerr4 = {
+    display: open4 ? "block" : "none",
+  };
+  const stylePerr5 = {
+    display: open5 ? "block" : "none",
+  };
+  return (
+    <>
+      <div id="procard_section">
+        <div id="procard">
+          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
+            <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
+              Basic
+            </h5>
+            <div className="flex items-baseline text-gray-900 dark:text-white">
+              <span className="text-m font-large text-gray-500 dark:text-gray-400">
+                USD $0/month
+              </span>
             </div>
-
-            {/* <div id="accordion-collapse" data-accordion="collapse">
-                <h2 id="accordion-collapse-heading-1">
-                    <button
-                        type="button"
-                        className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                        data-accordion-target="#accordion-collapse-body-1"
-                        aria-expanded="true"
-                        aria-controls="accordion-collapse-body-1"
-                        onClick={()=> setOpen(!open)}
-                    >
-                        <span>What is Flowbite?</span>
-                        <svg
-                            data-accordion-icon=""
-                            className="w-3 h-3 rotate-180 shrink-0"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                        >
-                            <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5 5 1 1 5"
-                            />
-                        </svg>
-                    </button>
-                </h2>
-                <div
-                    id="accordion-collapse-body-1"
-                    className="hidden"
-                    aria-labelledby="accordion-collapse-heading-1"
-                    style={stylePerr}
+            <h2 className="proh2">Included in Basic:</h2>
+            <ul role="list" className="space-y-3  mb-12">
+              <li className="flex items-center">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                    <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                            Flowbite is an open-source library of interactive components built on
-                            top of Tailwind CSS including buttons, dropdowns, modals, navbars, and
-                            more.
-                        </p>
-                        <p className="text-gray-500 dark:text-gray-400">
-                            Check out this guide to learn how to{" "}
-                            <a
-                                href="/docs/getting-started/introduction/"
-                                className="text-blue-600 dark:text-blue-500 hover:underline"
-                            >
-                                get started
-                            </a>{" "}
-                            and start developing websites even faster with components on top of
-                            Tailwind CSS.
-                        </p>
-                    </div>
-                </div>
-                <h2 id="accordion-collapse-heading-2">
-                    <button
-                        type="button"
-                        className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                        data-accordion-target="#accordion-collapse-body-2"
-                        aria-expanded="false"
-                        aria-controls="accordion-collapse-body-2"
-                        onClick={() => setOpen1(!open1)}
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
                     >
-                        <span>Is there a Figma file available?</span>
-                        <svg
-                            data-accordion-icon=""
-                            className="w-3 h-3 rotate-180 shrink-0"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                        >
-                            <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5 5 1 1 5"
-                            />
-                        </svg>
-                    </button>
-                </h2>
-                <div
-                    id="accordion-collapse-body-2"
-                    className="hidden"
-                    aria-labelledby="accordion-collapse-heading-2"
-                    style={stylePerr1}
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                  Unlimited online review collection
+                </span>
+              </li>
+              <li className="flex">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                    <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
-                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                            Flowbite is first conceptualized and designed using the Figma software
-                            so everything you see in the library has a design equivalent in our
-                            Figma file.
-                        </p>
-                        <p className="text-gray-500 dark:text-gray-400">
-                            Check out the{" "}
-                            <a
-                                href="https://flowbite.com/figma/"
-                                className="text-blue-600 dark:text-blue-500 hover:underline"
-                            >
-                                Figma design system
-                            </a>{" "}
-                            based on the utility classes from Tailwind CSS and components from
-                            Flowbite.
-                        </p>
-                    </div>
-                </div>
-                <h2 id="accordion-collapse-heading-3">
-                    <button
-                        type="button"
-                        className="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-                        data-accordion-target="#accordion-collapse-body-3"
-                        aria-expanded="false"
-                        aria-controls="accordion-collapse-body-3"
-                        onClick={() => setOpen2(!open2)}
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
                     >
-                        <span>What are the differences between Flowbite and Tailwind UI?</span>
-                        <svg
-                            data-accordion-icon=""
-                            className="w-3 h-3 rotate-180 shrink-0"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 10 6"
-                        >
-                            <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5 5 1 1 5"
-                            />
-                        </svg>
-                    </button>
-                </h2>
-                <div
-                    id="accordion-collapse-body-3"
-                    className="hidden"
-                    aria-labelledby="accordion-collapse-heading-3"
-                    style={stylePerr2}
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                  Project Capacity: Up to 2 concurrent projects
+                </span>
+              </li>
+              <li className="flex">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                    <div className="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                            The main difference is that the core components from Flowbite are open
-                            source under the MIT license, whereas Tailwind UI is a paid product.
-                            Another difference is that Flowbite relies on smaller and standalone
-                            components, whereas Tailwind UI offers sections of pages.
-                        </p>
-                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                            However, we actually recommend using both Flowbite, Flowbite Pro, and
-                            even Tailwind UI as there is no technical reason stopping you from using
-                            the best of two worlds.
-                        </p>
-                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                            Learn more about these technologies:
-                        </p>
-                        <ul className="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                            <li>
-                                <a
-                                    href="https://flowbite.com/pro/"
-                                    className="text-blue-600 dark:text-blue-500 hover:underline"
-                                >
-                                    Flowbite Pro
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://tailwindui.com/"
-                                    rel="nofollow"
-                                    className="text-blue-600 dark:text-blue-500 hover:underline"
-                                >
-                                    Tailwind UI
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                  Basic Project Management Features
+                </span>
+              </li>
+              <li className="flex ">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 ms-3">
+                  Limited Access to Premium Templates
+                </span>
+              </li>
+            </ul>
+            <button
+              type="button"
+              className="probutton bg-#FCFDFD-600 hover:bg-#2C868F-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
+            >
+              Create a free profile
+            </button>
+            <p className="propara">
+              Or <a href="#">talk to an expert</a>
+            </p>
+          </div>
+        </div>
+        <div id="procard">
+          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
+            <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
+              Enterprise
+            </h5>
+            <div className="flex items-baseline text-gray-900 dark:text-white">
+              <span className="text-m font-large text-gray-500 dark:text-gray-400">
+                USD $125/month
+              </span>
+            </div>
+            <h2 className="proh2">All benefits of Basic, and:</h2>
+            <ul role="list" className="space-y-3  mb-12">
+              <li className="flex items-center">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                  Unlimited online review collection
+                </span>
+              </li>
+              <li className="flex">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                  Project Capacity: Up to 2 concurrent projects
+                </span>
+              </li>
+              <li className="flex">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                  Basic Project Management Features
+                </span>
+              </li>
+              <li className="flex ">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 ms-3">
+                  Limited Access to Premium Templates
+                </span>
+              </li>
+            </ul>
+            <button
+              type="button"
+              className="probutton bg-#FCFDFD-600 hover:bg-#2C868F-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
+            >
+              Upgrade to Enterprise
+            </button>
+            <p className="propara">
+              Or <a href="#">talk to an expert</a>
+            </p>
+          </div>
+        </div>
+        <div id="procard">
+          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
+            <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
+              Pro
+            </h5>
+            <div className="flex items-baseline text-gray-900 dark:text-white">
+              <span className="text-m font-large text-gray-500 dark:text-gray-400">
+                USD $350/month
+              </span>
+            </div>
+            <h2 className="proh2">All benefits of Basic, and:</h2>
+            <ul role="list" className="space-y-3  mb-12">
+              <li className="flex items-center">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                  Unlimited online review collection
+                </span>
+              </li>
+              <li className="flex">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                  Project Capacity: Up to 2 concurrent projects
+                </span>
+              </li>
+              <li className="flex">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                  Basic Project Management Features
+                </span>
+              </li>
+              <li className="flex ">
+                <svg
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_186_993)">
+                    <path
+                      d="M20 6L9 17L4 12"
+                      stroke="url(#paint0_linear_186_993)"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_186_993"
+                      x1={4}
+                      y1="11.0828"
+                      x2={20}
+                      y2="11.0828"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#3C716A" />
+                      <stop offset={1} stopColor="#4F9C8E" />
+                    </linearGradient>
+                    <clipPath id="clip0_186_993">
+                      <rect width={24} height={24} fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span className="text-base font-normal leading-tight text-gray-500 ms-3">
+                  Limited Access to Premium Templates
+                </span>
+              </li>
+            </ul>
+            <button
+              type="button"
+              className="probutton bg-#FCFDFD-600 hover:bg-#2C868F-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
+            >
+              Upgrade to Pro
+            </button>
+            <p className="propara">
+              Or <a href="#">talk to an expert</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="main_intro">
+        <div className="intro">
+          <div className="intro_flex">
+            <div className="intro-left">
+              <div className="intro_div">
+                <h2>Introducing the new AI Stylist</h2>
+                <p>
+                  Create an AI-powered project brief and send to best-fit <br />
+                  services providers all at once
+                </p>
+                <div className="intro_btn">
+                  <button className="try_btn">
+                    <img src={t} alt="try" />
+                    <span>Try Now</span>
+                  </button>
+                  <button className="Learn_btn">
+                    <span>Learn more</span>
+                  </button>
                 </div>
-            </div> */}
+              </div>
+            </div>
+            <div className="intro_right">
+              <div className="intro_img">
+                <img src={gt1} alt="gt1" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        </>
-    )
-}
+      <div id="Accordion_section_pricing">
+        <div className="Accordion_section_pricing_detail">
+          <div className="Accordion_section_pricing_head">
+            <h2>Frequently asked questions</h2>
+          </div>
+          <div id="accordion-collapse" data-accordion="collapse">
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-1">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  data-accordion-target="#accordion-collapse-body-1"
+                  aria-expanded="true"
+                  aria-controls="accordion-collapse-body-1"
+                  onClick={() => setOpen(!open)}
+                >
+                  <span>What Services Do You Offer?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-1"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-1"
+                style={stylePerr}
+              >
+                <div className="p-4  dark:bg-gray-900 inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Potential clients want to understand the range of
+                    construction services your company provides. This can
+                    include general contracting, project management,
+                    design-build services, commercial construction, renovations,
+                    and specialized construction like industrial or
+                    infrastructure projects. It’s important to provide detailed
+                    descriptions of each service, accompanied by case studies or
+                    examples of past projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-2">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  data-accordion-target="#accordion-collapse-body-2"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-2"
+                  onClick={() => setOpen1(!open1)}
+                >
+                  <span>What Is Your Experience and Track Record?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-2"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-2"
+                style={stylePerr1}
+              >
+                <div className="p-4  dark:bg-gray-900 inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Potential clients want to understand the range of
+                    construction services your company provides. This can
+                    include general contracting, project management,
+                    design-build services, commercial construction, renovations,
+                    and specialized construction like industrial or
+                    infrastructure projects. It’s important to provide detailed
+                    descriptions of each service, accompanied by case studies or
+                    examples of past projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-3">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  data-accordion-target="#accordion-collapse-body-3"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-3"
+                  onClick={() => setOpen2(!open2)}
+                >
+                  <span>How Do You Ensure Project Quality and Safety?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-3"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-3"
+                style={stylePerr2}
+              >
+                <div className="p-4  dark:bg-gray-900 inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Potential clients want to understand the range of
+                    construction services your company provides. This can
+                    include general contracting, project management,
+                    design-build services, commercial construction, renovations,
+                    and specialized construction like industrial or
+                    infrastructure projects. It’s important to provide detailed
+                    descriptions of each service, accompanied by case studies or
+                    examples of past projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-4">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  data-accordion-target="#accordion-collapse-body-4"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-4"
+                  onClick={() => setOpen3(!open3)}
+                >
+                  <span>What Are Your Pricing and Payment Terms?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-4"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-4"
+                style={stylePerr3}
+              >
+                <div className="p-4  dark:bg-gray-900 inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Potential clients want to understand the range of
+                    construction services your company provides. This can
+                    include general contracting, project management,
+                    design-build services, commercial construction, renovations,
+                    and specialized construction like industrial or
+                    infrastructure projects. It’s important to provide detailed
+                    descriptions of each service, accompanied by case studies or
+                    examples of past projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  data-accordion-target="#accordion-collapse-body-5"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-5"
+                  onClick={() => setOpen4(!open4)}
+                >
+                  <span>
+                    How Do You Handle Project Management and Communication?
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-5"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-5"
+                style={stylePerr4}
+              >
+                <div className="p-4  dark:bg-gray-900 inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Potential clients want to understand the range of
+                    construction services your company provides. This can
+                    include general contracting, project management,
+                    design-build services, commercial construction, renovations,
+                    and specialized construction like industrial or
+                    infrastructure projects. It’s important to provide detailed
+                    descriptions of each service, accompanied by case studies or
+                    examples of past projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  data-accordion-target="#accordion-collapse-body-6"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-6"
+                  onClick={() => setOpen5(!open5)}
+                >
+                  <span>Can I use this for commercial purposes?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-6"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-6"
+                style={stylePerr5}
+              >
+                <div className="p-4  dark:bg-gray-900 inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Potential clients want to understand the range of
+                    construction services your company provides. This can
+                    include general contracting, project management,
+                    design-build services, commercial construction, renovations,
+                    and specialized construction like industrial or
+                    infrastructure projects. It’s important to provide detailed
+                    descriptions of each service, accompanied by case studies or
+                    examples of past projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="ready_main">
+        <div className="ready">
+          <div className="ready_div">
+            <h4>Ready to get started? </h4>
+            <h2>Share your experience & make profile</h2>
+            <button>Get in touch with us</button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default Pricing
+export default Pricing;
