@@ -50,6 +50,7 @@ const MainState = (props) => {
   };
 
   const updateUser = async ({ userId, name, email, phone, categoryies,  website, budget, file, location,aboutCompany,twiter,facebook,linkdin,insta }) => {
+
     let formdata=new FormData();
     formdata.append('name', name);
     formdata.append('email', email);
@@ -65,15 +66,17 @@ const MainState = (props) => {
     formdata.append('linkdin', linkdin);
     formdata.append('insta', insta);
 
+    const token = localStorage.getItem('b2b_token');
+
     const resp = await fetch(`${baseUrl}/user/updateUser/${userId}`, {
       method: 'PUT',
       headers: {
-        'token': localStorage.getItem('b2b_token')
+        // 'token': localStorage.getItem('b2b_token')
+        'Authorization': `Bearer ${token}`
       },
       body: formdata
     });
     const data = await resp.json();
-    console.log(data);
     return data;
   };
 

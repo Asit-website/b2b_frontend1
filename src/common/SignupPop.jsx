@@ -20,13 +20,13 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const ans = await register(value);
-        console.log(ans);
+        console.log("ans" , ans);
         notify(ans.status, ans.message);
       
         if (ans.status) {
             setUser(ans.user);
-            localStorage.setItem('b2b_user', JSON.stringify(ans.user));
-            localStorage.setItem('b2b_token', ans.token);
+            localStorage.setItem('b2b_user', JSON.stringify(ans?.data));
+            // localStorage.setItem('b2b_token', ans.token);
             navigate("/");
             setSignupPop(false);
         }

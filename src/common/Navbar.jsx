@@ -19,7 +19,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 // import {useMain} from '../hooks/useMain';
 const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify }) => {
   // const { register,setUser } = useMain();
-  let user = JSON?.parse(localStorage.getItem('b2b_user'));
+  let user = JSON?.parse(localStorage?.getItem('b2b_user'));
   const [click, setClick] = useState(false);
   const styleClick = {
     display: click ? "block" : "none"
