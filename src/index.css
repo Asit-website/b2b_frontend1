@@ -867,6 +867,21 @@ body {
   font-family: 'Inter', sans-serif;
   margin-top: 4px;
 }
+.inp1 select{
+  width: 100%;
+  border: 1px solid #D8DBEB;
+  height: 51px;
+  max-height: 100%;
+  outline: none;
+  background-color: #FCFDFD;
+  border-radius: 4px;
+  padding: 0px 15px;
+  color: #9CA3AF;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  margin-top: 4px;
+}
 .inp2{
   width: 100%;
   margin-left: 15px;
@@ -1322,6 +1337,64 @@ margin: 15px;
   line-height: 19.36px;
   font-family: Inter;
   text-decoration: underline;
-
+}
+.user_para p{
+  color: #FAFAFA;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif !important;
+}
+.dropThing{
+  position: absolute;
+  max-width: 341px;
+  width: 100%;
+  right: 142px;
+  padding: 20px 20px;
+}
+.test_user{
+  cursor: pointer;
+}
+.ul_res a{
+  color: #596080;
+  font-weight: 400;
+  font-size: 18px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  /* margin: 12px 0px; */
+}
+.user_avatar{
+  display: flex;
+  align-items: center;
+}
+.icons{
+  background: linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%);
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icons p{
+  color: #FCFDFD;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif !important;
+}
+.tright h3{
+  color: #161B32;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif !important;
+}
+.tright p{
+  color: #596080;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif !important;
+}
+.user_info{
+  margin-left: 10px;
 }
 

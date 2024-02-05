@@ -1,27 +1,71 @@
-import React from 'react'
+import React,{useState} from 'react'
+import OutsideClickHandler from 'react-outside-click-handler';
+import { useNavigate } from 'react-router-dom';
+import { useMain } from '../hooks/useMain';
+const LoginPopup = ({setSignupPop,setPop,setForgot,notify}) => {
+    const {login,setUser} = useMain();
+    const navigate = useNavigate();
+    const [value, setValue] = useState({
+        email: '',
+        password: ''
+    });
 
-const LoginPopup = ({setSignupPop,setPop,setForgot}) => {
+    const handleChange = (e) => {
+        setValue({ ...value, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const ans = await login(value);
+        console.log(ans);
+        notify(ans.status, ans.message);
+        if (ans.status) {
+            setUser(ans.user);
+            localStorage.setItem('b2b_user', JSON.stringify(ans.user));
+            localStorage.setItem('b2b_token', JSON.stringify({
+                token: ans.token,
+                rememberMe: document.getElementById('remember').checked,
+                expiry: new Date().getTime() + 24 * 60 * 60 * 1000 // 1 Day
+            }));
+            
+            if (ans.user.role === 'ADMIN') {
+                navigate('/');
+                setPop(false);
+            }
+            else {
+                navigate('/');
+                setPop(false);
+            }
+        }
+    }
     return (
         <>
         <div className='login_pop'>
             <div className="login_container">
+                <OutsideClickHandler
+                   onOutsideClick={()=>{
+                      setPop(false);
+                   }}
+                >
+                <div>
                 <div className="construction_head">
                     <h2>Construction  Login</h2>
                 </div>
                 <div className="construction_body">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="form_ino">
                             <div className="inp1">
-                                <label htmlFor="">Email</label>
-                                <input type="email" placeholder='Email Address' />
+                                <label htmlFor="email">Email</label>
+                                <input id='email' value={value.email} name='email' onChange={handleChange} type="email"  placeholder='Email Address' />
                             </div>
                             <div className="inp2">
-                                <label htmlFor="">Password</label>
-                                <input type="Password" placeholder='Password' />
+                                <label htmlFor="password">Password</label>
+                                <input value={value.password} id='password' name='password' onChange={handleChange} type="Password" placeholder='Password' />
                             </div>
                         </div>
                         <div className="keep_sign">
-                            <input type="checkbox" />
+                            <input id="remember" type="checkbox" />
                             <p>Keep me signed in</p>
                         </div>
                         <div className="login_btn">
@@ -54,6 +98,8 @@ const LoginPopup = ({setSignupPop,setPop,setForgot}) => {
 
 
                 </div>
+                </div>
+                </OutsideClickHandler>
             </div>
         </div>
         </>

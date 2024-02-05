@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
-const ResetPassword = () => {
+import OutsideClickHandler from 'react-outside-click-handler';
+const ResetPassword = ({setReset}) => {
     // const [pass,setPass] = useState(false);
     return (
         <>
             <div className='login_pop'>
                 <div className="login_container">
+                    <OutsideClickHandler
+                      onOutsideClick={()=>{
+                        setReset(false);
+                      }}
+                    >
+                    <div>
                     <div className="construction_head">
                         <h2>Forgot Password</h2>
                     </div>
@@ -33,6 +40,8 @@ const ResetPassword = () => {
                             </div>
                         </form>
                     </div>
+                    </div>
+                    </OutsideClickHandler>
                 </div>
             </div>
         </>

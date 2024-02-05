@@ -1,12 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LoginPopup from './LoginPopup';
 import SignupPop from './SignupPop';
 import ForgotPassword from './ForgotPassword';
 import loho from '../image/loho.svg';
 import Otp from './Otp';
 import ResetPassword from './ResetPassword';
-const Navbar = ({pop,setPop,signupPop,setSignupPop,forgot,setForgot,otpPop,setOtpPop,reset,setReset}) => {
+import ust from '../image/ust.svg'
+import trick from '../image/trick.svg';
+import trick1 from '../image/trick1.svg';
+import trick2 from '../image/trick2.svg';
+import trick3 from '../image/trick3.svg';
+import trick4 from '../image/trick4.svg';
+import trick5 from '../image/trick5.svg';
+import trick6 from '../image/trick6.svg';
+import { useNavigate } from 'react-router-dom';
+// import trick1 from '../image/tr'
+// import {useMain} from '../hooks/useMain';
+const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify }) => {
+  // const { register,setUser } = useMain();
+  let user = JSON.parse(localStorage.getItem('b2b_user'));
+  const [click, setClick] = useState(false);
+  const styleClick = {
+    display: click ? "block" : "none"
+  }
 
+  const navigate = useNavigate();
   return (
     <>
       <div className="header">
@@ -40,55 +58,173 @@ const Navbar = ({pop,setPop,signupPop,setSignupPop,forgot,setForgot,otpPop,setOt
 
           </div>
           <div className="header2">
-            <div className="btn_auth">
-              <button onClick={()=> setPop(true)} className='login'>Log in</button>
-              <button onClick={()=> setSignupPop(true)} className='signup'>Sign up</button>
-            </div>
+            {
+              user ?
+                <div>
+                  <div onClick={() => setClick(!click)} className='test_user flex items-center'>
+                    <div className="user_icon">
+                      <img src={ust} alt="ust" />
+                    </div>
+                    <div className="user_para">
+                      <p className='ml-2'>{user.name}</p>
+                    </div>
+
+
+                  </div>
+                  <div
+                    style={styleClick}
+                    id="dropdown"
+                    className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dropThing"
+                  >
+                    
+                    <ul
+                      className="py-2 text-sm text-gray-700 dark:text-gray-200 ul_res"
+                      aria-labelledby="dropdownDefaultButton"
+                    >
+                      <div className='user_avatar'>
+                            <div className='user_am'>
+                                <div className="icons">
+                                    <p>AM</p>
+                                </div>
+                            </div>
+                            <div className="user_info">
+                                 <div className="tright">
+                                     <h3>{user.name}</h3>
+                                     <p className='mt-2'>{user.email}</p>
+                                 </div>
+                            </div>
+                      </div>
+                      <div className='mt-4'>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <img src={trick} alt="trick" />
+                          <span className='ml-2'>Dashboard</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        > 
+                          <img src={trick1} alt="" />
+                          <span className='ml-2'>My Projects</span> 
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <img src={trick2} alt="" />
+                         <span className='ml-2'>Shortlist</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                         <img src={trick3} alt="trick3" />
+                        <span className='ml-2'>My Messages</span> 
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <img src={trick4} alt="" />
+                         <span className='ml-2'>Reviews</span> 
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <img src={trick5} alt="" />
+                          <span className='ml-2'>Upgrade Plan</span> 
+                        </a>
+                      </li>
+                      <hr />
+                      <li>
+                        <a
+                          href="#"
+                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          onClick={()=>{
+                            localStorage.removeItem('b2b_user');
+                            localStorage.removeItem('b2b_token');
+                            // navigate('/');
+                            setPop(true);
+                            notify("success","Logout successfully");
+                            setClick(false);
+                          }}
+                        >
+                        <img src={trick6} alt="" />
+                         <span className='ml-2'>Logout</span> 
+                        </a>
+                      </li>
+                      </div>
+                    </ul>
+                  </div>
+
+                </div>
+                : <div className="btn_auth">
+                  <button onClick={() => setPop(true)} className='login'>Log in</button>
+                  <button onClick={() => setSignupPop(true)} className='signup'>Sign up</button>
+                </div>
+            }
+
           </div>
         </header>
       </div>
       <div className="navbar">
-         <nav className='nav'>
-               <div className="nav1">
-                   <div className="logo">
-                       <img src={loho} alt="loho" />
-                   </div>
-               </div>
-               <div className="nav2">
-                  <div className="ul">
-                       <ul>
-                          <li><a href="">Services</a></li>
-                          <li><a href="">Manufacturers</a></li>
-                          <li><a href="">Projects</a></li>
-                          <li><a href="">Budgeting</a></li>
-                          <li><a href="">Subscription</a></li>
-                          <li><a href="">Bidding</a></li>
-                          <li><a href="">About Us</a></li>
-                       </ul>
-                  </div>
-               </div>
-         </nav>
+        <nav className='nav'>
+          <div className="nav1">
+            <div className="logo">
+              <img src={loho} alt="loho" />
+            </div>
+          </div>
+          <div className="nav2">
+            <div className="ul">
+              <ul>
+                <li><a href="">Services</a></li>
+                <li><a href="">Manufacturers</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Budgeting</a></li>
+                <li><a href="">Subscription</a></li>
+                <li><a href="">Bidding</a></li>
+                <li><a href="">About Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
       {
-        pop && <LoginPopup 
-        pop={pop} 
-        setPop={setPop} 
-        signupPop={signupPop} 
-        setSignupPop={setSignupPop}
-        setForgot={setForgot}
+        pop && <LoginPopup
+          pop={pop}
+          setPop={setPop}
+          signupPop={signupPop}
+          setSignupPop={setSignupPop}
+          setForgot={setForgot}
+          notify={notify}
         />
       }
       {
-        signupPop && <SignupPop pop={pop} setPop={setPop} signupPop={signupPop} setSignupPop={setSignupPop}/>
+
+        signupPop && <SignupPop pop={pop} setPop={setPop} signupPop={signupPop} setSignupPop={setSignupPop} notify={notify} />
       }
       {
-        forgot && <ForgotPassword setOtpPop={setOtpPop} setForgot={setForgot}/>
+        forgot && <ForgotPassword setOtpPop={setOtpPop} setForgot={setForgot} />
       }
       {
-        otpPop && <Otp reset={reset} setReset={setReset} setOtpPop={setOtpPop}/>
+        otpPop && <Otp reset={reset} setReset={setReset} setOtpPop={setOtpPop} />
       }
       {
-        reset && <ResetPassword/>
+        reset && <ResetPassword setReset={setReset} />
       }
     </>
   )

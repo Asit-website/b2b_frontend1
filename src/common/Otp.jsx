@@ -1,10 +1,16 @@
 import React from 'react'
-
+import OutsideClickHandler from 'react-outside-click-handler';
 const Otp = ({ setReset,setOtpPop }) => {
     return (
         <>
             <div className='login_pop'>
                 <div className="login_container">
+                    <OutsideClickHandler
+                      onOutsideClick={()=>{
+                        setOtpPop(false);
+                      }}
+                    >
+                    <div>
                     <div className="construction_head">
                         <h2>Check your email</h2>
                     </div>
@@ -37,6 +43,8 @@ const Otp = ({ setReset,setOtpPop }) => {
                             </div>
                         </form>
                     </div>
+                    </div>
+                    </OutsideClickHandler>
                 </div>
             </div>
         </>
