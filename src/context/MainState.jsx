@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import MainContext from "./MainContext";
 
-const baseUrl = 'http://localhost:5000';
-// const baseUrl = 'http://18.116.199.186/'
-// const baseUrl='https://diabolo.onrender.com';
-// const baseUrl = 'https://dolibo-backend.onrender.com';
-// const baseUrl = "https://dolibobackend.madfishdev.com";
-// const baseUrl = "https://dev.dolibo.com";
+// const baseUrl = 'http://localhost:5000';
+const baseUrl = 'https://backend.bln.obtechenterprise.com';
 
 const MainState = (props) => {
   const [user, setUser] = useState({})
