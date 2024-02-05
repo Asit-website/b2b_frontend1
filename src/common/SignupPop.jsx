@@ -78,7 +78,7 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
                                         </div>
                                     </div>
                                     <div className="login_btn">
-                                        <button>Create account</button>
+                                        <button type='submit'>Create account</button>
                                     </div>
                                     <div className="continue_google">
                                         <div className='try'>Continue with Google</div>

@@ -1,8 +1,10 @@
 import Sidebar from "../common/Sidebar";
 import "./dashboard.css"
 import frame from "../image/Frame.png"
+import { NavLink } from "react-router-dom";
 
 function Dashboard(){
+    let user = JSON.parse(localStorage.getItem('b2b_user'));
     return (
         <div className="DashboardWrap">
 
@@ -20,11 +22,11 @@ function Dashboard(){
                    <div className="namEditWrap">
 
                    <div className="nameWWrap">
-                    <h2>Alex Mercer</h2>
+                    <h2>{user.name}</h2>
                     <p>Main contractors</p>
                    </div>
 
-                   <button className="eidtProfile"><span>Edit Profile</span></button>
+                 <NavLink to="/personalInformation"><button className="eidtProfile"><span>Edit Profile</span></button></NavLink>
 
                    </div>
 

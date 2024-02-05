@@ -13,12 +13,13 @@ import trick3 from '../image/trick3.svg';
 import trick4 from '../image/trick4.svg';
 import trick5 from '../image/trick5.svg';
 import trick6 from '../image/trick6.svg';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import OutsideClickHandler from 'react-outside-click-handler';
 // import trick1 from '../image/tr'
 // import {useMain} from '../hooks/useMain';
 const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify }) => {
   // const { register,setUser } = useMain();
-  let user = JSON.parse(localStorage.getItem('b2b_user'));
+  let user = JSON?.parse(localStorage.getItem('b2b_user'));
   const [click, setClick] = useState(false);
   const styleClick = {
     display: click ? "block" : "none"
@@ -71,6 +72,11 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
 
 
                   </div>
+                  <OutsideClickHandler
+                    onOutsideClick={()=>{
+                      setClick(false);
+                    }}
+                  >
                   <div
                     style={styleClick}
                     id="dropdown"
@@ -96,13 +102,14 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       </div>
                       <div className='mt-4'>
                       <li>
-                        <a
-                          href="#"
+                        <NavLink
+                          onClick={()=> setClick(false)}
+                          to="/Dashboard"
                           className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           <img src={trick} alt="trick" />
                           <span className='ml-2'>Dashboard</span>
-                        </a>
+                        </NavLink>
                       </li>
                       <li>
                         <a
@@ -157,8 +164,8 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                           onClick={()=>{
                             localStorage.removeItem('b2b_user');
                             localStorage.removeItem('b2b_token');
-                            // navigate('/');
-                            setPop(true);
+                            navigate('/');
+                            // setPop(true);
                             notify("success","Logout successfully");
                             setClick(false);
                           }}
@@ -170,6 +177,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       </div>
                     </ul>
                   </div>
+                  </OutsideClickHandler>
 
                 </div>
                 : <div className="btn_auth">

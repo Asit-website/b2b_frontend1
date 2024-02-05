@@ -29,6 +29,7 @@ const MainState = (props) => {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
+        
       },
       body: JSON.stringify({ name, email, password,categoryies,confirmPassword })
     });
@@ -41,28 +42,33 @@ const MainState = (props) => {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'token': localStorage.getItem('dolibo_token')
+        'token': localStorage.getItem('b2b_token')
       }
     });
     const data = await resp.json();
     return data;
   };
 
-  const updateUser = async ({ userId, name, email, designation, bio, country, state, file, password }) => {
+  const updateUser = async ({ userId, name, email, phone, categoryies,  website, budget, file, location,aboutCompany,twiter,facebook,linkdin,insta }) => {
     let formdata=new FormData();
     formdata.append('name', name);
     formdata.append('email', email);
-    formdata.append('designation', designation);
-    formdata.append('bio', bio);
-    formdata.append('country', country);
-    formdata.append('state', state);
+    formdata.append('phone', phone);
+    formdata.append('categoryies', categoryies);
+    formdata.append('website', website);
+    formdata.append('budget', budget);
     formdata.append('file', file);
-    formdata.append('password', password);
+    formdata.append('location', location);
+    formdata.append('aboutCompany', aboutCompany);
+    formdata.append('twiter', twiter);
+    formdata.append('facebook', facebook);
+    formdata.append('linkdin', linkdin);
+    formdata.append('insta', insta);
 
     const resp = await fetch(`${baseUrl}/user/updateUser/${userId}`, {
       method: 'PUT',
       headers: {
-        'token': localStorage.getItem('dolibo_token')
+        'token': localStorage.getItem('b2b_token')
       },
       body: formdata
     });

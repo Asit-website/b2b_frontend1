@@ -56,7 +56,7 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/pricing' element={<Pricing />} />
               <Route path="/Dashboard" element={<Dashboard /> }  />
-              <Route path="/personalInformation" element={<PersonalInformation /> }  />
+              <Route  path="/personalInformation" element={<PersonalInformation notify={notify}/> }  />
 
             </Routes>
             <Footer />
