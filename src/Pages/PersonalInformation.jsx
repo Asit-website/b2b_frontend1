@@ -29,6 +29,7 @@ function PersonalInformation({notify}){
     
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(value);
@@ -46,7 +47,7 @@ function PersonalInformation({notify}){
     // }
 
     const ans = await updateUser({ ...value, userId: value._id });
-    console.log(ans);
+    console.log("update" ,ans);
     localStorage.setItem('b2b_user', JSON.stringify(ans.data));
 
     if (ans.status) {
