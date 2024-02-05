@@ -1,0 +1,44 @@
+.sidebarWrap{
+    width: 225px;
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+border: 0px 1px 0px 0px;
+display: flex;
+flex-direction: column;
+border-right: 1px solid #FAFAFA;
+box-shadow: 0px 6px 12px 0px #00000014;
+/* min-height: 100vh; */
+min-height: 100%;
+
+}
+
+.singleSideItem{
+    width: 225px;
+height: 64px;
+padding: 20px 30px 20px 30px;
+gap: 10px;
+display: flex;
+gap: 12;
+align-items: center;
+cursor: pointer;
+}
+.singleSideItem span{
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #596080;
+}
+
+.selectDash{
+    background: #EBF9F7;
+
+}
+.selectDash span{
+   color : #2C868F;
+
+}
+

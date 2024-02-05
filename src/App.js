@@ -14,6 +14,8 @@ import Pricing from './components/Pricing';
 import MainState from './context/MainState';
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
+import Dashboard from './Pages/Dashboard';
+import PersonalInformation from './Pages/PersonalInformation';
 function App() {
   const [pop, setPop] = useState(false);
   const [signupPop, setSignupPop] = useState(false);
@@ -49,9 +51,13 @@ function App() {
             />
              <NotificationContainer/>
             <Routes>
+
               <Route path='/' element={<Home pop={pop} setPop={setPop} />} />
               <Route path='/about' element={<About />} />
               <Route path='/pricing' element={<Pricing />} />
+              <Route path="/Dashboard" element={<Dashboard /> }  />
+              <Route path="/personalInformation" element={<PersonalInformation /> }  />
+
             </Routes>
             <Footer />
          
