@@ -60,7 +60,9 @@ function PersonalInformation({notify}){
   };
     return (
         <div className="persInfoWrap">
+
             <form onSubmit={handleSubmit}>
+
             <div className="persInfoCont">
 
                  <div className="persInfo">
@@ -215,6 +217,7 @@ function PersonalInformation({notify}){
                  </div>
 
             </div>
+            
             </form>
 
         </div>

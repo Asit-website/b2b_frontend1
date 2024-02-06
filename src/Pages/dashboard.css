@@ -4,16 +4,21 @@
     display: flex;
     min-height: 90vh;
     flex-direction: row;
+    gap: 0px;
     /* background-color: red; */
 }
 
 .dashRightContain{
     display: flex;
     flex-direction: column;
-    padding: 26px 66px;
+    padding: 26px 20px;
     gap: 34px;
-    width: calc(100% - 225px);
+    /* width: calc(100% - 225px); */
+    max-width: 1070px;
+    margin: 0 auto;
 }
+
+
 
 .DashboardWrap .editProfile{
     display: flex;
@@ -22,7 +27,7 @@
 }
 
 .DashboardWrap .editProfile .AM{
-    width: 61px;
+    min-width: 61px;
 height: 61px;
 background: linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%);
 box-shadow: 3px 11px 9.199999809265137px 0px #2EA6914D;
@@ -46,6 +51,8 @@ justify-content: center;
    max-width: 333px;
    width: 100%;
    display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
    justify-content: space-between;
    align-items: center;
     
@@ -82,7 +89,6 @@ justify-content: center;
 .DashboardWrap .eidtProfile{
     width: 105px;
     height: 41px;
-    /* padding: 12px 16px 12px 16px; */
     border-radius: 24px;    
     border: 1px solid #B6E2E4;
 }
@@ -99,7 +105,7 @@ justify-content: center;
 
 .DashboardWrap .banner{
     max-width: 1079px;
-height: 260px;
+min-height: 260px;
 border-radius: 30px;
 background-color: #161B32;
 display: flex;
@@ -121,3 +127,38 @@ transform: translateY(-25px);
 
 }
 
+
+.DashboardWrap .banner img{
+    max-width: 400px;
+    width: 100%;
+}
+
+@media (max-width:1024px) {
+    .DashboardWrap .banner p{
+        
+    font-size: 26px;
+   
+    }
+    
+    
+}
+
+@media (max-width:700px) {
+    
+.DashboardWrap .banner{
+
+display: flex;
+flex-direction: column;
+padding: 43px 20px 0px 20px;
+gap: 10px;
+
+
+}
+
+.DashboardWrap .banner p{
+        
+    font-size: 20px;
+   
+    }
+
+}

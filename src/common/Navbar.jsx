@@ -16,10 +16,15 @@ import trick6 from '../image/trick6.svg';
 import { NavLink, useNavigate } from 'react-router-dom';
 import OutsideClickHandler from 'react-outside-click-handler';
 import Avatar from 'react-avatar';
-// import trick1 from '../image/tr'
-// import {useMain} from '../hooks/useMain';
-const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify }) => {
-  // const { register,setUser } = useMain();
+import { IoReorderThreeOutline } from "react-icons/io5";
+
+
+const navItems = [
+  "Services","Manufacturers","Projects","Budgeting","Subscription","Bidding","About Us"
+]
+
+const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify , showNavbar , setShowNavbar }) => {
+
   let user = JSON?.parse(localStorage?.getItem('b2b_user'));
   const [click, setClick] = useState(false);
   const styleClick = {
@@ -28,13 +33,17 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
 
   const navigate = useNavigate();
 
+ 
   // const styleAvatar = {
   //   background:"linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%)"
   // }
+  
   return (
     <>
       <div className="header">
+
         <header className='head'>
+
           <div className="header1">
             <form>
               <label
@@ -63,6 +72,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
             </form>
 
           </div>
+
           <div className="header2">
             {
              localStorage.getItem('b2b_token') ?
@@ -194,16 +204,24 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
 
           </div>
         </header>
+
+
       </div>
+
+      
       <div className="navbar">
         <nav className='nav'>
+
           <div className="nav1">
             <div className="logo">
               <img src={loho} alt="loho" />
             </div>
           </div>
+
           <div className="nav2">
+
             <div className="ul">
+
               <ul>
                 <li><a href="">Services</a></li>
                 <li><a href="">Manufacturers</a></li>
@@ -213,8 +231,17 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                 <li><a href="">Bidding</a></li>
                 <li><a href="">About Us</a></li>
               </ul>
+
+
+
             </div>
+            
           </div>
+
+          <div className='threeline'>
+              <IoReorderThreeOutline onClick={()=>setShowNavbar((prev)=>!prev)} className='lineIcons' />
+              </div>
+
         </nav>
       </div>
       {
@@ -240,6 +267,20 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
       {
         reset && <ResetPassword setReset={setReset} notify={notify} />
       }
+
+ {
+  showNavbar && 
+  <div className='showNavWrap'>
+
+            {
+              navItems?.map((item, index)=>(
+                <p key={index}>{item}</p>
+              ))
+            }
+
+  </div>
+ }
+
     </>
   )
 }

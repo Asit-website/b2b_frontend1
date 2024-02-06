@@ -22,8 +22,8 @@ function Dashboard(){
                    <div className="namEditWrap">
 
                    <div className="nameWWrap">
-                    <h2>{user.name}</h2>
-                    <p>{user.categoryies}</p>
+                    <h2>{user?.name}</h2>
+                    <p>{user?.categoryies}</p>
                    </div>
 
                  <NavLink to="/personalInformation"><button className="eidtProfile"><span>Edit Profile</span></button></NavLink>
