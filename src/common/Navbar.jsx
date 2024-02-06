@@ -76,8 +76,13 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
           <div className="header2">
             {
              localStorage.getItem('b2b_token') ?
+                  <OutsideClickHandler
+                    onOutsideClick={()=>{
+                       setClick(false)
+                    }}
+                  >
                 <div>
-                  <div onClick={() =>  setClick(true) ? setClick(false) : setClick(true)} className='test_user flex items-center'>
+                  <div onClick={()=> setClick(!click)} className='test_user flex items-center'>
                     <div className="user_icon">
                       <img src={ust} alt="ust" />
                     </div>
@@ -87,15 +92,10 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
 
 
                   </div>
-                  <OutsideClickHandler
-                    onOutsideClick={()=>{
-                      setClick(false) ? setClick(true) : setClick(false)
-                    }}
-                  >
                   <div
                     style={styleClick}
                     id="dropdown"
-                    className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dropThing"
+                    className=" hidden z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44  dropThing"
                   >
                     
                     <ul
@@ -193,9 +193,9 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       </div>
                     </ul>
                   </div>
-                  </OutsideClickHandler>
 
                 </div>
+                  </OutsideClickHandler>
                 : <div className="btn_auth">
                   <button onClick={() => setPop(true)} className='login'>Log in</button>
                   <button onClick={() => setSignupPop(true)} className='signup'>Sign up</button>

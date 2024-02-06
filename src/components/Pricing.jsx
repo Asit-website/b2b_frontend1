@@ -30,7 +30,7 @@ const Pricing = () => {
     <>
       <div id="procard_section">
         <div id="procard">
-          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
             <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
               Basic
             </h5>
@@ -206,7 +206,7 @@ const Pricing = () => {
           </div>
         </div>
         <div id="procard">
-          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
             <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
               Enterprise
             </h5>
@@ -382,7 +382,7 @@ const Pricing = () => {
           </div>
         </div>
         <div id="procard">
-          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
             <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
               Pro
             </h5>
@@ -599,7 +599,7 @@ const Pricing = () => {
               <h2 id="accordion-collapse-heading-1">
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400   gap-3 "
                   data-accordion-target="#accordion-collapse-body-1"
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-1"
@@ -615,7 +615,7 @@ const Pricing = () => {
                 style={stylePerr}
               >
                 <div className="p-4  dark:bg-gray-900 inner_div">
-                  <p className="text-#596080-500 dark:text-#596080-400">
+                  <p className="">
                     Potential clients want to understand the range of
                     construction services your company provides. This can
                     include general contracting, project management,
