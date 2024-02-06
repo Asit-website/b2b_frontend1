@@ -6,8 +6,10 @@ import vect2 from '../image/vect2.svg'
 const Footer = () => {
   return (
     <>
+
       <div className="main_foot">
         <div className="footer">
+
           <footer className='foot'>
             <div className="foot_flex">
               <div className="first_flex">
@@ -51,9 +53,12 @@ const Footer = () => {
               </div>
             </div>
           </footer>
+          
         </div>
       </div>
+
       <div className="lower_footer">
+        
          <div className="lower_sect">
              <div className="lower_sect1">
                  <span>2024 © BuildLink Network. All rights reserved.</span>
@@ -70,6 +75,7 @@ const Footer = () => {
                 </div>
              </div>
          </div>
+         
       </div>
     </>
   )

@@ -8,6 +8,9 @@ import join5 from "../image/join5.png";
 import join6 from "../image/join6.png";
 import right1 from "../image/right_home.png";
 import { Button, Modal } from 'flowbite-react';
+import find from "../image/find.png"
+import find2 from "../image/find2.png"
+
 const Home = ({pop,setPop}) => {
   const [openModal, setOpenModal] = useState(false);
   return (
@@ -36,7 +39,9 @@ const Home = ({pop,setPop}) => {
         </Modal.Footer>
       </Modal> */}
       <div id="home_banner">
+
         <div className="home_banner-back">
+
           <div className="home_banner-back1">
             <div className="home_banner_head">
               <h1>
@@ -105,16 +110,26 @@ const Home = ({pop,setPop}) => {
                 </form>
               </div> */}
 
+              <div className="serchFind">
+                <img src={find} alt="" />
+                <input type="text" placeholder="Search Architects " />
+                <img src={find2} alt="" />
+              </div>
+
               <button>
                 <span>Search</span>
               </button>
+              
             </div>
           </div>
+
           <div className="home_banner2">
             <img src={left1} alt="home" />
           </div>
         </div>
+
       </div>
+
       <div id="home_services_banner">
         <div className="home_services_back">
           <div className="home_services_banner_content">
@@ -145,6 +160,7 @@ const Home = ({pop,setPop}) => {
           </div>
         </div>
       </div>
+
       <div id="home_partner">
         <div className="home_partner_container">
           <div className="home_partner_content">
@@ -1007,6 +1023,7 @@ const Home = ({pop,setPop}) => {
           </div>
         </div>
       </div>
+
       <div id="home_Join">
         <div className="home_join_container">
           <div className="home_join_content">
@@ -1022,6 +1039,7 @@ const Home = ({pop,setPop}) => {
           </div>
         </div>
       </div>
+
       <div id="home_product">
         <div className="home_product_container">
           <div className="home_product_content">
@@ -1076,6 +1094,7 @@ const Home = ({pop,setPop}) => {
           </div>
         </div>
       </div>
+
       <div id="home_solution">
         <div className="home_solution_container">
           <div className="home_solution_container_buttons">
@@ -1139,10 +1158,13 @@ const Home = ({pop,setPop}) => {
             </div>
           </div>
           <div className="Home_marking">
+
             <div className="Home_marking_right">
               <img src={right1} alt="" />
             </div>
+
             <div className="Home_marking_left">
+
               <div className="Home_marking_content">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1162,13 +1184,19 @@ const Home = ({pop,setPop}) => {
                 </p>
                 <span>BEN TERRY, Director of Marketing</span>
               </div>
+
             </div>
+
           </div>
         </div>
       </div>
+
       <div id="home_last_section">
+
         <div className="home_last_section_container">
+
           <div className="home_last_section_flex">
+
             <div className="home_last_section_first">
               <h2>Connect with your next client on BuildLink Network</h2>
               <p>
@@ -1182,6 +1210,7 @@ const Home = ({pop,setPop}) => {
               {" "}
               <hr />
             </div>
+
             <div className="home_last_section_third">
               <h2>Share the love!</h2>
               <p>
@@ -1190,8 +1219,11 @@ const Home = ({pop,setPop}) => {
               </p>
               <a href="#"> Create a Profile</a>
             </div>
+
           </div>
+
         </div>
+
       </div>
     </>
   );

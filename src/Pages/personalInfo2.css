@@ -34,11 +34,40 @@ text-align: left;
 
 .persInfoWrap .photoWrap{
 display: flex;
-gap: 12px;
+gap: 10px;
+align-items: center;
+}
+.persInfoWrap .photoWrap .btnWrap{
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
 align-items: center;
 }
 
-.persInfoWrap .photoWrap button{
+
+
+.persInfoWrap .photoWrap .uploadNew{
+width: 201px;
+height: 43px;
+border-radius: 8px;
+padding: 8px 12px;
+/* background-color: #B6E2E4; */
+overflow: hidden;
+border: 1px solid #B6E2E4;
+background-color: #FAFAFA;
+}
+.persInfoWrap .photoWrap .uploadNew span{
+    font-family: Inter;
+    color: #2C868F;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+
+.persInfoWrap .photoWrap .deleteProfile{
     width: 119px;
     height: 43px;
     /* padding: 12px, 16px 12px 16px; */
@@ -46,7 +75,7 @@ align-items: center;
     border: 1px solid #B6E2E4;
     color: #B6E2E4;    
 }
-.persInfoWrap .photoWrap button span{
+.persInfoWrap .photoWrap .deleteProfile span{
     font-family: Inter;
     color: #2C868F;
     font-size: 16px;
