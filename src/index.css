@@ -1367,7 +1367,7 @@ margin: 15px;
   display: flex;
   align-items: center;
 }
-.icons{
+/* .icons{
   background: linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%);
   width: 51px;
   height: 51px;
@@ -1375,17 +1375,26 @@ margin: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.icons p{
+} */
+/* .icons p{
   color: #FCFDFD;
   font-weight: 500;
   font-size: 20px;
   font-family: 'Inter', sans-serif !important;
-}
+} */
 .tright h3{
   color: #161B32;
   font-weight: 500;
   font-size: 20px;
+  font-family: 'Inter', sans-serif !important;
+}
+.sb-avatar__text{
+  background: linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%) !important;
+}
+.sb-avatar__text span{
+  color: #FCFDFD !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
   font-family: 'Inter', sans-serif !important;
 }
 .tright p{

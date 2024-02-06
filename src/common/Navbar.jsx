@@ -15,6 +15,7 @@ import trick5 from '../image/trick5.svg';
 import trick6 from '../image/trick6.svg';
 import { NavLink, useNavigate } from 'react-router-dom';
 import OutsideClickHandler from 'react-outside-click-handler';
+import Avatar from 'react-avatar';
 // import trick1 from '../image/tr'
 // import {useMain} from '../hooks/useMain';
 const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify }) => {
@@ -26,6 +27,10 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
   }
 
   const navigate = useNavigate();
+
+  // const styleAvatar = {
+  //   background:"linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%)"
+  // }
   return (
     <>
       <div className="header">
@@ -60,9 +65,9 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
           </div>
           <div className="header2">
             {
-              user ?
+             localStorage.getItem('b2b_token') ?
                 <div>
-                  <div onClick={() => setClick(!click)} className='test_user flex items-center'>
+                  <div onClick={() =>  setClick(true) ? setClick(false) : setClick(true)} className='test_user flex items-center'>
                     <div className="user_icon">
                       <img src={ust} alt="ust" />
                     </div>
@@ -74,7 +79,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                   </div>
                   <OutsideClickHandler
                     onOutsideClick={()=>{
-                      setClick(false);
+                      setClick(false) ? setClick(true) : setClick(false)
                     }}
                   >
                   <div
@@ -90,7 +95,8 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       <div className='user_avatar'>
                             <div className='user_am'>
                                 <div className="icons">
-                                    <p>AM</p>
+                                    {/* <p>AM</p> */}
+                                    <Avatar  name={user.name} size='51px' round={true} textSizeRatio={2} />
                                 </div>
                             </div>
                             <div className="user_info">
@@ -226,13 +232,13 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
         signupPop && <SignupPop pop={pop} setPop={setPop} signupPop={signupPop} setSignupPop={setSignupPop} notify={notify} />
       }
       {
-        forgot && <ForgotPassword setOtpPop={setOtpPop} setForgot={setForgot} />
+        forgot && <ForgotPassword setOtpPop={setOtpPop} setForgot={setForgot} notify={notify} />
       }
       {
-        otpPop && <Otp reset={reset} setReset={setReset} setOtpPop={setOtpPop} />
+        otpPop && <Otp reset={reset} setReset={setReset} setOtpPop={setOtpPop} notify={notify} />
       }
       {
-        reset && <ResetPassword setReset={setReset} />
+        reset && <ResetPassword setReset={setReset} notify={notify} />
       }
     </>
   )
