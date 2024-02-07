@@ -589,6 +589,10 @@ text-align: left;
 #home_Join .home_join_container {
   padding: 34px 50px;
 }
+#home_Join .home_join_container .home_join_content .home_join_section {
+  justify-content: center;
+  gap: 28px !important;
+}
 }
 
 #home_Join .home_join_container .home_join_content h2 {
@@ -1412,9 +1416,7 @@ input[type=checkbox]{
 h1,h2,h3,p{
   overflow: hidden !important;
 }
-#procard_section{
-  margin-top: 9rem;
-}
+
 /* =================about page css start================ */
 .about_main{
   background-color: transparent;
@@ -1666,6 +1668,7 @@ h1,h2,h3,p{
   font-family: inter !important;
   font-weight: 700 !important;
   font-size: 18px !important;
+  text-align: left !important;
 }
 
 #Accordion_section_pricing .Accordion_section_pricing_detail .inner_div{
@@ -1696,6 +1699,28 @@ h1,h2,h3,p{
   gap: 12px;
   justify-content: center;
   align-items: center;
+  position: relative;
+  bottom: 58px;
+}
+#today_section{
+  margin-top: 9em;
+  background-color: #FAFAFA;
+  padding: 61px 61px 100px 61px;
+}
+.today_head h1{
+  font-family: Plus Jakarta sans-serif;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 40.32px;
+}
+.today_head p{
+  line-height: 19.36px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #161B32;
 }
 #procard{
   width: 334px !important;
@@ -1823,3 +1848,166 @@ margin: 15px;
   margin-left: 10px;
 }
 
+/* about css responsive */
+@media (max-width:1185px) {
+  .about {
+    padding: 50px 93px;
+  }
+  .intro {
+    padding: 50px 93px;
+  }
+  .builLink_sect {
+    padding: 50px 93px;
+  }
+}
+@media (max-width:1047px) {
+  .about {
+    padding: 50px 50px;
+  }
+  .about_left_content p{
+    width: 25em;
+  }
+  .intro {
+    padding: 50px 50px;
+  }
+  .builLink_sect {
+    padding: 50px 50px;
+  }
+  #procard_section{
+    flex-direction: column;
+    margin-left:20px;
+    margin-right:20px ;
+    gap: 25px;
+  }
+}
+@media (max-width:900px) {
+  .about_flex{
+    flex-direction: column-reverse;
+  }
+  .about_left_content p{
+    width: 28em;
+  }
+  .buildLink_flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media (max-width:882px) {
+  .ready{
+    padding: 50px 50px;
+  }
+}
+
+
+
+
+@media (max-width:900px) {
+  .intro_flex{
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 27px;
+  }
+  .intro_btn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro_btn button{
+    text-align: center;
+  }
+  .intro_right{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+  }
+  .intro_img{
+    display: block;
+    margin: auto;
+  }
+  #Accordion_section_pricing .Accordion_section_pricing_detail{
+    padding: 0px 77px 50px;
+  }
+}
+@media (max-width:560px){
+  .about_left_content h2{
+    font-size: 36px;
+    line-height: 42.48px;
+  }
+  
+.get_in {
+  background-color: #2C868F;
+  width: 175px;
+  max-width: 100%;
+  height: 43px;
+  border-radius: 8px;
+  margin-top: 18px;
+}
+.main_buildLink h2 {
+  font-size: 36.4px;
+  line-height: 35.46px;
+
+}
+.main_buildLink p {
+  font-size: 16px;
+  line-height: 19.78px;
+  margin-top: 10px;
+}
+.buildLink_box h3 {
+  font-size: 22px;
+}
+.buildLink_box p {
+  font-size: 15px;
+  line-height: 18px;
+  margin-top: 13px;
+}
+.ready_div h2 {
+  font-size: 22px;
+  margin-top: 4px;
+}
+.ready_div h4 {
+  font-size: 22px;
+  line-height: 26.24px;
+}
+.ready_div button {
+  width: 176px;
+  max-width: 100%;
+  height: 41px;
+  margin-top: 10px;
+}
+.intro_div h2{
+  line-height: 31.32px;
+}
+#home_Join .home_join_container .home_join_content h2 {
+  font-size: 16px;
+  line-height: 20px;
+}
+#Accordion_section_pricing .Accordion_section_pricing_detail .Accordion_section_pricing_head h2{
+  line-height: 20.24px;
+  font-size: 20px;
+  margin-bottom: 29px;
+    margin-top: 25px;
+}
+
+}
+@media (max-width:560px) {
+.builLink_sect {
+  padding: 20px 20px;
+}
+.about {
+  padding: 20px 20px;
+}
+.intro {
+  padding: 20px 20px;
+}
+.ready {
+  padding: 20px 20px;
+}
+#home_Join .home_join_container{
+  padding: 20px 20px;
+}
+#Accordion_section_pricing .Accordion_section_pricing_detail {
+  padding: 0px 30px 40px;
+}
+}
