@@ -1,11 +1,11 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./personalInformation.css"
 import photo from "../image/photo.png"
 import { useMain } from "../hooks/useMain";
 import { useNavigate } from "react-router-dom";
 
-function PersonalInformation({notify}){
-  const {updateUser} = useMain();
+function PersonalInformation({ notify }) {
+  const { updateUser } = useMain();
   const [value, setValue] = useState({});
   const navigate = useNavigate();
   // let user = JSON.parse(localStorage.getItem('b2b_user'));
@@ -24,9 +24,9 @@ function PersonalInformation({notify}){
     //   reader.readAsDataURL(e.target.files[0]);
     //   setValue({ ...value, [e.target.name]: e.target.files[0] });
     // }
-   
-      setValue({ ...value, [e.target.name]: e.target.value });
-    
+
+    setValue({ ...value, [e.target.name]: e.target.value });
+
   };
 
 
@@ -47,7 +47,7 @@ function PersonalInformation({notify}){
     // }
 
     const ans = await updateUser({ ...value, userId: value._id });
-    console.log("update" ,ans);
+    console.log("update", ans);
     localStorage.setItem('b2b_user', JSON.stringify(ans.data));
 
     if (ans.status) {
@@ -60,36 +60,37 @@ function PersonalInformation({notify}){
     }
   };
 
-  const handlePoint = (e) =>{
+  const handlePoint = (e) => {
     e.preventDefault();
     setValue({
-      name:'',
-      phone:'',
-      email:'',
-      website:'',
-      budget:'',
-      categoryies:'',
-      location:'',
-      aboutCompany:'',
-      twiter:'',
-      facebook:'',
-      linkdin:'',
-      insta:''
+      name: '',
+      phone: '',
+      email: '',
+      website: '',
+      budget: '',
+      categoryies: '',
+      location: '',
+      aboutCompany: '',
+      twiter: '',
+      facebook: '',
+      linkdin: '',
+      insta: '',
+      city:''
     });
   }
-    return (
-        <div className="persInfoWrap">
+  return (
+    <div className="persInfoWrap">
 
-            <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
 
-            <div className="persInfoCont">
+        <div className="persInfoCont">
 
-                 <div className="persInfo">
-               
-                 <h2>Personal Information</h2>
+          <div className="persInfo">
 
-                {/* photo  */}
-                {/* <div className="photoWrap">
+            <h2>Personal Information</h2>
+
+            {/* photo  */}
+            {/* <div className="photoWrap">
                     <img src={photo} alt="" />
 
                     <button><span>Choose file</span>
@@ -98,149 +99,168 @@ function PersonalInformation({notify}){
 
                 </div> */}
 
-                <div className="comNameWrap">
+            <div className="comNameWrap">
 
-                    <label htmlFor="name" className="nameCom">
-                        <p>Name/Company *</p>
-                        <input id="name" name="name" value={value.name} onChange={handleChange} type="text"  className="cmpName" />
-                    </label>
+              <label htmlFor="name" className="nameCom">
+                <p>Name/Company *</p>
+                <input id="name" name="name" value={value.name} onChange={handleChange} type="text" className="cmpName" />
+              </label>
 
-                    <div className="conEmilWrap">
+              <div className="conEmilWrap">
 
-                      <label htmlFor="phone">
-                        <p>Contact No *</p>
-                        <input name="phone" id="phone" onChange={handleChange} value={value.phone} type="text" />
-                      </label>
-
-                      <label htmlFor="email">
-                        <p>Email *</p>
-                        <input type="email" id="email" name="email" onChange={handleChange} value={value.email} />
-                      </label>
-
-                    </div>
-
-                </div>
-
-                 </div>
-
-                 <div className="aboutCont">
-                    <h2>About</h2>
-
-              <div className="webbud">
-
-                <label htmlFor="website">
-                    <p>Website *</p>
-                    <input id="website" onChange={handleChange} name="website" value={value.website} type="text" placeholder="https://" />
-                </label>
-                
-                <label htmlFor="budget">
-                    <p>Budget *</p>
-                    <input id="budget" name="budget" onChange={handleChange} value={value.budget} type="text" placeholder="" />
+                <label htmlFor="phone">
+                  <p>Contact No *</p>
+                  <input name="phone" id="phone" onChange={handleChange} value={value.phone} type="text" />
                 </label>
 
+                <label htmlFor="email">
+                  <p>Email *</p>
+                  <input type="email" id="email" name="email" onChange={handleChange} value={value.email} />
+                </label>
 
               </div>
-
-              <div className="webbud">
-
-                <label htmlFor="categoryies">
-                    <p>Category *</p>
-                   <select name="categoryies" id="categoryies" onChange={handleChange} value={value.categoryies} >
-
-                    {/* <option>Select</option> */}
-                    <option>Main contractors</option>
-                    <option>Hauling & excavating</option>
-                    <option>Structural contractors</option>
-                    <option>Masonry</option>
-                    <option>Carpenters</option>
-                    <option>Civil contractors</option>
-                   </select>
-                </label>
-
-                <label htmlFor="location">
-                    <p>Location *</p>
-                    <input id="location" name="location" onChange={handleChange} value={value.location} type="text" placeholder="" />
-                </label>
-
-
-              </div>
-
-              <div className="webbud">
-
-           
-
-                <label htmlFor="aboutCompany">
-                    <p>About Company *</p>
-                  <textarea name="aboutCompany" id="aboutCompany" cols="30" rows="10"
-                    onChange={handleChange} value={value.aboutCompany} 
-                  ></textarea>
-                </label>
-
-
-              </div>
-
-              
-
-
-
-                 </div>
-
-
-                 <div className="aboutCont">
-                    <h2>Social Media</h2>
-
-              <div className="webbud">
-
-                <label htmlFor="twiter">
-                    <p>Twitter</p>
-                    <input id="twiter" name="twiter" onChange={handleChange} value={value.twiter} type="text" placeholder="https://" />
-                </label>
-                <label htmlFor="facebook">
-                    <p>Facebook</p>
-                    <input id="facebook" name="facebook" onChange={handleChange} value={value.facebook} type="text" placeholder="https://" />
-                </label>
-                
-             
-
-
-              </div>
-
-              <div className="webbud">
-
-                <label htmlFor="linkdin">
-                    <p>Linkedin</p>
-                    <input id="linkdin" name="linkdin" value={value.linkdin} onChange={handleChange} type="text" placeholder="https://" />
-                </label>
-                <label htmlFor="insta">
-                    <p>Insta</p>
-                    <input id="insta" name="insta" value={value.insta} onChange={handleChange} type="text" placeholder="https://" />
-                </label>
-                
-             
-
-
-              </div>
-
-       
-              
-
-
-
-                 </div>
-
-                 <div className="cancelSaveBtn">
-
-                    <button type="button" onClick={handlePoint} className="cancel"><span>Cancel</span></button>
-                    <button type="submit" className="saveChange"><span>Save Change</span></button>
-
-                 </div>
 
             </div>
-            
-            </form>
+
+          </div>
+
+          <div className="aboutCont">
+            <h2>About</h2>
+
+            <div className="webbud">
+
+              <label htmlFor="categoryies">
+                <p>Service *</p>
+                 <select className=" w-100" name="categoryies" id="categoryies" onChange={handleChange} value={value.categoryies}>
+                      <option>Main contractors</option>
+                      <option>Hauling & excavating</option>
+                      <option>Structural contractors</option>
+                      <option>Masonry</option>
+                      <option>Carpenters</option>
+                      <option>Civil contractors</option>
+                 </select>
+              </label>
+
+
+
+
+            </div>
+
+            <div className="webbud">
+
+              <label htmlFor="website">
+                <p>Website *</p>
+                <input id="website" onChange={handleChange} name="website" value={value.website} type="text" placeholder="https://" />
+              </label>
+
+              <label htmlFor="budget">
+                <p>Budget *</p>
+                <input id="budget" name="budget" onChange={handleChange} value={value.budget} type="text" placeholder="" />
+              </label>
+
+
+            </div>
+
+            <div className="webbud">
+
+              <label htmlFor="city">
+                <p>City *</p>
+                <select name="city" id="city" onChange={handleChange} value={value.city} >
+
+                  {/* <option>Select</option> */}
+                  <option>city1</option>
+                  <option>city2</option>
+                  <option>city3</option>
+                  <option>city4</option>
+                  <option>city5</option>
+                  <option>city6</option>
+                </select>
+              </label>
+
+              <label htmlFor="location">
+                <p>Location *</p>
+                <input id="location" name="location" onChange={handleChange} value={value.location} type="text" placeholder="" />
+              </label>
+
+
+            </div>
+
+            <div className="webbud">
+
+
+
+              <label htmlFor="aboutCompany">
+                <p>About Company *</p>
+                <textarea name="aboutCompany" id="aboutCompany" cols="30" rows="10"
+                  onChange={handleChange} value={value.aboutCompany}
+                ></textarea>
+              </label>
+
+
+            </div>
+
+
+
+
+
+          </div>
+
+
+          <div className="aboutCont">
+            <h2>Social Media</h2>
+
+            <div className="webbud">
+
+              <label htmlFor="twiter">
+                <p>Twitter</p>
+                <input id="twiter" name="twiter" onChange={handleChange} value={value.twiter} type="text" placeholder="https://" />
+              </label>
+              <label htmlFor="facebook">
+                <p>Facebook</p>
+                <input id="facebook" name="facebook" onChange={handleChange} value={value.facebook} type="text" placeholder="https://" />
+              </label>
+
+
+
+
+            </div>
+
+            <div className="webbud">
+
+              <label htmlFor="linkdin">
+                <p>Linkedin</p>
+                <input id="linkdin" name="linkdin" value={value.linkdin} onChange={handleChange} type="text" placeholder="https://" />
+              </label>
+              <label htmlFor="insta">
+                <p>Insta</p>
+                <input id="insta" name="insta" value={value.insta} onChange={handleChange} type="text" placeholder="https://" />
+              </label>
+
+
+
+
+            </div>
+
+
+
+
+
+
+          </div>
+
+          <div className="cancelSaveBtn">
+
+            <button type="button" onClick={handlePoint} className="cancel"><span>Cancel</span></button>
+            <button type="submit" className="saveChange"><span>Save Change</span></button>
+
+          </div>
 
         </div>
-    )
+
+      </form>
+
+    </div>
+  )
 }
 
 

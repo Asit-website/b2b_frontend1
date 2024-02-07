@@ -45,7 +45,7 @@ const MainState = (props) => {
     return data;
   };
 
-  const updateUser = async ({ userId, name, email, phone, categoryies,  website, budget, file, location,aboutCompany,twiter,facebook,linkdin,insta }) => {
+  const updateUser = async ({ userId, name, email, phone, categoryies,  website, budget, file, location,aboutCompany,twiter,facebook,linkdin,insta,city }) => {
 
     let formdata=new FormData();
     formdata.append('name', name);
@@ -61,7 +61,7 @@ const MainState = (props) => {
     formdata.append('facebook', facebook);
     formdata.append('linkdin', linkdin);
     formdata.append('insta', insta);
-
+    formdata.append("city", city)
     const token = localStorage.getItem('b2b_token');
 
     const resp = await fetch(`${baseUrl}/user/updateUser/${userId}`, {
