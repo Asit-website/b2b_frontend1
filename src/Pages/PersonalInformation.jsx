@@ -52,12 +52,31 @@ function PersonalInformation({notify}){
 
     if (ans.status) {
       notify(ans.status, ans.message);
+      // setValue({});
       // navigate("/endUser/myProfile");
     }
     else {
       console.log("error");
     }
   };
+
+  const handlePoint = (e) =>{
+    e.preventDefault();
+    setValue({
+      name:'',
+      phone:'',
+      email:'',
+      website:'',
+      budget:'',
+      categoryies:'',
+      location:'',
+      aboutCompany:'',
+      twiter:'',
+      facebook:'',
+      linkdin:'',
+      insta:''
+    });
+  }
     return (
         <div className="persInfoWrap">
 
@@ -83,7 +102,7 @@ function PersonalInformation({notify}){
 
                     <label htmlFor="name" className="nameCom">
                         <p>Name/Company *</p>
-                        <input id="name" name="name" value={value.name} onChange={handleChange} type="text" placeholder="Emerson Gutters and Drainage" className="cmpName" />
+                        <input id="name" name="name" value={value.name} onChange={handleChange} type="text"  className="cmpName" />
                     </label>
 
                     <div className="conEmilWrap">
@@ -211,7 +230,7 @@ function PersonalInformation({notify}){
 
                  <div className="cancelSaveBtn">
 
-                    <button type="button" className="cancel"><span>Cancel</span></button>
+                    <button type="button" onClick={handlePoint} className="cancel"><span>Cancel</span></button>
                     <button type="submit" className="saveChange"><span>Save Change</span></button>
 
                  </div>

@@ -27,7 +27,7 @@ body {
 .showNavWrap{
   position: absolute;
   right: 0;
-  z-index: 100;
+  z-index: 98;
   background-color: #1B1B1B;
   width: 300px;
   min-height: 100vh;
@@ -41,7 +41,7 @@ body {
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
-
+  margin-top: 9rem;
   /* justify-content: center; */
 }
 
