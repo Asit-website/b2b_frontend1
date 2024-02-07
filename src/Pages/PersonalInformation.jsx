@@ -132,12 +132,35 @@ function PersonalInformation({ notify }) {
               <label htmlFor="categoryies">
                 <p>Service *</p>
                  <select className=" w-100" name="categoryies" id="categoryies" onChange={handleChange} value={value.categoryies}>
-                      <option>Main contractors</option>
-                      <option>Hauling & excavating</option>
-                      <option>Structural contractors</option>
-                      <option>Masonry</option>
-                      <option>Carpenters</option>
+                     
                       <option>Civil contractors</option>
+                      <option>Architects</option>
+                                                <option>Consulting Engineers</option>
+                                                <option>Interior Designers</option>
+                                                <option>Fense</option>
+                                                <option>Main Contractors</option>
+                                                <option>Hauling & Excavating</option>
+                                                <option>Main contractors</option>
+                                                <option>Hauling & excavating</option>
+                                                <option>Structural contractors</option>
+                                                <option>Masonry</option>
+                                                <option>Carpenters</option>
+                                                <option>Concrete pouring</option>
+                                                <option>Mechanical contractors</option>
+                                                <option>Electrical contractors</option>
+                                                <option>Plumbing contractors</option>
+                                                <option>Fire protection</option>
+                                                <option>Roofing contractors</option>
+                                                <option>Painting contractors</option>
+                                                <option>Glass works</option>
+                                                <option>Drainage contractors</option>
+                                                <option>Garden /Lawn works</option>
+                                                <option>Wall /Ceiling</option>
+                                                <option>Insulation</option>
+                                                <option>Realtors</option>
+                                                <option>Lenders</option>
+                                                <option>Investors</option>
+                                                <option>Owners</option>
                  </select>
               </label>
 

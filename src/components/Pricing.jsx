@@ -28,6 +28,14 @@ const Pricing = () => {
   };
   return (
     <>
+     <div id="today_section">
+      <div className="today_container">
+        <div className="today_head">
+          <h1>One simple solution for contractors and design pros</h1>
+          <p>The easy way to manage your projects, clients, and business — all in one place.</p>
+        </div>
+      </div>
+     </div>
       <div id="procard_section">
         <div id="procard">
           <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
@@ -75,7 +83,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
                   Unlimited online review collection
                 </span>
               </li>
@@ -113,7 +121,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
                   Project Capacity: Up to 2 concurrent projects
                 </span>
               </li>
@@ -151,7 +159,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
                   Basic Project Management Features
                 </span>
               </li>
@@ -189,7 +197,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 ms-3">
+                <span className="text-base font-normal text-gray-500 ms-3">
                   Limited Access to Premium Templates
                 </span>
               </li>
@@ -251,7 +259,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                <span className="text-base font-normal text-gray-500 dark:text-gray-400 ms-3">
                   Unlimited online review collection
                 </span>
               </li>
@@ -289,7 +297,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
                   Project Capacity: Up to 2 concurrent projects
                 </span>
               </li>
@@ -327,7 +335,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
                   Basic Project Management Features
                 </span>
               </li>
@@ -365,7 +373,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 ms-3">
+                <span className="text-base font-normal  text-gray-500 ms-3">
                   Limited Access to Premium Templates
                 </span>
               </li>
@@ -427,7 +435,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
                   Unlimited online review collection
                 </span>
               </li>
@@ -465,7 +473,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
                   Project Capacity: Up to 2 concurrent projects
                 </span>
               </li>
@@ -503,7 +511,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">
+                <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
                   Basic Project Management Features
                 </span>
               </li>
@@ -541,7 +549,7 @@ const Pricing = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="text-base font-normal leading-tight text-gray-500 ms-3">
+                <span className="text-base font-normal  text-gray-500 ms-3">
                   Limited Access to Premium Templates
                 </span>
               </li>
