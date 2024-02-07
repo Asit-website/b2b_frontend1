@@ -46,7 +46,8 @@ justify-content: center;
     line-height: 33px;
     letter-spacing: 0em;
     text-align: left;
-    
+    display: block;
+    text-align: center;
 }
 .DashboardWrap .namEditWrap{
    max-width: 333px;

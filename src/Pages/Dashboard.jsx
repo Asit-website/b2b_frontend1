@@ -2,7 +2,7 @@ import Sidebar from "../common/Sidebar";
 import "./dashboard.css"
 import frame from "../image/Frame.png"
 import { NavLink } from "react-router-dom";
-
+import Avatar from 'react-avatar';
 function Dashboard(){
     let user = JSON.parse(localStorage.getItem('b2b_user'));
     return (
@@ -15,8 +15,8 @@ function Dashboard(){
                 {/* first  */}
                 <div className="editProfile">
 
-                   <div className="AM">
-                    <span>AM</span>
+                   <div className="AM icons">
+                   <Avatar  name={user.name} size='51px' round={true} textSizeRatio={2} />
                    </div>
 
                    <div className="namEditWrap">

@@ -43,12 +43,12 @@ const Pricing = () => {
               Basic
             </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
-              <span className="text-m font-large text-gray-500 dark:text-gray-400">
+              <span className="text-m font-large text-gray-500 dark:text-gray-400 ser">
                 USD $0/month
               </span>
             </div>
             <h2 className="proh2">Included in Basic:</h2>
-            <ul role="list" className="space-y-3  mb-12">
+            <ul role="list" className="space-y-3 trt mb-12">
               <li className="flex items-center">
                 <svg
                   width={24}
@@ -213,18 +213,22 @@ const Pricing = () => {
             </p>
           </div>
         </div>
-        <div id="procard">
+        <div id="procard" className="proding">
+        <div className="headery">
+              <h2>Recommended</h2>
+          </div>
           <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
+         
             <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
               Enterprise
             </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
-              <span className="text-m font-large text-gray-500 dark:text-gray-400">
+              <span className="text-m font-large text-gray-500 dark:text-gray-400 ser">
                 USD $125/month
               </span>
             </div>
             <h2 className="proh2">All benefits of Basic, and:</h2>
-            <ul role="list" className="space-y-3  mb-12">
+            <ul role="list" className="space-y-3 trt  mb-12">
               <li className="flex items-center">
                 <svg
                   width={24}
@@ -395,12 +399,12 @@ const Pricing = () => {
               Pro
             </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
-              <span className="text-m font-large text-gray-500 dark:text-gray-400">
+              <span className="text-m ser font-large text-gray-500 dark:text-gray-400">
                 USD $350/month
               </span>
             </div>
             <h2 className="proh2">All benefits of Basic, and:</h2>
-            <ul role="list" className="space-y-3  mb-12">
+            <ul role="list" className="space-y-3 trt mb-12">
               <li className="flex items-center">
                 <svg
                   width={24}

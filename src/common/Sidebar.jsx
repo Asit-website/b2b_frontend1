@@ -7,15 +7,18 @@ import star from "../image/star.png";
 import coffee from "../image/coffee.png";
 import { useEffect, useState } from "react";
 import { IoReorderThreeOutline } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 
 const data = [
   {
     img: dashboard,
     title: "Dashboard",
+    link: "Dashboard"
   },
   {
     img: file,
     title: "My Projects",
+    link: "myProject"
   },
   {
     img: list,
@@ -63,14 +66,15 @@ function Sidebar() {
     <>
       <div className="sidebarWrap">
         {data.map((item, index) => (
-          <div
+          <NavLink  to={`/${item.link}`}> <div
             onClick={() => setSelectSide(index)}
             key={index}
-            className={` ${index == selectSide && "selectDash"} singleSideItem`}
+            // className={` ${index == selectSide && "selectDash"} singleSideItem`}
+            className={` ${window.location.pathname === `/${item.link}` ? "selectDash" : ""} singleSlideItem`}
           >
             <img src={item.img} alt="" />
             <span>{item?.title}</span>
-          </div>
+          </div></NavLink>
         ))}
       </div>
 
@@ -83,20 +87,20 @@ function Sidebar() {
           />
         </div>
 
-        <div className={`${showSidebar  &&  "allDataItem"} hidden`}> 
+        <div className={`${showSidebar && "allDataItem"} hidden`}>
 
-        {data.map((item, index) => (
-          <div
-            onClick={() => setSelectSide(index)}
-            key={index}
-            className={` ${index == selectSide && "SinselectDash"} singleSlideItem`}
-          >
-            <img src={item.img} alt="" />
-            <span>{item?.title}</span>
-          </div>
-        ))}
+          {data.map((item, index) => (
+            <NavLink to={`/${item.link}`} className={` ${index == selectSide && "SinselectDash"} singleSlideItem`}>  <div
+              onClick={() => setSelectSide(index)}
+              key={index}
+              
+            >
+              <img src={item.img} alt="" />
+              <span>{item?.title}</span>
+            </div></NavLink>
+          ))}
 
-</div>
+        </div>
 
       </div>
     </>
