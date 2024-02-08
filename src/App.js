@@ -112,7 +112,7 @@ function App() {
               <Route path='/postProject' element={<PostProject />}  />
 
             </Routes>
-            <Footer />
+            
          
         </Router>
       </MainState>

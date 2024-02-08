@@ -3,11 +3,14 @@ import "./dashboard.css"
 import frame from "../image/Frame.png"
 import { NavLink } from "react-router-dom";
 import Avatar from 'react-avatar';
+import Footer from "../common/Footer";
 function Dashboard({userImage}){
 
     let user = JSON.parse(localStorage.getItem('b2b_user'));
 
     return (
+        <>
+       
         <div className="DashboardWrap">
 
             <Sidebar />
@@ -57,7 +60,13 @@ function Dashboard({userImage}){
 
             </div>
 
+
+
         </div>
+
+
+            <Footer adjustFirst={true} />
+            </>
     )
 }
 

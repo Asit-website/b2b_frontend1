@@ -4,6 +4,7 @@ import photo from "../image/photo.png";
 import { useMain } from "../hooks/useMain";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../common/Sidebar";
+import Footer from "../common/Footer"
 
 function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImageId }) {
   const { updateUser  , deleteImage} = useMain();
@@ -108,6 +109,7 @@ function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImag
 
   return (
     <div className="myPersonal">
+      
       <Sidebar />
 
       <div className="persInfoWrap">
@@ -358,6 +360,8 @@ function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImag
         </form>
 
       </div>
+
+      <Footer adjustFirst={true} />
     </div>
   );
 }

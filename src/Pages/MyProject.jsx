@@ -8,6 +8,7 @@ import rec5 from "../image/rec5.png"
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 // import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import Footer from "../common/Footer";
 
 
 
@@ -105,7 +106,9 @@ function MyProject() {
                     </div>
                 </div>
 
+
             </div>
+                <Footer adjustFirst={true} />
         </>
     )
 }

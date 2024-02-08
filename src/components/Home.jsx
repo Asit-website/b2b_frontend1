@@ -10,6 +10,7 @@ import right1 from "../image/right_home.png";
 import { Button, Modal } from 'flowbite-react';
 import find from "../image/find.png"
 import find2 from "../image/find2.png"
+import Footer from "../common/Footer";
 
 const Home = ({pop,setPop}) => {
   const [openModal, setOpenModal] = useState(false);
@@ -1225,6 +1226,8 @@ const Home = ({pop,setPop}) => {
         </div>
 
       </div>
+
+      <Footer />
     </>
   );
 };
