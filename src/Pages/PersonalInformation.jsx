@@ -3,6 +3,7 @@ import "./personalInformation.css"
 import photo from "../image/photo.png"
 import { useMain } from "../hooks/useMain";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "../common/Sidebar";
 
 function PersonalInformation({ notify }) {
   const { updateUser } = useMain();
@@ -79,14 +80,20 @@ function PersonalInformation({ notify }) {
     });
   }
   return (
-    <div className="persInfoWrap">
+
+    <div className="myProjectWrap">
+      <Sidebar/>
+      <div className="myProjectRightCon">
+    <div className="persInfoWrap ">
+
+     
 
       <form onSubmit={handleSubmit}>
-
+      
         <div className="persInfoCont">
 
           <div className="persInfo">
-
+        
             <h2>Personal Information</h2>
 
             {/* photo  */}
@@ -282,6 +289,8 @@ function PersonalInformation({ notify }) {
 
       </form>
 
+    </div>
+    </div>
     </div>
   )
 }
