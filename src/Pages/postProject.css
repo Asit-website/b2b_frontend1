@@ -1,0 +1,342 @@
+.PPWrap{
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    margin-top: 9rem;
+ 
+}
+
+.PPRightContain{
+ max-width: calc(100% - 224px);
+transform: translateX(225px);
+   
+}
+
+
+.prmain{
+    width: 100%;
+}
+.ppFirSec1Wrap{
+    
+    border-bottom: 1px solid #E1E1E2;
+    background-color: #FAFAFA;
+    padding: 70px 20px;
+    width: 100%;
+}
+
+.PPWrap .ppFirSec1{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    max-width: 1070px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+} 
+
+ .PPWrap .ppFS1Left{
+   max-width: 530px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+}
+.PPWrap .ppFS1Left h2{
+    font-family: Plus Jakarta Sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #161B32;
+    
+} 
+.PPWrap .ppFS1Left p{
+    font-family: Inter;
+    color: #303550;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    max-width: 482px;
+    
+} 
+.PPWrap .ppFS1Right{
+    max-width: 512px;
+    width: 100%;
+    
+}
+.PPWrap .ppFS1Right img{
+    max-width: 512px;
+    width: 100%;
+    
+}
+ .ppSec2Wrap{
+    padding: 50px 20px;
+    width: 100%;
+} 
+
+ .PPWrap .pSec2Cont{
+    display: flex;
+    gap: 48px;
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+}
+ .PPWrap .pSec2Left{
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+ 
+ .PPWrap .pSec2Right{
+    max-width:  323px;
+    width: 100%;
+    min-height: 327px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    padding: 16px;
+    border-top: 5px solid #2C868F;
+    background-color: #EBF9F7;
+    margin-top: 62px;
+}
+ 
+ .PPWrap .sinSec2R{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+    
+}
+ 
+ .PPWrap .sinSec2R h2{
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #161B32;
+    
+    
+}
+ 
+ .PPWrap .sinSec2R p{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+color: #303550;    
+    
+}
+ 
+ .PPWrap .pS2tOP{
+   display: flex;
+   flex-direction: column;
+   gap: 32px;
+   
+    
+}
+ .PPWrap .pS2tOP .head{
+    font-family: Plus Jakarta Sans;
+    color: #161B32;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+padding: 0px;
+    
+}
+ 
+ .PPWrap .ps2mid{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+    
+}
+ 
+ .PPWrap .midSing{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+ .PPWrap .midSing h2{
+    font-family: Inter;
+    color: #161B32;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+ .PPWrap .midSing p{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #303550;
+}
+ .PPWrap .midSing input{
+    width: 100%;
+    height:51px;
+    padding: 16px 12px;
+    border-radius: 4px;
+background-color: #FCFDFD;
+border: 1px solid #D8DBEB;
+    
+}
+ .PPWrap .midSing textarea{
+    width: 100%;
+    height: 124px;
+    resize: none;
+    padding: 16px 12px;
+    border: 1px solid #D8DBEB;
+    background-color: #FCFDFD;
+    
+}
+ .PPWrap .ps2Bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 5px;
+  
+    
+}
+ 
+ .PPWrap .ps2Bottom .hd{
+    font-family: Inter;
+    color: #161B32;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+    
+}
+ 
+ .PPWrap .ps2Bottom .pp{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+color: #303550;    
+
+    
+}
+ 
+ .PPWrap .dropzone{
+    width: 100%;
+ margin-top: 5px;
+    height: 193px;
+    border-radius: 10px;
+    padding: 16px 12px;
+    border: 1px solid #596080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+ 
+.drapWrap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.butnBotn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.publishBtn{
+    width: 111px;
+height: 54px;
+
+border-radius: 8px;
+border: 1px solid #FFFFFF;
+background-color: #2C868F;
+
+}
+.publishBtn span{
+    font-family: Inter;
+    color: #FCFDFD;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+
+}
+
+ .PPWrap .upload{
+  max-width: 24px;
+  width: 100%;
+    
+}
+ 
+ .PPWrap .draptEXXT{
+    font-family: Inter;
+    color: #9CA3AF;
+ text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    
+}
+ 
+
+@media (max-width:1200px) {
+    .PPRightContain{
+        max-width: 100%;
+        width: 100%;
+        transform: translateX(0);
+    }  
+}
+
+
+@media (max-width:850px) {
+    .PPWrap .ppFirSec1{
+        display: flex;
+        flex-direction: column-reverse;
+    } 
+    .PPWrap .pSec2Cont{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        
+    }
+    
+}
+
+@media (max-width:500px) {
+    .PPWrap .ppFS1Left h2{
+       font-size: 26px;
+        
+    } 
+    .PPWrap .ppFS1Left p{
+      font-size: 16px;
+        
+    } 
+    .PPWrap .pS2tOP .head{
+       justify-content: flex-start;
+        
+    }
+}

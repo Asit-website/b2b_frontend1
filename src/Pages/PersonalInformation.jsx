@@ -111,8 +111,11 @@ function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImag
       <Sidebar />
 
       <div className="persInfoWrap">
+
         <form onSubmit={handleSubmit}>
+
           <div className="persInfoCont">
+
             <div className="persInfo">
               <h2>Personal Information</h2>
 
@@ -349,8 +352,11 @@ function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImag
                 <span>Save Change</span>
               </button>
             </div>
+            
           </div>
+
         </form>
+
       </div>
     </div>
   );
