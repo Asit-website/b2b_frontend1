@@ -64,7 +64,7 @@ function Sidebar() {
 
   return (
     <>
-      <div className="sidebarWrap">
+      <div className={`sidebarWrap`}>
         {data.map((item, index) => (
           <NavLink  to={`/${item.link}`}> <div
             onClick={() => setSelectSide(index)}
@@ -90,14 +90,16 @@ function Sidebar() {
         <div className={`${showSidebar && "allDataItem"} hidden`}>
 
           {data.map((item, index) => (
-            <NavLink to={`/${item.link}`} className={` ${index == selectSide && "SinselectDash"} singleSlideItem`}>  <div
+            <NavLink to={`/${item.link}`} className={` ${index == selectSide && "SinselectDash"} singleSlideItem`}> 
+             <div className="sortedSingle"
               onClick={() => setSelectSide(index)}
               key={index}
               
             >
               <img src={item.img} alt="" />
               <span>{item?.title}</span>
-            </div></NavLink>
+            </div>
+            </NavLink>
           ))}
 
         </div>

@@ -3,8 +3,10 @@ import "./dashboard.css"
 import frame from "../image/Frame.png"
 import { NavLink } from "react-router-dom";
 import Avatar from 'react-avatar';
-function Dashboard(){
+function Dashboard({userImage}){
+
     let user = JSON.parse(localStorage.getItem('b2b_user'));
+
     return (
         <div className="DashboardWrap">
 
@@ -12,11 +14,20 @@ function Dashboard(){
 
             <div className="dashRightContain">
 
+                <div className="mainPart">
+
+                
+
                 {/* first  */}
                 <div className="editProfile">
 
                    <div className="AM icons">
+                    {
+                        userImage ?
+                        <img src={userImage} alt="" />
+                        :
                    <Avatar  name={user.name} size='51px' round={true} textSizeRatio={2} />
+                    }
                    </div>
 
                    <div className="namEditWrap">
@@ -39,6 +50,9 @@ function Dashboard(){
 
     <img src={frame} alt="" />
  </div>
+
+ </div>
+ 
 
 
             </div>

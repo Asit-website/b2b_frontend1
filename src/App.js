@@ -57,6 +57,26 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const [userImage , setUserImage] = useState(null);
+  const [imageId , setImageId] = useState(null);
+
+
+  const getUserImageFromLocalStorage = () => {
+    const userDataString = localStorage.getItem('b2b_user');
+    const userData = JSON.parse(userDataString);
+
+    if (userData && userData.img && userData.img.url) {
+      setUserImage(userData?.img?.url);
+      setImageId(userData?.img?.id);
+    }
+  };
+
+  useEffect(() => {
+    getUserImageFromLocalStorage();
+  }, []); 
+
+  console.log("userImage" ,imageId);
+
   return (
     <div className={`${showNavbar && "heightAdjust"}`}>
       <MainState>
@@ -76,6 +96,7 @@ function App() {
               reset={reset}
               setReset={setReset}
               notify={notify}
+              userImage={userImage}
             />
              <NotificationContainer/>
             <Routes>
@@ -83,8 +104,8 @@ function App() {
               <Route path='/' element={<Home pop={pop} setPop={setPop} />} />
               <Route path='/about' element={<About />} />
               <Route path='/pricing' element={<Pricing />} />
-              <Route path="/Dashboard" element={<Dashboard /> }  />
-              <Route  path="/personalInformation" element={<PersonalInformation notify={notify}/> }  />
+              <Route path="/Dashboard" element={<Dashboard userImage={userImage} /> }  />
+              <Route  path="/personalInformation" element={<PersonalInformation userImage={userImage} setImageId={setImageId} imageId={imageId} setUserImage={setUserImage} notify={notify}/> }  />
               <Route path="/personalInfo" element={<PersonalInfo2 /> }  />
               <Route path="/myProject" element={<MyProject /> }  />
 

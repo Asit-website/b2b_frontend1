@@ -26,7 +26,7 @@ const LoginPopup = ({setSignupPop,setPop,setForgot,notify}) => {
             localStorage.setItem('b2b_user', JSON.stringify(ans.user));
             localStorage.setItem('b2b_token', JSON.stringify({
                 token: ans.token,
-                rememberMe: document.getElementById('remember').checked,
+                rememberMe: document.getElementById('remember')?.checked,
                 expiry: new Date().getTime() + 24 * 60 * 60 * 1000 // 1 Day
             }));
             

@@ -25,6 +25,12 @@ body {
   overflow: hidden;
 }
 
+.userImage{
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+}
+
 .showNavWrap {
   position: absolute;
   right: 0;
@@ -1134,6 +1140,9 @@ body {
 .main_foot {
   border-top: 1px solid #E1E1E2;
   border-bottom: 1px solid #E1E1E2;
+  z-index: 110;
+  background-color:white;
+
 }
 
 .foot_flex {
