@@ -3,15 +3,15 @@ import tus from '../image/tus.svg';
 import vector from '../image/Vector.svg'
 import vect1 from '../image/vect1.svg'
 import vect2 from '../image/vect2.svg'
-const Footer = () => {
+const Footer = ({adjustFirst = false}) => {
   return (
     <>
 
-      <div className="main_foot">
-        <div className="footer">
+      <div className={`main_foot`}>
+        <div className={`footer  `}>
 
-          <footer className='foot'>
-            <div className="foot_flex">
+          <footer className={`foot `}>
+            <div className={`${adjustFirst? "adjustFooter":"foot_flex "}`}>
               <div className="first_flex">
                 <div className="imn">
                   <img src={tus} alt="tus" />
@@ -57,9 +57,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="lower_footer">
+      <div className={`lower_footer `}>
         
-         <div className="lower_sect">
+         <div className={`lower_sect ${adjustFirst? "adjustFooter2":"lower_sect"}`}>
              <div className="lower_sect1">
                  <span>2024 © BuildLink Network. All rights reserved.</span>
              </div>

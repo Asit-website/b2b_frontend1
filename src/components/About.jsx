@@ -7,6 +7,7 @@ import join3 from "../image/join3.png";
 import join4 from "../image/join4.png";
 import join5 from "../image/join5.png";
 import join6 from "../image/join6.png";
+import Footer from '../common/Footer';
 const About = () => {
     return (
         <>
@@ -94,6 +95,8 @@ const About = () => {
                       </div>
                   </div>
             </div>
+
+            <Footer />
         </>
     )
 }

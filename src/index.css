@@ -70,7 +70,6 @@ body {
   line-height: 17px;
   letter-spacing: 0em;
   height: fit-content;
-  /* background-color: red; */
   padding: 4px 0px;
   text-align: left;
   color: #FAFAFA;
@@ -108,10 +107,7 @@ body {
   color: #FAFAFA !important;
   font-weight: 400;
   font-size: 14px;
-  /* width: 100px; */
-  background-color: red;
   font-family: 'Inter', sans-serif !important;
-  /* padding: 0px 20px !important; */
 }
 
 
@@ -530,7 +526,6 @@ body {
   #home_partner .home_partner_container {
     padding: 40px 30px;
 
-    /* background-color: red; */
   }
 }
 
@@ -1123,7 +1118,7 @@ body {
   padding: 40px 150px;
 }
 
-@media (max-width:1250px) {
+@media (max-width:1200px) {
   .foot {
     padding: 40px 50px;
   }
@@ -1152,6 +1147,27 @@ body {
   gap: 30px;
   justify-content: space-between;
 }
+.adjustFooter {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0px 100px;
+  justify-content: space-between;
+}
+
+@media (max-width:1200px) {
+  .adjustFooter {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    margin: 0px;
+  }
+}
+
+
 
 .tus_para {
   margin-top: 12px;
@@ -1172,7 +1188,20 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.adjustFooter h3 {
+  color: #303550;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+}
+
 .foot_flex p {
+  color: #303550;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+.adjustFooter p {
   color: #303550;
   font-weight: 400;
   font-size: 14px;
@@ -1207,8 +1236,36 @@ body {
   padding: 20px 150px;
   padding-bottom: 35px;
 }
+.adjustFooter2 {
+ 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px 150px;
+  padding-bottom: 35px;
+}
 
-@media (max-width:1250px) {
+@media (max-width:1200px) {
+  .adjustFooter2{
+    
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 20px 150px;
+    padding-bottom: 35px;
+  }
+}
+
+
+@media (max-width:1200px) {
   .lower_sect {
 
     padding: 20px 50px;
@@ -1309,8 +1366,7 @@ body {
 }
 
 .inp1 input {
-  /* max-width: 100%; */
-  /* background-color: red; */
+ 
   border: 1px solid #D8DBEB;
   height: 51px;
   max-height: 100%;

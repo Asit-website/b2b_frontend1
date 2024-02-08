@@ -3,6 +3,7 @@ import "./postProject.css";
 import ppHero from "../image/ppHero.png";
 import Dropzone from 'react-dropzone'
 import upload from "../image/upload.png"
+import Footer from "../common/Footer";
 
 
 
@@ -10,6 +11,8 @@ function PostProject() {
 
   
   return (
+    <>
+    
     <div className="PPWrap">
 
       <Sidebar />
@@ -141,6 +144,10 @@ function PostProject() {
 
       </div>
     </div>
+
+    <Footer adjustFirst={true} />
+
+    </>
   );
 }
 

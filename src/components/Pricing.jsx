@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import gt1 from "../image/pricing_img.svg";
 import t from "../image/try.svg";
+import Footer from "../common/Footer";
 const Pricing = () => {
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
@@ -819,6 +820,8 @@ const Pricing = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
