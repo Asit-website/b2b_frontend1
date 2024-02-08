@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MainContext from "./MainContext";
 
-// const baseUrl = 'http://localhost:5000';
-const baseUrl = 'https://backend.bln.obtechenterprise.com';
+const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'https://backend.bln.obtechenterprise.com';
 
 const MainState = (props) => {
   const [user, setUser] = useState({})
@@ -73,8 +73,26 @@ const MainState = (props) => {
       body: formdata
     });
     const data = await resp.json();
+
     return data;
   };
+
+  const deleteImage = async({id , userId})=>{
+    const token = localStorage.getItem('b2b_token');
+
+
+    const resp = await fetch(`${baseUrl}/user/deleteUserImage/${id}/${userId}`, {
+      method: 'DELETE',
+      headers: {
+        // 'token': localStorage.getItem('b2b_token')
+        'Authorization': `Bearer ${token}`
+      },
+    });
+
+    const data = await resp.json();
+
+    return data;
+  }
 
   const verify = async () => {
     const resp = await fetch(`${baseUrl}/user/verify`, {
@@ -142,7 +160,7 @@ const MainState = (props) => {
   };
 
   return (
-    <MainContext.Provider value={{ login, register, getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,resetPassword }}>
+    <MainContext.Provider value={{ login, register, getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword }}>
       {props.children}
     </MainContext.Provider>
   );

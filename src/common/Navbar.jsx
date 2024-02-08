@@ -23,9 +23,11 @@ const navItems = [
   "Services","Manufacturers","Projects","Budgeting","Subscription","Bidding","About Us"
 ]
 
-const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify , showNavbar , setShowNavbar }) => {
+const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify , showNavbar , setShowNavbar , userImage }) => {
 
-  let user = JSON?.parse(localStorage?.getItem('b2b_user'));
+
+  let user = JSON?.parse(localStorage?.getItem('b2b_user')) ? JSON.parse(localStorage.getItem("b2b_user")):null;
+
   const [click, setClick] = useState(false);
   const styleClick = {
     display: click ? "block" : "none"
@@ -87,7 +89,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       <img src={ust} alt="ust" />
                     </div>
                     <div className="user_para">
-                      <p className='ml-2'>{user.name}</p>
+                      <p className='ml-2'>{user?.name}</p>
                     </div>
 
 
@@ -106,13 +108,16 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                             <div className='user_am'>
                                 <div className="icons">
                                     {/* <p>AM</p> */}
-                                    <Avatar  name={user.name} size='51px' round={true} textSizeRatio={2} />
+                                    {
+                                      userImage ? <img className='userImage' src={userImage} alt="" /> :
+                                    <Avatar  name={user?.name} size='51px' round={true} textSizeRatio={2} />
+                                    }
                                 </div>
                             </div>
                             <div className="user_info">
                                  <div className="tright">
-                                     <h3>{user.name}</h3>
-                                     <p className='mt-2'>{user.email}</p>
+                                     <h3>{user?.name}</h3>
+                                     <p className='mt-2'>{user?.email}</p>
                                  </div>
                             </div>
                       </div>

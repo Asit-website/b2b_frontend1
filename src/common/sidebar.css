@@ -6,6 +6,10 @@ flex-direction: column;
 border-right: 1px solid #FAFAFA;
 box-shadow: 0px 6px 12px 0px #00000014;
 min-height: 100%;
+width: 100%;
+height: fit-content;
+position: fixed;
+top: 140px;
 
 }
 
@@ -66,23 +70,36 @@ cursor: pointer;
 
 .slidebarWrap{
     display: none;
+
 }
 
 .allDataItem{
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    position: fixed;
+    top: 60px;
 
+
+}
+
+.sortedSingle{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
 }
 
 .showSlidebar{
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 244px;
     background-color: #FAFAFA;
     border-right: 1px solid #FAFAFA;
     box-shadow: 0px 6px 12px 0px #00000014;
-    position: absolute;
+    position: fixed;
     left: 0;
+    top: 140px;
     height: 100%;
     z-index: 200;
     animation-name: slidebar;
@@ -96,7 +113,9 @@ cursor: pointer;
 .singleSlideItem{
     display: flex;
     padding: 20px 30px;
+    width: 255px;
     align-items: center;
+    /* min-width: 100%; */
     gap: 10px;
 }
 .singleSlideItem span{
@@ -145,8 +164,7 @@ cursor: pointer;
     }
 
     .slidebarWrap{
-        display: flex;    
-
+        display: flex; 
     }
    
     
