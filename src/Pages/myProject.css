@@ -7,11 +7,11 @@
 }
 .myProjectWrap .myProjectRightCon{
 
-
     max-width: calc(100% - 225px);
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
     right: 0;
+    transform: translateX(225px);
     display: flex;
     flex-direction: column;
 align-items: center;
@@ -20,12 +20,35 @@ align-items: center;
     margin-top: 50px;
 }
 
+@media (max-width:1200px) {
+    .myProjectWrap .myProjectRightCon{
+
+        max-width: 100%;
+        width: 100%;
+      
+        transform: translateX(0px);
+        
+    }
+}
+
+.prorighwrap{
+    max-width: 1079px;
+    width:100%;
+    /* padding: 30px 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px solid #E1E1E2;
+    gap: 24px;
+
+
+}
+
 
 
 .myProjectWrap .myProjectSlide{
-    max-width: 1079px;
-    width:100%;
-    padding: 30px 20px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,17 +119,22 @@ border: 1px solid #FFFFFF;
     /* max-width: 300px; */
 }
 
+
+/* all Projects  */
+
 .allProjects{
-   
-        max-width: 1079px;
-        width:100%;
-        display: flex;
-        flex-wrap: wrap;
-        border: 1px solid #E1E1E2;
-        gap: 25px;
-        justify-content: center;
-     padding: 20px 0px;
-    
+        /* max-width: 1079px; */
+width: 100%;       
+
+}
+
+.allProCont{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #E1E1E2;
+    gap: 25px;
+    justify-content: center;
+ padding: 20px 0px;
 }
 
 .allProjects .singPro{
@@ -155,17 +183,14 @@ color: #161B32;
 }
 
 @media (max-width:1200px) {
+  
     .myProjectWrap .myProjectRightCon{
-        max-width: 100%;
-       
-    }
-    .myProjectWrap .myProjectRightCon{
-
+         max-width: 100%;
+        transform: translateX(0px);
         display: flex;
         flex-direction: column;
-        padding: 48px 20px;
+        padding: 48px 20px 40px 0px;
         align-items: center;
-        gap: 34px;
        width: 100%;
     }
 }

@@ -72,6 +72,10 @@ function MyProject() {
 
                 <div className="myProjectRightCon">
 
+                    <div className="prorighwrap">
+
+                 
+
                     <div className="myProjectSlide">
 
 
@@ -130,8 +134,11 @@ function MyProject() {
                     </div>
 
 
-
                 <div className="allProjects">
+
+                    <div className="allProCont">
+
+                   
 
                    {
                     allProject?.map((pro ,index)=>(
@@ -156,6 +163,10 @@ function MyProject() {
                     ))
                     
                    }
+
+
+</div>
+                </div>
 
                 </div>
 
