@@ -17,8 +17,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import OutsideClickHandler from 'react-outside-click-handler';
 import Avatar from 'react-avatar';
 import { IoReorderThreeOutline } from "react-icons/io5";
-
-
+import fr from '../image/fr.svg'
 const navItems = [
   "Services","Manufacturers","Projects","Budgeting","Subscription","Bidding","About Us"
 ]
@@ -219,7 +218,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
 
           <div className="nav1">
             <div className="logo">
-              <img src={loho} alt="loho" />
+              <img src={fr} alt="loho" />
             </div>
           </div>
 
