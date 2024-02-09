@@ -10,10 +10,17 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import Footer from "../common/Footer";
 import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useMain } from "../hooks/useMain";
+
 
 
 
 function MyProject() {
+
+    const {  getProjects} = useMain();
+
+    const [allProject , setAllProjects] = useState([]);
 
     const splideOptions = {
         fixedWidth: 200,
@@ -40,6 +47,22 @@ function MyProject() {
             },
         },
     };
+
+    console.log("al", allProject);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+          const ans = await getProjects();
+          setAllProjects(ans?.data);
+        };
+      
+        fetchData();
+      
+        return () => {
+        };
+      }, []);
+    
 
     return (
         <>
@@ -105,6 +128,38 @@ function MyProject() {
 
 
                     </div>
+
+
+
+                <div className="allProjects">
+
+                   {
+                    allProject?.map((pro ,index)=>(
+                        <div className="singPro" key={index}>
+
+
+                            <img src={pro?.img[0]?.url} alt="" />
+
+
+ <div className="proTitlDDes">
+
+                            <div className="proTitl">
+                                <p>{pro?.title}</p>
+                            </div>
+
+                            <div className="proDesc">
+                                <p>{pro?.desc}</p>
+                            </div>
+ </div>
+
+                        </div>
+                    ))
+                    
+                   }
+
+                </div>
+
+
                 </div>
 
 

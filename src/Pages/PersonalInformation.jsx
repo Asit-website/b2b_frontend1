@@ -96,8 +96,6 @@ function PersonalInformation({ notify, userImage, setUserImage, imageId, setImag
 
   const deleteImageHandler = async () => {
 
-
-
     const ans = await deleteImage({ imageId, userId: value._id });
 
     if (ans.status) {
