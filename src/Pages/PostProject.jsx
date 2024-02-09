@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 import { ImCross } from "react-icons/im";
 
 
-
-
 function PostProject() {
 
   const [value, setValue] = useState({});
@@ -75,7 +73,7 @@ function PostProject() {
     const {title , desc , location} = formData;
 
 
-    const ans = await postProject({ title, desc, location, file: allImages });
+    const ans = await postProject({ title, desc, location, file: allImages  ,  userId: value._id});
 
  console.log("ans", ans);
 
