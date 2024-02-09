@@ -11,6 +11,8 @@ import { Button, Modal } from 'flowbite-react';
 import find from "../image/find.png"
 import find2 from "../image/find2.png"
 import Footer from "../common/Footer";
+import p1 from "../image/p1.png"
+import rating from "../image/rating.png"
 
 const Home = ({pop,setPop}) => {
   const [openModal, setOpenModal] = useState(false);
@@ -1190,6 +1192,151 @@ const Home = ({pop,setPop}) => {
 
           </div>
         </div>
+      </div>
+
+      {/* new sECTION */}
+      <div id="shareExpe">
+
+       <div className="shareExCont">
+       
+       {/* left side */}
+       <div className="shExLeft">
+
+        <h2>Share your experience and make B2B buying more transparent</h2>
+        <p>Leave a review of the business partners you’ve worked with over the years. Make your voice heard and help other business leaders make a confident choice.
+</p>
+
+<button><span>Write a Review</span></button>
+        
+       </div>
+
+       {/* right side */}
+       <div className="shExRight">
+
+        <div className="shEXrIcONT">
+
+       
+
+        {/* left side */}
+        <div className="shERiLef">
+
+          {/* first  */}
+          <div className="sinRev">
+                 
+                 <p className="headRev">As a project manager, I've used various B2B construction platforms, but this website stands out for its user-friendly interface. The layout is intuitive, making it incredibly easy to navigate through different services and products. Finding what I need takes minimal time, and the detailed descriptions of each item help in making the right choices for our projects. The efficiency and ease of use have made this my go-to resource for construction needs.</p>
+
+                 <div className="ReProRating">
+
+                <div className="rePro">
+
+                  <img src={p1} alt="" />
+                  <span>James Peterson</span>
+              
+
+                 </div>
+
+                 <div className="rating">
+                  <img src={rating} alt="" />
+                  <span>04/08/23</span>
+                 </div>
+                 
+                 </div>
+
+                 
+
+          </div>
+
+          {/* second  */}
+          <div className="sinRev">
+                 
+                 <p className="headRev">As a project manager, I've used various B2B construction platforms, but this website stands out for its user-friendly interface. The layout is intuitive, making it incredibly easy to navigate through different services and products. Finding what I need takes minimal time, and the detailed descriptions of each item help in making the right choices for our projects. The efficiency and ease of use have made this my go-to resource for construction needs.</p>
+
+                 <div className="ReProRating">
+
+                <div className="rePro">
+
+                  <img src={p1} alt="" />
+                  <span>Carlos Alvarez</span>
+              
+
+                 </div>
+
+                 <div className="rating">
+                  <img src={rating} alt="" />
+                  <span>04/08/23</span>
+                 </div>
+                 
+                 </div>
+
+                 
+
+          </div>
+
+        </div>
+
+        {/* right side */}
+        <div className="shErRig">
+
+          {/* first  */}
+          <div className="sinRev">
+                 
+                 <p className="headRev">The user experience on this B2B construction website is top-notch. Navigating through various services and finding exactly what I need is incredibly straightforward.</p>
+
+                 <div className="ReProRating">
+
+                <div className="rePro">
+
+                  <img src={p1} alt="" />
+                  <span>Anita Desai</span>
+              
+
+                 </div>
+
+                 <div className="rating">
+                  <img src={rating} alt="" />
+                  <span>04/08/23</span>
+                 </div>
+                 
+                 </div>
+
+                 
+
+          </div>
+
+          {/* second  */}
+          <div className="sinRev">
+                 
+                 <p className="headRev">As a project manager, I've used various B2B construction platforms, but this website stands out for its user-friendly interface. The layout is intuitive, making it incredibly easy to navigate through different services and products. Finding what I need takes minimal time, and the detailed descriptions of each item help in making the right choices for our projects. The efficiency and ease of use have made this my go-to resource for construction needs.</p>
+
+                 <div className="ReProRating">
+
+                <div className="rePro">
+
+                  <img src={p1} alt="" />
+                  <span>Grace Liu</span>
+              
+
+                 </div>
+
+                 <div className="rating">
+                  <img src={rating} alt="" />
+                  <span>04/08/23</span>
+                 </div>
+                 
+                 </div>
+
+                 
+
+          </div>
+
+        </div>
+
+        </div>
+
+       </div>
+
+       </div>
+
       </div>
 
       <div id="home_last_section">
