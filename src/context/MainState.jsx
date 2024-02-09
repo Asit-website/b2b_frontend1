@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MainContext from "./MainContext";
 
-// const baseUrl = 'http://localhost:5000';
-const baseUrl = 'https://backend.bln.obtechenterprise.com';
+const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'https://backend.bln.obtechenterprise.com';
 
 const MainState = (props) => {
   const [user, setUser] = useState({})
@@ -159,8 +159,110 @@ const MainState = (props) => {
     return data;
   };
 
+  // ! project APIS
+
+  const projectPostImage = async({file})=>{
+    let formdata=new FormData();
+  
+    formdata.append('file', file);
+
+    const token = localStorage.getItem('b2b_token');
+
+    const resp = await fetch(`${baseUrl}/project/uploadImage`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
+      body: formdata
+    });
+    const data = await resp.json();
+
+    return data;
+
+   
+  }
+
+  const projectDeleteImg = async(id)=>{
+  
+
+    const token = localStorage.getItem('b2b_token');
+
+    const resp = await fetch(`${baseUrl}/project/deleteProjectImage/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
+    });
+    const data = await resp.json();
+
+    return data;
+
+   
+  }
+
+
+  const postProject = async({title , desc , location , file}) => {
+    const token = localStorage.getItem('b2b_token');
+
+    const data = {
+        title,
+        desc,
+        location,
+        file
+    };
+
+    try {
+        const resp = await fetch(`${baseUrl}/project/postProject`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!resp.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        return await resp.json();
+    } catch (error) {
+        console.error('There was an error!', error);
+        throw error;
+    }
+};
+
+
+  const getProjects = async() => {
+    const token = localStorage.getItem('b2b_token');
+
+    console.log("fdsfs");
+   
+    try {
+        const resp = await fetch(`${baseUrl}/project/getProjects`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+        });
+
+        if (!resp.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        return await resp.json();
+    } catch (error) {
+        console.error('There was an error!', error);
+        throw error;
+    }
+};
+
+
+
+  
+
   return (
-    <MainContext.Provider value={{ login, register, getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword }}>
+    <MainContext.Provider value={{ login, register, getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects}}>
       {props.children}
     </MainContext.Provider>
   );
