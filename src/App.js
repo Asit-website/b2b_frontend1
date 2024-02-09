@@ -19,6 +19,7 @@ import PersonalInformation from './Pages/PersonalInformation';
 import PersonalInfo2 from './Pages/PersonalInfo2';
 import MyProject from './Pages/MyProject';
 import PostProject from './Pages/PostProject';
+import AllProject from './Pages/AllProject';
 function App() {
   const [pop, setPop] = useState(false);
   const [signupPop, setSignupPop] = useState(false);
@@ -110,6 +111,8 @@ function App() {
               <Route path="/personalInfo" element={<PersonalInfo2 /> }  />
               <Route path="/myProject" element={<MyProject /> }  />
               <Route path='/postProject' element={<PostProject />}  />
+              <Route path='/allProject' element={<AllProject />}  />
+
 
             </Routes>
             
