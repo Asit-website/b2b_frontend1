@@ -210,7 +210,7 @@ const Home = ({pop,setPop}) => {
                   >
                     <path
                       d="M8.39998 8L5.33331 4.93333L6.26665 4L10.2666 8L6.26665 12L5.33331 11.0667L8.39998 8Z"
-                      fill="#2C868F"
+                      fill="#fff"
                     />
                   </svg>
                 </div>
@@ -313,6 +313,9 @@ const Home = ({pop,setPop}) => {
                     />
                   </svg>
                   <p>Main Contractors</p>
+                  <div className="newi">
+                      <p>New</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -341,7 +344,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Architects</p>
+                  <p>Hauling & Excavating</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -351,84 +354,9 @@ const Home = ({pop,setPop}) => {
                   >
                     <path
                       d="M8.39998 8L5.33331 4.93333L6.26665 4L10.2666 8L6.26665 12L5.33331 11.0667L8.39998 8Z"
-                      fill="#2C868F"
+                      fill="#fff"
                     />
                   </svg>
-                </div>
-                <div className="inner-card">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6.00016"
-                      cy="5.99998"
-                      r="2.22727"
-                      fill="#2C868F"
-                      stroke="#2C868F"
-                    />
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="5.75"
-                      stroke="#2C868F"
-                      stroke-width="0.5"
-                    />
-                  </svg>
-                  <p>Consulting Engineers</p>
-                </div>
-                <div className="inner-card">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6.00016"
-                      cy="5.99998"
-                      r="2.22727"
-                      fill="#2C868F"
-                      stroke="#2C868F"
-                    />
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="5.75"
-                      stroke="#2C868F"
-                      stroke-width="0.5"
-                    />
-                  </svg>
-                  <p>Interior Designers</p>
-                </div>
-                <div className="inner-card">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6.00016"
-                      cy="5.99998"
-                      r="2.22727"
-                      fill="#2C868F"
-                      stroke="#2C868F"
-                    />
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="5.75"
-                      stroke="#2C868F"
-                      stroke-width="0.5"
-                    />
-                  </svg>
-                  <p>Fense</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -454,6 +382,84 @@ const Home = ({pop,setPop}) => {
                     />
                   </svg>
                   <p>Main Contractors</p>
+                  <div className="newi">
+                      <p>New</p>
+                  </div>
+                </div>
+                <div className="inner-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                  >
+                    <circle
+                      cx="6.00016"
+                      cy="5.99998"
+                      r="2.22727"
+                      fill="#2C868F"
+                      stroke="#2C868F"
+                    />
+                    <circle
+                      cx="6"
+                      cy="6"
+                      r="5.75"
+                      stroke="#2C868F"
+                      stroke-width="0.5"
+                    />
+                  </svg>
+                  <p>Hauling & Excavating</p>
+                </div>
+                <div className="inner-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                  >
+                    <circle
+                      cx="6.00016"
+                      cy="5.99998"
+                      r="2.22727"
+                      fill="#2C868F"
+                      stroke="#2C868F"
+                    />
+                    <circle
+                      cx="6"
+                      cy="6"
+                      r="5.75"
+                      stroke="#2C868F"
+                      stroke-width="0.5"
+                    />
+                  </svg>
+                  <p>Structural Contractors</p>
+                </div>
+                <div className="inner-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                  >
+                    <circle
+                      cx="6.00016"
+                      cy="5.99998"
+                      r="2.22727"
+                      fill="#2C868F"
+                      stroke="#2C868F"
+                    />
+                    <circle
+                      cx="6"
+                      cy="6"
+                      r="5.75"
+                      stroke="#2C868F"
+                      stroke-width="0.5"
+                    />
+                  </svg>
+                  <p>Masonry</p>
                 </div>
               </div>
             </div>
@@ -482,7 +488,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Architects</p>
+                  <p>Carpenters</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -492,7 +498,7 @@ const Home = ({pop,setPop}) => {
                   >
                     <path
                       d="M8.39998 8L5.33331 4.93333L6.26665 4L10.2666 8L6.26665 12L5.33331 11.0667L8.39998 8Z"
-                      fill="#2C868F"
+                      fill="#fff"
                     />
                   </svg>
                 </div>
@@ -519,7 +525,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Consulting Engineers</p>
+                  <p>Civil Contractors</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -544,7 +550,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Interior Designers</p>
+                  <p>Concrete Pouring</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -569,7 +575,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Fense</p>
+                  <p>Mechanical Contractors</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -594,7 +600,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Main Contractors</p>
+                  <p>Electrical contractors</p>
                 </div>
               </div>
             </div>
@@ -625,7 +631,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Architects</p>
+                  <p>Plumbing contractors</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -635,7 +641,7 @@ const Home = ({pop,setPop}) => {
                   >
                     <path
                       d="M8.39998 8L5.33331 4.93333L6.26665 4L10.2666 8L6.26665 12L5.33331 11.0667L8.39998 8Z"
-                      fill="#2C868F"
+                      fill="#fff"
                     />
                   </svg>
                 </div>
@@ -662,7 +668,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Consulting Engineers</p>
+                  <p>Fire protection</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -687,7 +693,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Interior Designers</p>
+                  <p>Roofing contractors</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -712,7 +718,10 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Fense</p>
+                  <p>Painting contractors</p>
+                  {/* <div className="newi">
+                      <p>New</p>
+                  </div> */}
                 </div>
                 <div className="inner-card">
                   <svg
@@ -737,7 +746,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Main Contractors</p>
+                  <p>Roofing contractors</p>
                 </div>
               </div>
             </div>
@@ -766,7 +775,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Architects</p>
+                  <p>Glass works</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -776,7 +785,7 @@ const Home = ({pop,setPop}) => {
                   >
                     <path
                       d="M8.39998 8L5.33331 4.93333L6.26665 4L10.2666 8L6.26665 12L5.33331 11.0667L8.39998 8Z"
-                      fill="#2C868F"
+                      fill="#fff"
                     />
                   </svg>
                 </div>
@@ -803,7 +812,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Consulting Engineers</p>
+                  <p>Drainage contractors</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -828,7 +837,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Interior Designers</p>
+                  <p>Garden /Lawn works</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -853,7 +862,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Fense</p>
+                  <p>Wall /Ceiling</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -878,7 +887,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Main Contractors</p>
+                  <p>Insulation</p>
                 </div>
               </div>
             </div>
@@ -907,7 +916,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Architects</p>
+                  <p>Realtors</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -917,7 +926,7 @@ const Home = ({pop,setPop}) => {
                   >
                     <path
                       d="M8.39998 8L5.33331 4.93333L6.26665 4L10.2666 8L6.26665 12L5.33331 11.0667L8.39998 8Z"
-                      fill="#2C868F"
+                      fill="#fff"
                     />
                   </svg>
                 </div>
@@ -944,7 +953,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Consulting Engineers</p>
+                  <p>Lenders</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -969,7 +978,7 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Interior Designers</p>
+                  <p>Investors</p>
                 </div>
                 <div className="inner-card">
                   <svg
@@ -994,9 +1003,9 @@ const Home = ({pop,setPop}) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Fense</p>
+                  <p>Owners</p>
                 </div>
-                <div className="inner-card">
+                <div style={{visibility:"hidden"}} className="inner-card">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -1069,12 +1078,10 @@ const Home = ({pop,setPop}) => {
             <div className="card">
               <div className="card_content">
                 <div className="inner-card">
-                  <span>Search</span>
-                  <h2>Browse 280K service providers</h2>
+                  <span>Find</span>
+                  <h2 className="narrows">Narrow results and shortlist top picks</h2>
                   <p>
-                    Explore our global network of trusted partners from 1,500+
-                    business categories. Find the right company or service in
-                    minutes.
+                  Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
                   </p>
                 </div>
                 <div className="back_section2"></div>
@@ -1083,12 +1090,10 @@ const Home = ({pop,setPop}) => {
             <div className="card">
               <div className="card_content">
                 <div className="inner-card">
-                  <span>Search</span>
-                  <h2>Browse 280K service providers</h2>
+                  <span>Decide</span>
+                  <h2 className="farrows">Read in-depth verified reviews</h2>
                   <p>
-                    Explore our global network of trusted partners from 1,500+
-                    business categories. Find the right company or service in
-                    minutes.
+                  Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
                   </p>
                 </div>
                 <div className="back_section3"></div>
@@ -1119,7 +1124,7 @@ const Home = ({pop,setPop}) => {
                 />
               </svg>
             </button>
-            <button className="btn_first2">
+            <button className="btn_first">
               <span>
                 Sub <br />
                 Contractors
@@ -1132,8 +1137,8 @@ const Home = ({pop,setPop}) => {
                 fill="none"
               >
                 <path
-                  d="M32.1799 22H8.15991V26H32.1799V32L40.1599 24L32.1799 16V22Z"
-                  fill="white"
+                  d="M32.85 22H8.82996V26H32.85V32L40.83 24L32.85 16V22Z"
+                  fill="#2C868F"
                 />
               </svg>
             </button>
