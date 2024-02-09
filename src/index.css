@@ -24,7 +24,12 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-
+.photosap{
+  width: 89px !important;
+  height: 89px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
 .userImage{
   width: 51px;
   height: 51px;
@@ -118,7 +123,12 @@ body {
   font-family: 'Inter', sans-serif !important;
   letter-spacing: 12% !important;
 }
-
+.inner_div p{
+  color: #596080;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px;
+}
 
 @media (max-width:500px) {
   .header1 {
@@ -2281,5 +2291,24 @@ p {
 
   #Accordion_section_pricing .Accordion_section_pricing_detail {
     padding: 0px 30px 40px;
+  }
+  .form_ino{
+   flex-direction: column;
+  }
+  .inp1 input{
+    width: 100%;
+  }
+  .inp1{
+    margin: 18px 0px;
+  }
+  .inp2{
+    margin-left: 0px;
+    margin-top: 18px 0px;
+  }
+  .form_ino1{
+    margin-top: 0px;
+  }
+  .dropThing{
+    right: 0px;
   }
 }

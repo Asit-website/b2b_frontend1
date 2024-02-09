@@ -612,7 +612,7 @@ const Pricing = () => {
               <h2 id="accordion-collapse-heading-1">
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400   gap-3 "
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right    gap-3 "
                   data-accordion-target="#accordion-collapse-body-1"
                   aria-expanded="true"
                   aria-controls="accordion-collapse-body-1"
@@ -627,7 +627,7 @@ const Pricing = () => {
                 aria-labelledby="accordion-collapse-heading-1"
                 style={stylePerr}
               >
-                <div className="p-4  dark:bg-gray-900 inner_div">
+                <div className="p-4  inner_div">
                   <p className="">
                     Potential clients want to understand the range of
                     construction services your company provides. This can
@@ -645,7 +645,7 @@ const Pricing = () => {
               <h2 id="accordion-collapse-heading-2">
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3 "
                   data-accordion-target="#accordion-collapse-body-2"
                   aria-expanded="false"
                   aria-controls="accordion-collapse-body-2"
@@ -660,7 +660,7 @@ const Pricing = () => {
                 aria-labelledby="accordion-collapse-heading-2"
                 style={stylePerr1}
               >
-                <div className="p-4  dark:bg-gray-900 inner_div">
+                <div className="p-4 inner_div">
                   <p className="text-#596080-500 dark:text-#596080-400">
                     Potential clients want to understand the range of
                     construction services your company provides. This can
@@ -678,7 +678,7 @@ const Pricing = () => {
               <h2 id="accordion-collapse-heading-3">
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3 "
                   data-accordion-target="#accordion-collapse-body-3"
                   aria-expanded="false"
                   aria-controls="accordion-collapse-body-3"
@@ -693,7 +693,7 @@ const Pricing = () => {
                 aria-labelledby="accordion-collapse-heading-3"
                 style={stylePerr2}
               >
-                <div className="p-4  dark:bg-gray-900 inner_div">
+                <div className="p-4   inner_div">
                   <p className="text-#596080-500 dark:text-#596080-400">
                     Potential clients want to understand the range of
                     construction services your company provides. This can
@@ -711,7 +711,7 @@ const Pricing = () => {
               <h2 id="accordion-collapse-heading-4">
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right  gap-3 "
                   data-accordion-target="#accordion-collapse-body-4"
                   aria-expanded="false"
                   aria-controls="accordion-collapse-body-4"
@@ -726,7 +726,7 @@ const Pricing = () => {
                 aria-labelledby="accordion-collapse-heading-4"
                 style={stylePerr3}
               >
-                <div className="p-4  dark:bg-gray-900 inner_div">
+                <div className="p-4  inner_div">
                   <p className="text-#596080-500 dark:text-#596080-400">
                     Potential clients want to understand the range of
                     construction services your company provides. This can
@@ -744,7 +744,7 @@ const Pricing = () => {
               <h2 id="accordion-collapse-heading-5">
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3 "
                   data-accordion-target="#accordion-collapse-body-5"
                   aria-expanded="false"
                   aria-controls="accordion-collapse-body-5"
@@ -761,7 +761,7 @@ const Pricing = () => {
                 aria-labelledby="accordion-collapse-heading-5"
                 style={stylePerr4}
               >
-                <div className="p-4  dark:bg-gray-900 inner_div">
+                <div className="p-4 inner_div">
                   <p className="text-#596080-500 dark:text-#596080-400">
                     Potential clients want to understand the range of
                     construction services your company provides. This can
@@ -779,7 +779,7 @@ const Pricing = () => {
               <h2 id="accordion-collapse-heading-5">
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-#161B32-700  focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-#D8DBEB-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3 "
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3"
                   data-accordion-target="#accordion-collapse-body-6"
                   aria-expanded="false"
                   aria-controls="accordion-collapse-body-6"
@@ -794,7 +794,7 @@ const Pricing = () => {
                 aria-labelledby="accordion-collapse-heading-6"
                 style={stylePerr5}
               >
-                <div className="p-4  dark:bg-gray-900 inner_div">
+                <div className="p-4   inner_div">
                   <p className="text-#596080-500 dark:text-#596080-400">
                     Potential clients want to understand the range of
                     construction services your company provides. This can

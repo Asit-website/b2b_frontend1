@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "../common/Sidebar";
 import Footer from "../common/Footer"
 
-function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImageId }) {
-  const { updateUser  , deleteImage} = useMain();
+function PersonalInformation({ notify, userImage, setUserImage, imageId, setImageId }) {
+  const { updateUser, deleteImage } = useMain();
   const [value, setValue] = useState({});
+  const [image, setImage] = useState(null);
   const navigate = useNavigate();
 
   // let user = JSON.parse(localStorage.getItem('b2b_user'));
@@ -22,7 +23,8 @@ function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImag
     if (e.target.name === "file" && e.target.files && e.target.files[0]) {
       let reader = new FileReader();
       reader.onload = (e) => {
-        localStorage.setItem("img", e.target.result);
+        // localStorage.setItem("img", e.target.result);
+        localStorage.setItem("img", setImage(e.target.result));
       };
 
       reader.readAsDataURL(e.target.files[0]);
@@ -88,20 +90,23 @@ function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImag
       insta: "",
       city: "",
     });
+    setImage(null);
+    setUserImage(null);
   };
 
-  const deleteImageHandler =async ()=>{
+  const deleteImageHandler = async () => {
 
 
-   
-    const ans = await deleteImage({imageId , userId: value._id});    
-    
+
+    const ans = await deleteImage({ imageId, userId: value._id });
+
     if (ans.status) {
-      notify(ans.status, ans.message);
+      notify(ans.status, "Image delete successfully");
       localStorage.setItem("b2b_user", JSON.stringify(ans.data));
       setUserImage(null);
-    setImageId(null);
-      
+      setImageId(null);
+      setImage(null)
+
     } else {
       console.log("error");
     }
@@ -109,7 +114,7 @@ function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImag
 
   return (
     <div className="myPersonal">
-      
+
       <Sidebar />
 
       <div className="persInfoWrap">
@@ -123,15 +128,17 @@ function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImag
 
               {/* photo  */}
               <div className="photoWrap">
-                <img src={userImage ? userImage : photo} alt="" />
+
+                <img className="photosap" src={userImage ? userImage : image ? image : photo} alt="" />
 
                 {userImage ? (
-                  <button  onClick={deleteImageHandler} className="deleteBtn"><span>Delete</span></button>
+                  <button type="button" onClick={deleteImageHandler} className="deleteBtn"><span>Delete</span></button>
                 ) : (
 
-                  <button>
-                  <input className="takeInputPhoto" name="file" onChange={handleChange} type="file" />
-                </button>
+                  <button type="button" className="pos">
+                    <label htmlFor="">Choose file</label>
+                    <input className="takeInputPhoto" name="file" onChange={handleChange} type="file" />
+                  </button>
                 )}
               </div>
 
@@ -354,7 +361,7 @@ function PersonalInformation({ notify, userImage, setUserImage ,imageId ,setImag
                 <span>Save Change</span>
               </button>
             </div>
-            
+
           </div>
 
         </form>

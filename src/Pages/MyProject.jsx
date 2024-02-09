@@ -9,6 +9,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 // import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import Footer from "../common/Footer";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -96,10 +97,10 @@ function MyProject() {
 
 
                         <div className="new_project">
-                            <button><span>New Projects</span><svg className="ml-2" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <NavLink to="/postProject"><button><span>New Projects</span><svg className="ml-2" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.48698 4.83366H7.82031V8.16699H4.48698V9.83366H7.82031V13.167H9.48698V9.83366H12.8203V8.16699H9.48698V4.83366ZM8.65365 0.666992C4.05365 0.666992 0.320312 4.40033 0.320312 9.00033C0.320312 13.6003 4.05365 17.3337 8.65365 17.3337C13.2536 17.3337 16.987 13.6003 16.987 9.00033C16.987 4.40033 13.2536 0.666992 8.65365 0.666992ZM8.65365 15.667C4.97865 15.667 1.98698 12.6753 1.98698 9.00033C1.98698 5.32533 4.97865 2.33366 8.65365 2.33366C12.3286 2.33366 15.3203 5.32533 15.3203 9.00033C15.3203 12.6753 12.3286 15.667 8.65365 15.667Z" fill="#E9F5F6" />
                             </svg>
-                            </button>
+                            </button></NavLink>
                         </div>
 
 
