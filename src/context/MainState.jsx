@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MainContext from "./MainContext";
 
-// const baseUrl = 'http://localhost:5000';
-const baseUrl = 'https://backend.bln.obtechenterprise.com';
+const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'https://backend.bln.obtechenterprise.com';
 
 const MainState = (props) => {
   const [user, setUser] = useState({})
@@ -201,15 +201,27 @@ const MainState = (props) => {
   }
 
 
-  const postProject = async({title , desc , location , file ,userId}) => {
+  const postProject = async({title , desc , location , file ,userId , bidDate ,
+    startDate,
+    stage,
+    buildingUse,
+    Value,
+    sector}) => {
     const token = localStorage.getItem('b2b_token');
 
     const data = {
         title,
         desc,
         location,
-        file
+        file , 
+        bidDate ,
+        startDate,
+        stage,
+        buildingUse,
+        Value ,
+        sector , 
     };
+
 
     try {
         const resp = await fetch(`${baseUrl}/project/postProject/${userId}`, {

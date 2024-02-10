@@ -1,10 +1,10 @@
-import { Sidebar } from "flowbite-react";
+// import { Sidebar } from "flowbi.";
 
 function AllProject(){
     return (
         <div className="allProjectWrap">
 
-            <Sidebar />
+            {/* <Sidebar /> */}
 
 
             <div className="allProRiCon">
