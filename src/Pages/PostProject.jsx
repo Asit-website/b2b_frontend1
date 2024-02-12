@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 import { ImCross } from "react-icons/im";
 
 
-
-
 function PostProject() {
 
   const [value, setValue] = useState({});
@@ -22,14 +20,19 @@ function PostProject() {
   const [formData , setFormData] = useState({
     title:"",
     location:"",
-    desc:""
+    desc:"" , 
+    bidDate:"" ,
+    startDate:"",
+    stage:"",
+    buildingUse:"",
+    Value :"",
+    sector:"" , 
   })
 
   const handleImageUpload = async (acceptedFiles) => {
 
     for (const file of acceptedFiles) {
       const ans = await projectPostImage({ userId: value._id, file }); 
-      console.log("uploadiMg" ,ans); 
       setAllImages(prev => ([...prev, ...(ans?.data || [])]));
 
     }
@@ -41,7 +44,6 @@ function PostProject() {
 
   const deleteUploadImg = async(id)=>{
      const ans = await projectDeleteImg({id});
-     console.log("ans" ,ans);
      removeImageByPublicId(id);
   }
 
@@ -63,6 +65,7 @@ function PostProject() {
   }
 
 
+
   const projectSubmitHandler = async(e)=>{
 
     e.preventDefault();
@@ -72,19 +75,32 @@ function PostProject() {
       return alert("Please choose the iamges");
     }
 
-    const {title , desc , location} = formData;
+    const {  title,
+    location,
+    desc, 
+    bidDate ,
+    startDate,
+    stage,
+    buildingUse,
+    Value ,
+    sector} = formData;
 
-
-    const ans = await postProject({ title, desc, location, file: allImages });
+       const ans = await postProject({ title, desc, location, file: allImages  ,  userId: value._id , bidDate ,startDate , stage , buildingUse , sector , Value });
 
  console.log("ans", ans);
 
     if(ans?.status){
       alert("Successfuly created the project");
       setFormData({
-        title: "",
-        location: "",
-        desc: ""
+        title:"",
+        location:"",
+        desc:"" , 
+        bidDate:"" ,
+        startDate:"",
+        stage:"",
+        buildingUse:"",
+        value :"",
+        sector:""
       });
 
     setAllImages([]);
@@ -92,7 +108,6 @@ function PostProject() {
     else {
       alert("Something went wrong");
     }
-    console.log("ans" ,ans);
   }
   
   
@@ -160,6 +175,65 @@ function PostProject() {
                         <input required type="text" placeholder="Location" name="location" onChange={changeHandler} value={formData.location} />
                         </div>
 
+{/* bid date first  */}
+
+                        <div className="bidStartDate">
+
+                  {/* first  */}
+                  <div className="midSing">
+                        <h2>Bid Date</h2>
+                        <p>Please enter bid date</p>
+                        <input required type="text" placeholder="Bid Date" name="bidDate" onChange={changeHandler} value={formData.bidDate} />
+                        </div>
+
+                        {/* sercond  */}
+                        <div className="midSing">
+                        <h2>Start Date</h2>
+                        <p>Please enter project bid start date</p>
+                        <input required type="text" placeholder="Start Date" name="startDate" onChange={changeHandler} value={formData.startDate} />
+                        </div>
+
+                        </div>
+
+{/* bid date second  */}
+                        <div className="bidStartDate">
+
+{/* first  */}
+<div className="midSing">
+      <h2>Stage</h2>
+      <p>Please enter project stage</p>
+      <input required type="text" placeholder="Project Stage" name="stage" onChange={changeHandler} value={formData.stage} />
+      </div>
+
+      {/* sercond  */}
+      <div className="midSing">
+      <h2>Building Use</h2>
+      <p>Please enter project use</p>
+      <input required type="text" placeholder="Building Use" name="buildingUse" onChange={changeHandler} value={formData.buildingUse} />
+      </div>
+
+      </div>
+
+
+      {/* bid date second  */}
+      <div className="bidStartDate">
+
+{/* first  */}
+<div className="midSing">
+      <h2>Value</h2>
+      <p>Please enter project value</p>
+      <input required type="number" placeholder="$" name="Value" onChange={changeHandler} value={formData.Value} />
+      </div>
+
+      {/* sercond  */}
+      <div className="midSing">
+      <h2>Sector</h2>
+      <p>Please enter project sector</p>
+      <input required type="text" placeholder="Sector" name="sector" onChange={changeHandler} value={formData.sector} />
+      </div>
+
+      </div>
+
                         {/* third  */}
                         <div className="midSing">
                         <h2>Description</h2>
@@ -167,6 +241,7 @@ function PostProject() {
                         <textarea required placeholder="Add Description" id="" cols="30" rows="10" name="desc" onChange={changeHandler} value={formData.desc} />
                         </div>
 
+         
 
 
                 </div>

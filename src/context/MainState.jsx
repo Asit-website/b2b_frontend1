@@ -201,18 +201,30 @@ const MainState = (props) => {
   }
 
 
-  const postProject = async({title , desc , location , file}) => {
+  const postProject = async({title , desc , location , file ,userId , bidDate ,
+    startDate,
+    stage,
+    buildingUse,
+    Value,
+    sector}) => {
     const token = localStorage.getItem('b2b_token');
 
     const data = {
         title,
         desc,
         location,
-        file
+        file , 
+        bidDate ,
+        startDate,
+        stage,
+        buildingUse,
+        Value ,
+        sector , 
     };
 
+
     try {
-        const resp = await fetch(`${baseUrl}/project/postProject`, {
+        const resp = await fetch(`${baseUrl}/project/postProject/${userId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -233,13 +245,18 @@ const MainState = (props) => {
 };
 
 
-  const getProjects = async() => {
+  const getProjects = async({userId}) => {
     const token = localStorage.getItem('b2b_token');
+    
+    let user1 = JSON?.parse(localStorage.getItem("b2b_user")) ? JSON?.parse(localStorage.getItem("b2b_user")) : null;
 
-    console.log("fdsfs");
-   
+    if(user1 === null){
+      return alert("invalid token");
+    }
+    
+     
     try {
-        const resp = await fetch(`${baseUrl}/project/getProjects`, {
+        const resp = await fetch(`${baseUrl}/project/getProjects/${user1._id}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`

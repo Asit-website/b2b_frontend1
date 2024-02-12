@@ -20,7 +20,10 @@ function MyProject() {
 
     const { getProjects } = useMain();
 
-    const [allProject, setAllProjects] = useState([]);
+    const [value, setValue] = useState({});
+
+
+    const [allProject , setAllProjects] = useState([]);
 
     const splideOptions = {
         fixedWidth: 200,
@@ -48,17 +51,24 @@ function MyProject() {
         },
     };
 
-    console.log("al", allProject);
-
+    useEffect(() => {
+        let user1 = JSON?.parse(localStorage.getItem("b2b_user"));
+        setValue({ ...user1, password: "" });
+      }, [localStorage.getItem("b2b_user")]);
 
     useEffect(() => {
+
         const fetchData = async () => {
-            const ans = await getProjects();
-            setAllProjects(ans?.data);
+        
+          const ans = await getProjects({userId: value._id});
+          console.log("ans" ,ans);
+          setAllProjects(ans?.data?.project);
         };
+      
+        
+             fetchData();
 
-        fetchData();
-
+      
         return () => {
         };
     }, []);
