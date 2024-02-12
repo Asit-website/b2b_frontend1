@@ -9,9 +9,26 @@ import visit from "../image/global.png";
 import verify from "../image/verified.png";
 import star from "../image/star.png"
 import loc from "../image/loc.png"
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import technical23 from "../image/technician23.png"
 
 
-function ArchitecturePage({srcArchiData}) {
+function ArchitecturePage() {
+
+  const location = useLocation();
+
+  const state = location.state;
+
+  console.log("stte" ,state);
+const [srcArchiData , setSrcArchiData] = useState();
+
+useEffect(()=>{
+  if(state){
+    setSrcArchiData(state?.data);
+  }
+},[])
+
   return (
     <>
       <div className="arct_wrapS1">
@@ -188,7 +205,10 @@ function ArchitecturePage({srcArchiData}) {
                 ))
 
               ):(
-                <span>No data Found</span>
+               <div className="technical23">
+                <img src={technical23} alt="" />
+                <p>{state?.title}</p>
+               </div>
               )
             }
 

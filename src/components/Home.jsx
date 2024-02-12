@@ -20,7 +20,7 @@ const data = [
   "Civil contractors","Architects","Consulting Engineers","Interior Designers","Fense","Main Contractors","Hauling & Excavating","Main contractors","Hauling & excavating","Structural contractors","Masonry","Carpenters","Concrete pouring","Mechanical contractors","Electrical contractors","Plumbing contractors","Fire protection","Roofing contractors","Painting contractors","Glass works","Drainage contractors","Garden /Lawn works","Wall Ceiling","Insulation","Realtors","Lenders","Investors","Owners"
 ]
 
-const Home = ({pop,setPop ,setSrcArchiData}) => {
+const Home = ({pop,setPop }) => {
 
   const { fetchUserCategory } = useMain();
 
@@ -43,8 +43,8 @@ const Home = ({pop,setPop ,setSrcArchiData}) => {
 
       if (ans?.status) {
        
-        setSrcArchiData(ans?.data);
-        navigate("/architecturePage");
+       
+        navigate("/architecturePage", { state: { data: ans?.data, title: searchArch }});
       
         } else {
         alert("Something went wrong");

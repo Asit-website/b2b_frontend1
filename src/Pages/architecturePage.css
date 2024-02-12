@@ -16,6 +16,28 @@
     justify-content: space-between;
     
 }
+
+.technical23{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px ;
+    flex-direction: column;
+    gap: 20px;
+}
+.technical23 p{
+    font-family: Plus Jakarta Sans;
+    color: #161B32;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    
+}
+
 .arct_wrapS1 .arctS1Left{
     display: flex;
     flex-direction: column;
@@ -273,8 +295,6 @@ min-width: fit-content;
     
 }
 .listsALl .allExpertArc{
- /* overflow-x: scroll; */
-
  width: 100%;
     
 }
@@ -283,8 +303,15 @@ min-width: fit-content;
    display: flex;
    flex-direction: column;
    gap: 24px;
-  overflow-x: scroll;
 }
+
+@media (max-width:850px) {
+    .listsALl .allExpertArcCont{
+      
+      overflow-x: scroll;
+    }
+}
+
 .listsALl .singleExpert{
   background-color: white;
   border: 1px solid #D8DBEB;
