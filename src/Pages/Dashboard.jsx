@@ -6,7 +6,7 @@ import Avatar from 'react-avatar';
 import Footer from "../common/Footer";
 function Dashboard({userImage}){
 
-    let user = JSON.parse(localStorage.getItem('b2b_user'));
+    let user = JSON?.parse(localStorage.getItem('b2b_user'));
 
     return (
         <>

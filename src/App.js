@@ -21,6 +21,10 @@ import MyProject from './Pages/MyProject';
 import PostProject from './Pages/PostProject';
 import AllProject from './Pages/AllProject';
 import ArchitecturePage from './Pages/ArchitecturePage';
+import NotUser from './Pages/NotUser';
+import PageNotFound from './Pages/PageNotFound';
+// import PrivateRoute from './PrivateRoute/PrivateRoute';
+// import Navbar1 from './common/Navbar1';
 function App() {
   const [pop, setPop] = useState(false);
   const [signupPop, setSignupPop] = useState(false);
@@ -78,7 +82,7 @@ function App() {
     getUserImageFromLocalStorage();
   }, []); 
 
-
+  let user = JSON?.parse(localStorage?.getItem('b2b_user'))
   return (
     <div className={`${showNavbar && "heightAdjust"}`}>
       <MainState>
@@ -100,24 +104,32 @@ function App() {
               notify={notify}
               userImage={userImage}
             />
+             {/* {
+                !user && <NotUser/>
+               } */}
+            {/* <Navbar1/> */}
              <NotificationContainer/>
             <Routes>
-
+              
+              
               <Route path='/' element={<Home pop={pop} setPop={setPop} />} />
               <Route path='/about' element={<About />} />
               <Route path='/pricing' element={<Pricing />} />
-              <Route path="/Dashboard" element={<Dashboard userImage={userImage} /> }  />
-              <Route  path="/personalInformation" element={<PersonalInformation userImage={userImage} setImageId={setImageId} imageId={imageId} setUserImage={setUserImage} notify={notify}/> }  />
-              <Route path="/personalInfo" element={<PersonalInfo2 /> }  />
-              <Route path="/myProject" element={<MyProject /> }  />
-              <Route path='/postProject' element={<PostProject />}  />
               <Route path='/allProject' element={<AllProject />}  />
               <Route path='/architecturePage' element={<ArchitecturePage />} />
 
-
+              {
+                user && <> <Route path="/Dashboard" element={<Dashboard userImage={userImage} /> }  />
+                <Route  path="/personalInformation" element={<PersonalInformation userImage={userImage} setImageId={setImageId} imageId={imageId} setUserImage={setUserImage} notify={notify}/> }  />
+                <Route path="/personalInfo" element={<PersonalInfo2 /> }  />
+                <Route path="/myProject" element={<MyProject notify={notify} /> }  />
+                <Route path='/postProject' element={<PostProject notify={notify} />}  /> </> 
+              }
+              
+              
+             <Route path='*' element={<PageNotFound/>}/>
             </Routes>
-            
-         
+           
         </Router>
       </MainState>
     </div>

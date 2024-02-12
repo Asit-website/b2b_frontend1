@@ -274,12 +274,24 @@ const MainState = (props) => {
     }
 };
 
+const deleteProject = async (id) => {
+  const resp = await fetch(`${baseUrl}/project/deleteProject/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+      'token': localStorage.getItem('dolibo_token')
+    }
+  });
+  const data = await resp.json();
+  return data;
+};
+
 
 
   
 
   return (
-    <MainContext.Provider value={{ login, register, getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects}}>
+    <MainContext.Provider value={{ login, register, getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects,deleteProject}}>
       {props.children}
     </MainContext.Provider>
   );

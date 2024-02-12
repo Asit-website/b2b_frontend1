@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { ImCross } from "react-icons/im";
 
 
-function PostProject() {
+function PostProject({notify}) {
 
   const [value, setValue] = useState({});
 
@@ -72,7 +72,8 @@ function PostProject() {
 
 
     if(allImages.length === 0){
-      return alert("Please choose the iamges");
+      // return alert("Please choose the iamges");
+      notify("error","Please chose the images")
     }
 
     const {  title,
@@ -90,7 +91,8 @@ function PostProject() {
  console.log("ans", ans);
 
     if(ans?.status){
-      alert("Successfuly created the project");
+      // alert("Successfuly created the project");
+      notify("success","Successfully created the project");
       setFormData({
         title:"",
         location:"",
@@ -304,10 +306,10 @@ function PostProject() {
                         <p>Each project is reviewed by BuildLink Network editors for possible feature online or in print.</p>
                      </div>
                      
-                     <div className="sinSec2R">
+                     {/* <div className="sinSec2R">
                         <h2>Generate leads</h2>
                         <p>Post vacation homes and real estate listings, too.</p>
-                     </div>
+                     </div> */}
                      <div className="sinSec2R">
                         <h2>Share with your community</h2>
                         <p>Every project posted to Dwell includes a public link for easy sharing.</p>

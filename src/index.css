@@ -172,6 +172,30 @@ body {
   align-items: center;
   justify-content: center;
 }
+.user_nothing{
+  position: relative !important;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.user_not{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.user_not h2{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.edit_del{
+  padding: 10px;
+}
+.edit_del i{
+  padding: 0px 15px;
+}
 .newi p{
   color: #2C868F !important;
   font-weight: 500 !important;

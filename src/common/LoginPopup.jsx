@@ -31,7 +31,7 @@ const LoginPopup = ({setSignupPop,setPop,setForgot,notify}) => {
             }));
             
             if (ans.user.role === 'ADMIN') {
-                navigate('/');
+                navigate('/admin/dashboard');
                 setPop(false);
             }
             else {

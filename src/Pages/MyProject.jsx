@@ -12,18 +12,23 @@ import Footer from "../common/Footer";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useMain } from "../hooks/useMain";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 
 
+function MyProject({notify}) {
 
-function MyProject() {
 
-    const { getProjects } = useMain();
+
+    const { getProjects,deleteProject } = useMain();
 
     const [value, setValue] = useState({});
 
 
     const [allProject , setAllProjects] = useState([]);
+
+    const [refreshFlag, setRefreshFlag] = useState(false);
 
     const splideOptions = {
         fixedWidth: 200,
@@ -71,7 +76,41 @@ function MyProject() {
       
         return () => {
         };
-    }, []);
+    }, [refreshFlag]);
+
+
+    const deleteProject1 = async (id) => {
+        confirmAlert({
+          title: 'Are you sure to delete this data?',
+          message: 'All related data to this will be deleted',
+          buttons: [
+            {
+              label: 'Yes, Go Ahead!',
+              style: {
+                background: "#FF5449"
+              },
+              onClick: async () => {
+                const ans = await deleteProject(id);
+                console.log(ans);
+                if (ans.status) {
+                  // alert(ans.message);
+                  notify(ans.status, ans.message);
+                  setRefreshFlag(!refreshFlag);
+                }
+                else {
+                  alert('Something went wrong! ');
+                }
+              }
+            },
+            {
+              label: 'Cancel',
+    
+              onClick: () => null
+            }
+          ]
+        });
+      };
+    
 
 
     return (
@@ -148,7 +187,9 @@ function MyProject() {
 
                             <div className="allProCont">
 
-
+                              {
+                                allProject.length === 0 && <h2>No project found</h2>
+                              }
 
                                 {
                                     allProject?.map((pro, index) => (
@@ -157,7 +198,7 @@ function MyProject() {
 
                                             <img src={pro?.img[0]?.url} alt="" />
 
-
+                                            <div className=" flex items-center ">
                                             <div className="proTitlDDes">
 
                                                 <div className="proTitl">
@@ -167,6 +208,13 @@ function MyProject() {
                                                 <div className="proDesc">
                                                     <p>{pro?.desc}</p>
                                                 </div>
+                                            </div>
+                                            <div className="edit_del flex items-center">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                            <i onClick={()=>{
+                                                  deleteProject1(pro._id);
+                                            }} class="fa-solid fa-trash"></i>
+                                            </div>
                                             </div>
 
                                         </div>

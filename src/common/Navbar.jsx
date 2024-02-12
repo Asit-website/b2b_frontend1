@@ -179,8 +179,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       <hr />
                       <li>
                         <a
-                          href="#"
-                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
                           onClick={()=>{
                             localStorage.removeItem('b2b_user');
                             localStorage.removeItem('b2b_token');
