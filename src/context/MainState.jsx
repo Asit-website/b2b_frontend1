@@ -207,6 +207,7 @@ const MainState = (props) => {
     buildingUse,
     Value,
     sector}) => {
+
     const token = localStorage.getItem('b2b_token');
 
     const data = {
@@ -287,11 +288,76 @@ const deleteProject = async (id) => {
 };
 
 
+const updateProject = async({title , desc , location , file ,id , bidDate ,
+  startDate,
+  stage,
+  buildingUse,
+  Value,
+  sector})=>{
 
+  const token = localStorage.getItem('b2b_token');
+
+  const data = {
+    title,
+    desc,
+    location,
+    file , 
+    bidDate ,
+    startDate,
+    stage,
+    buildingUse,
+    value: Value ,
+    sector , 
+};
+
+
+try {
+  const resp = await fetch(`${baseUrl}/project/updateProject/${id}`, {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(data)
+  });
+
+  if (!resp.ok) {
+      throw new Error('Network response was not ok');
+  }
+
+  return await resp.json();
+} catch (error) {
+  console.error('There was an error!', error);
+  throw error;
+}
+
+}
+
+
+const fetchUserCategory = async({category})=>{
+  console.log("ca" ,category);
+  try {
+    const resp = await fetch(`${baseUrl}/user/getUserByCategory/${category}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+  
+    if (!resp.ok) {
+        throw new Error('Network response was not ok');
+    }
+  
+    return await resp.json();
+  } catch (error) {
+    console.error('There was an error!', error);
+    throw error;
+  }
+}
   
 
   return (
-    <MainContext.Provider value={{ login, register, getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects,deleteProject}}>
+    <MainContext.Provider value={{ login,fetchUserCategory, register,updateProject , getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects,deleteProject}}>
       {props.children}
     </MainContext.Provider>
   );

@@ -13,11 +13,54 @@ import find2 from "../image/find2.png"
 import Footer from "../common/Footer";
 import p1 from "../image/p1.png"
 import rating from "../image/rating.png"
+import { useMain } from "../hooks/useMain";
+import { useNavigate } from "react-router-dom";
 
-const Home = ({pop,setPop}) => {
+const data = [
+  "Civil contractors","Architects","Consulting Engineers","Interior Designers","Fense","Main Contractors","Hauling & Excavating","Main contractors","Hauling & excavating","Structural contractors","Masonry","Carpenters","Concrete pouring","Mechanical contractors","Electrical contractors","Plumbing contractors","Fire protection","Roofing contractors","Painting contractors","Glass works","Drainage contractors","Garden /Lawn works","Wall Ceiling","Insulation","Realtors","Lenders","Investors","Owners"
+]
+
+const Home = ({pop,setPop ,setSrcArchiData}) => {
+
+  const { fetchUserCategory } = useMain();
+
+  const navigate = useNavigate();
+
   const [openModal, setOpenModal] = useState(false);
+
+  const [searchArch , setSearchArch] = useState("");
+
+
+   const getUsersByCategoryHandler = async()=>{
+    try{
+
+      if(searchArch === ""){
+        return 
+      }
+      const ans = await fetchUserCategory({
+      category:searchArch
+      });
+
+      if (ans?.status) {
+       
+        setSrcArchiData(ans?.data);
+        navigate("/architecturePage");
+      
+        } else {
+        alert("Something went wrong");
+      }
+
+
+    } catch(error){
+      console.log(error);
+    }
+   }
+
+  
+
   return (
     <>
+
       {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button>
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
         <Modal.Header>Terms of Service</Modal.Header>
@@ -41,6 +84,7 @@ const Home = ({pop,setPop}) => {
           </Button>
         </Modal.Footer>
       </Modal> */}
+
       <div id="home_banner">
 
         <div className="home_banner-back">
@@ -115,11 +159,20 @@ const Home = ({pop,setPop}) => {
 
               <div className="serchFind">
                 <img src={find} alt="" />
-                <input type="text" placeholder="Search Architects " />
+                <select required name="searchArch" id="" value={searchArch} onChange={(e)=>setSearchArch(e.target.value)}>
+                  <option value="Search Architects">Search Architects </option>
+                  {
+                    data.map((item ,index)=>(
+                      <option value={item} key={index}>{item}</option>
+                    ))
+                  }
+                  
+                </select>
+               
                 <img src={find2} alt="" />
               </div>
 
-              <button>
+              <button onClick={getUsersByCategoryHandler}>
                 <span>Search</span>
               </button>
               

@@ -6,21 +6,28 @@
 
 }
 .arct_wrapS1 .arct_ContS1{
-  max-width: 1130px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 43px 0px 50px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
+    max-width: 1130px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 43px 20px 50px 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
+    
 }
 .arct_wrapS1 .arctS1Left{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 721px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 721px;
 }
+.arct_wrapS1 .arctS1Right{
+    max-width: 166px;
+   width: 100%;
+
+}
+
 .arct_wrapS1 .arctS1Left h2{
     font-family: Plus Jakarta Sans;
     color: #FFFFFF;
@@ -43,22 +50,55 @@
     
 }
 
+
+@media (max-width:624px) {
+    .arct_wrapS1 .arct_ContS1{
+       
+        flex-direction: column-reverse;
+       
+        
+    }
+    .arct_wrapS1 .arctS1Left h2{
+     font-size: 26px;
+     text-align: center;
+     line-height: 35px;
+    }
+
+    .arct_wrapS1 .arctS1Left p{
+      text-align: center;
+    }
+}
+
 .allArc_datas2{
     max-width: 1130px;
     width: 100%;
     margin: 0 auto;
-    padding: 23px 0px ;
-   
+    padding: 23px 20px ;
+    
 }
 
 .allArc_datas2 .pricingWrap{
     display: flex;
     align-items: center;
     justify-content: space-between;
- height: 86px;   
+ min-height: 86px;   
+ width: 100%;
  border-bottom: 1px solid #D8DBEB;
 
 }
+
+@media (max-width:650px) {
+    .allArc_datas2 .pricingWrap{
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0px;
+      align-items: flex-start;
+      gap: 20px;
+
+    
+    }
+}
+
 
 .allArc_datas2 .priceHead{
     font-family: Plus Jakarta Sans;
@@ -70,16 +110,32 @@
     text-align: left;
     
 }
+@media (max-width:800px) {
+    .allArc_datas2 .priceHead{
+       font-size: 26px;
+        
+    }
+}
 .allArc_datas2 .locaPrice{
   display: flex;
   align-items: center;
   gap: 16px;
   
 }
+
+@media (max-width:400px) {
+    .allArc_datas2 .locaPrice{
+        display: flex;
+        flex-wrap: wrap;
+    
+      }
+      
+}
 .allArc_datas2 .s2Location{
 display: flex;
 align-items: center;
-width: 324px;
+max-width: 324px;
+width: 100%;
 height: 56px;
 padding: 0px 20px ;
 border-radius: 32px;
@@ -95,11 +151,13 @@ justify-content: space-between;
 outline: none;
 border: none;
 width: 100%;
+height: 100%;
 
 
 }
 .allArc_datas2 .s2Pricing{
-width: 127px;
+max-width: 127px;
+width: 100%;
 height: 56px;
 padding: 16px 20px;
 border-radius: 32px;
@@ -120,7 +178,8 @@ overflow: hidden;
 color: #2C868F;    
 }
 .allArc_datas2 .allFilters{ 
-  height: 96px;
+  min-height: 96px;
+  gap: 10px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -128,6 +187,16 @@ color: #2C868F;
   padding: 20px 20px;
   border-bottom: 1px solid #D8DBEB;
   overflow: hidden;
+}
+
+@media (max-width:850px) {
+    .allArc_datas2 .allFilters{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+      
+      }
 }
 .allArc_datas2 .allFilters select{ 
     font-family: Inter;
@@ -139,7 +208,8 @@ color: #2C868F;
     color: #9CA3AF;    
 }
 .allArc_datas2 .arcSelect{ 
-    width: 324px;
+    max-width: 324px;
+    width: 100%;
     height: 56px;
     padding: 16px 20px;
     border-radius: 32px;
@@ -149,7 +219,8 @@ border: 1px solid #D8DBEB;
     
 }
 .allArc_datas2 .clientBudget{ 
-    width: 212px;
+    max-width: 212px;
+    width: 100%;
     height: 56px;
     padding: 16px 20px;
     border-radius: 32px;
@@ -157,7 +228,8 @@ background-color: #FFFFFF;
 border: 1px solid #D8DBEB;
 }
 .allArc_datas2 .Reviews{ 
-    width: 195px;
+    max-width: 195px;
+    width: 1005;
     height: 56px;
     padding: 16px 20px;
     border-radius: 32px;
@@ -165,7 +237,8 @@ background-color: #FFFFFF;
 border: 1px solid #D8DBEB;
 }
 .allArc_datas2 .Shortby{ 
-    width: 187px;
+    max-width: 187px;
+    width: 100%;
     height: 56px;
     padding: 16px 20px;
     border-radius: 32px;
@@ -180,7 +253,7 @@ border: 1px solid #D8DBEB;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
-    
+min-width: fit-content;
 }
 
 .listsALl{
@@ -200,10 +273,17 @@ border: 1px solid #D8DBEB;
     
 }
 .listsALl .allExpertArc{
+ /* overflow-x: scroll; */
+
+ width: 100%;
+    
+}
+.listsALl .allExpertArcCont{
+    width: 100%;
    display: flex;
    flex-direction: column;
    gap: 24px;
-    
+  overflow-x: scroll;
 }
 .listsALl .singleExpert{
   background-color: white;
@@ -212,11 +292,12 @@ border: 1px solid #D8DBEB;
 max-width: 1124px;
 width: 100%;
 display: flex;
-max-height: 340px;
-height: 100%;
+min-height: 340px;
+height: fit-content;
 
       
 }
+
 .listsALl .sinExLeft{
   max-width: 927px;
   width: 100%;
@@ -231,8 +312,6 @@ align-items: center;
 border-bottom: 1px solid #D8DBEB;
 padding: 20px;
 overflow: hidden;
-
-
       
 }
 .listsALl .sExTop .sExToLeft{
@@ -339,6 +418,7 @@ gap: 6px;
 
 }
 
+
 .listsALl .exBoLeft .lHeading2{
    display: flex;
    gap: 8px;
@@ -374,6 +454,7 @@ align-items: center;
 width: 100%;
 justify-content: center;
 overflow: hidden;
+padding: 10px;
 
 }
 .listsALl .exBtoRight span{
@@ -439,7 +520,86 @@ overflow: hidden;
     line-height: 22px;
     letter-spacing: 0em;
     text-align: left;
-    
     color:#FF6D7F;
 
+}
+
+
+@media (max-width:900px) {
+    .listsALl .singleExpert{
+      max-width: auto;
+      width: 800px;
+            
+      }
+
+      .listsALl .sExToLeft .hotelName h2{
+       font-size: 18px;    
+    }
+    .listsALl .rating p{
+       font-size: 16px;
+    }
+    .listsALl .rating span{
+        font-size: 14px;
+        
+    }
+    .listsALl .verified span{
+       font-size: 16px;
+    }
+    
+    .listsALl .Budget{
+    font-size: 16px;
+    }
+    .listsALl .exBoLeft .lHeading2 h2{
+      font-size: 16px;
+    }
+    .listsALl .exBoLeft .para2{
+ font-size: 16px;
+    }
+    .listsALl .exBtoRight span{
+       font-size: 16px;
+    
+    }
+    .listsALl .visit span{
+     font-size: 16px;
+    }
+}
+
+
+@media (max-width:500px) {
+    .listsALl .singleExpert{
+      max-width: auto;
+      width: 700px;
+            
+      }
+
+      .listsALl .sExToLeft .hotelName h2{
+       font-size: 16px;    
+    }
+    .listsALl .rating p{
+       font-size: 14px;
+    }
+    .listsALl .rating span{
+        font-size: 12px;
+        
+    }
+    .listsALl .verified span{
+       font-size: 14px;
+    }
+    
+    .listsALl .Budget{
+    font-size: 14px;
+    }
+    .listsALl .exBoLeft .lHeading2 h2{
+      font-size: 14px;
+    }
+    .listsALl .exBoLeft .para2{
+ font-size: 14px;
+    }
+    .listsALl .exBtoRight span{
+       font-size: 14px;
+    
+    }
+    .listsALl .visit span{
+     font-size: 14px;
+    }
 }

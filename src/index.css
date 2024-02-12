@@ -450,11 +450,12 @@ body {
   background-color: #FFFFFF;
   display: flex;
   align-items: center;
+  overflow: hidden;
   padding: 20px;
 
 }
 
-#home_banner .serchFind input {
+#home_banner .serchFind select {
   outline: none;
   font-family: Inter;
   color: #596080;
@@ -463,10 +464,6 @@ body {
   letter-spacing: 0em;
   text-align: left;
 
-
-}
-
-#home_banner .serchFind input::placeholder {
   font-family: Inter;
   color: #596080;
   font-size: 18px;
@@ -475,8 +472,11 @@ body {
   letter-spacing: 0em;
   text-align: left;
 
+overflow: hidden;
 
 }
+
+
 
 #home_banner .home_banner-back1 .home_banner_buttons button {
   max-width: 120px;

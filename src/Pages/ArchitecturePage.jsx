@@ -10,57 +10,12 @@ import verify from "../image/verified.png";
 import star from "../image/star.png"
 import loc from "../image/loc.png"
 
-const data = [
-  {
-    img: hotel,
-    title: "Perkins & Will",
-    rating: "4.8 ",
-    reviews: "59",
-    budget: "$12,346",
-    location: "2218 Bryan St #200, Dallas, TX 75201, United States",
-    quote:
-      "Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. ",
-    quote: " “Awesome office space and great people.” ",
-  },
-  {
-    img: hotel,
-    title: "Perkins & Will",
-    rating: "4.8 ",
-    reviews: "59",
-    budget: "$12,346",
-    location: "2218 Bryan St #200, Dallas, TX 75201, United States",
-    quote:
-      "Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. ",
-    quote: " “Awesome office space and great people.” ",
-  },
-  {
-    img: hotel,
-    title: "Perkins & Will",
-    rating: "4.8 ",
-    reviews: "59",
-    budget: "$12,346",
-    location: "2218 Bryan St #200, Dallas, TX 75201, United States",
-    quote:
-      "Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. ",
-    quote: " “Awesome office space and great people.” ",
-  },
-  {
-    img: hotel,
-    title: "Perkins & Will",
-    rating: "4.8 ",
-    reviews: "59",
-    budget: "$12,346",
-    location: "2218 Bryan St #200, Dallas, TX 75201, United States",
-    quote:
-      "Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. ",
-    quote: " “Awesome office space and great people.” ",
-  },
-];
 
-function ArchitecturePage() {
+function ArchitecturePage({srcArchiData}) {
   return (
     <>
       <div className="arct_wrapS1">
+
         <div className="arct_ContS1">
           {/* left side */}
           <div className="arctS1Left">
@@ -99,6 +54,7 @@ function ArchitecturePage() {
               <span>Pricing</span> <img src={award} alt="" />
             </div>
           </div>
+
         </div>
 
         {/* second */}
@@ -125,102 +81,120 @@ function ArchitecturePage() {
         <main className="listsALl">
           <h2 className="listHead">List of the Expert Architects </h2>
 
-          <div className="allExpertArc">
+            <div className="allExpertArc">
 
-            {data?.map((item, index) => (
-              <div className="singleExpert" key={index}>
+           
+          <div className="allExpertArcCont">
+            
 
-                {/* left side */}
-                <div className="sinExLeft">
 
-                  {/* top */}
-                  <div className="sExTop">
+            {
+              srcArchiData?.length > 0 ?(
 
+                srcArchiData?.map((item, index) => (
+
+                  <div className="singleExpert" key={index}>
+    
                     {/* left side */}
-                    <div className="sExToLeft">
-
-                        <img src={item.img} alt="" />
-
-                        <div className="hotelName">
-
-                            <h2>{item.title}</h2>
-
-                            <div className="rating">
-
-                                <img src={star} alt="" />
-
-                                <p>Rating {item.rating}/5</p>
-
-                                <span>{item.reviews} Reviews ></span>
-
+                    <div className="sinExLeft">
+    
+                      {/* top */}
+                      <div className="sExTop">
+    
+                        {/* left side */}
+                        <div className="sExToLeft">
+    
+                            <img src={item?.img ? item?.img : hotel} alt="" />
+    
+                            <div className="hotelName">
+    
+                                <h2>{item?.name}</h2>
+    
+                                <div className="rating">
+    
+                                    <img src={star} alt="" />
+    
+                                    <p>Rating {item?.rating ? item?.rating : "3.4"}/5</p>
+    
+                                    <span>{item?.reviews ? item?.reviews : "59"} Reviews </span>
+    
+                                </div>
+    
                             </div>
-
+    
                         </div>
-
-                    </div>
-
-
-                      {/* rigth side  */}
-                      <div className="sExLefRight">
-
-                        <div className="verified">
-                          <img src={verify} alt="" /> <span>Verified</span>
-                        </div>
-
-                        <div className="Budget">
-                          <span>Budget: ${item?.budget}</span>
-                        </div>
-
+    
+    
+                          {/* rigth side  */}
+                          <div className="sExLefRight">
+    
+                            <div className="verified">
+                              <img src={verify} alt="" /> <span>Verified</span>
+                            </div>
+    
+                            <div className="Budget">
+                              <span>Budget: ${item?.budget ?item?.budget :"5000"}</span>
+                            </div>
+    
+                          </div>
+    
+    
+                       
                       </div>
-
-
-                   
-                  </div>
-
-                  {/* bottom */}
-                  <div className="sExBottom">
-
-                    {/* left side */}
-                    <div className="exBoLeft">
-
-                         <div className="lHeading2">
-
-                            <img src={loc} alt="" />
-                            <h2>2218 Bryan St #200, Dallas, TX 75201, United States</h2>
-
-                         </div>
-
-                         <p className="para2">
-                         Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. 
-                         </p>
-
+    
+                      {/* bottom */}
+                      <div className="sExBottom">
+    
+                        {/* left side */}
+                        <div className="exBoLeft">
+    
+                             <div className="lHeading2">
+    
+                                <img src={loc} alt="" />
+                                <h2>2218 Bryan St #200, Dallas, TX 75201, United States</h2>
+    
+                             </div>
+    
+                             <p className="para2">
+                             Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. 
+                             </p>
+    
+                        </div>
+    
+                        {/* right side */}
+                        <div className="exBtoRight">
+    
+                            <span>{item?.quote ?  item?.quote : "Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. "}</span>
+    
+                        </div>
+    
+                      </div>
+    
                     </div>
-
+    
                     {/* right side */}
-                    <div className="exBtoRight">
-
-                        <span>{item.quote}</span>
-
+                    <div className="sinExRight">
+                      <div className="visitWev visit">
+                        <span>Visit Website</span> <img src={global} alt="" />
+                      </div>
+                      <div className="visitWev portfolio">
+                        <span>View Portfolio</span> <img src={portfolio} alt="" />
+                      </div>
+                      <div className="visitWev send">
+                        <span>Send Message</span> <img src={send} alt="" />
+                      </div>
                     </div>
+                  </div>
+                ))
 
-                  </div>
+              ):(
+                <span>No data Found</span>
+              )
+            }
 
-                </div>
+           
 
-                {/* right side */}
-                <div className="sinExRight">
-                  <div className="visitWev visit">
-                    <span>Visit Website</span> <img src={global} alt="" />
-                  </div>
-                  <div className="visitWev portfolio">
-                    <span>View Portfolio</span> <img src={portfolio} alt="" />
-                  </div>
-                  <div className="visitWev send">
-                    <span>Send Message</span> <img src={send} alt="" />
-                  </div>
-                </div>
-              </div>
-            ))}
+          </div>
 
           </div>
         </main>
