@@ -83,6 +83,9 @@ function App() {
   }, []); 
 
   let user = JSON?.parse(localStorage?.getItem('b2b_user'))
+
+   const [srcArchiData , setSrcArchiData] = useState([]);
+
   return (
     <div className={`${showNavbar && "heightAdjust"}`}>
       <MainState>
@@ -112,18 +115,21 @@ function App() {
             <Routes>
               
               
-              <Route path='/' element={<Home pop={pop} setPop={setPop} />} />
+              <Route path='/' element={<Home pop={pop} setPop={setPop} setSrcArchiData={setSrcArchiData} />} />
               <Route path='/about' element={<About />} />
               <Route path='/pricing' element={<Pricing />} />
               <Route path='/allProject' element={<AllProject />}  />
-              <Route path='/architecturePage' element={<ArchitecturePage />} />
+              <Route path='/architecturePage'  element={<ArchitecturePage srcArchiData={srcArchiData} />} />
 
               {
                 user && <> <Route path="/Dashboard" element={<Dashboard userImage={userImage} /> }  />
                 <Route  path="/personalInformation" element={<PersonalInformation userImage={userImage} setImageId={setImageId} imageId={imageId} setUserImage={setUserImage} notify={notify}/> }  />
                 <Route path="/personalInfo" element={<PersonalInfo2 /> }  />
                 <Route path="/myProject" element={<MyProject notify={notify} /> }  />
-                <Route path='/postProject' element={<PostProject notify={notify} />}  /> </> 
+                <Route path='/postProject' element={<PostProject notify={notify} />}  /> 
+                
+                
+                </> 
               }
               
               

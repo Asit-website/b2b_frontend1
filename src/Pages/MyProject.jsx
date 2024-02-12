@@ -9,7 +9,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 // import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import Footer from "../common/Footer";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useMain } from "../hooks/useMain";
 import { confirmAlert } from 'react-confirm-alert'; // Import
@@ -112,6 +112,8 @@ function MyProject({notify}) {
       };
     
 
+      const navigate = useNavigate();
+     
 
     return (
         <>
@@ -210,7 +212,9 @@ function MyProject({notify}) {
                                                 </div>
                                             </div>
                                             <div className="edit_del flex items-center">
-                                            <i class="fa-solid fa-pen-to-square"></i>
+                                            <i onClick={()=>{
+                                                navigate(`/postProject` , { state: { pro } })
+                                                }} class="fa-solid fa-pen-to-square"></i>
                                             <i onClick={()=>{
                                                   deleteProject1(pro._id);
                                             }} class="fa-solid fa-trash"></i>
