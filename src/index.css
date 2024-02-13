@@ -19,7 +19,15 @@ body {
 }
 
 /* ================header css start============== */
-
+.upgrade_sect{
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  margin-top: 9rem;
+}
+.seyy{
+  margin-top: 0rem !important;
+}
 .heightAdjust {
   height: 100vh;
   overflow: hidden;
@@ -265,7 +273,7 @@ body {
 }
 
 #home_banner {
-  margin-top: 9rem;
+  margin-top: 10rem;
 }
 
 .nav {
@@ -1855,7 +1863,7 @@ p {
 /* =================about page css start================ */
 .about_main {
   background-color: transparent;
-  margin-top: 9rem;
+  margin-top: 10rem;
 }
 
 .about {
@@ -2375,6 +2383,115 @@ p {
   margin-left: 10px;
 }
 
+.main_budget{
+  margin-top: 9rem;
+  position: relative;
+}
+.budget_man{
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #E1E1E2;
+}
+.budget_under{
+  max-width: 1440px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 50px 150px;
+}
+.budget_flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.budget_content h2{
+  color: #161B32;
+  font-weight: 700;
+  font-size: 48px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 60.48px;
+}
+.budget_content p{
+  color: #303550;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif !important;
+  line-height: 21.78px;
+  margin-top: 35px;
+}
+.take_main{
+  background-color: transparent;
+}
+.take_main_bs{
+  max-width: 1440px;
+  width: 100%;
+  padding: 50px 150px;
+  display: block;
+  margin: auto;
+}
+.take_man h1{
+  color: #161B32;
+  font-weight: 700;
+  font-size: 32px;
+  /* line-height: 40.32px; */
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.take_man .wet{
+  color: #303550;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif !important;
+  text-align: center;
+  width: 40em;
+  display: block;
+  margin: auto;
+  margin-top: 12px;
+  line-height: 21.78px;
+}
+.trys{
+  width: 90px;
+}
+.th_fs{
+  margin-top: 100px;
+}
+.take_flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.talk_left{
+  width: 50%;
+  margin-right: 40px;
+}
+.talk_right{
+  width: 50%;
+  margin-left: 40px;
+}
+.talk_cont h2{
+  color: #161B32;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40.32px;
+}
+.talk_cont p{
+  color: #596080;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif !important;
+  line-height: 19.36px;
+  margin-top: 25px;
+}
+.ports_btn button{
+  width: 143px;
+  height: 51px;
+  border-radius: 8px;
+  background-color: #2C868F;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif !important;
+  margin-top: 30px;
+}
 /* about css responsive */
 @media (max-width:1185px) {
   .about {

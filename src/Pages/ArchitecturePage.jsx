@@ -20,14 +20,15 @@ function ArchitecturePage() {
 
   const state = location.state;
 
-  console.log("stte" ,state);
-const [srcArchiData , setSrcArchiData] = useState();
+  console.log("stte", state);
+  const [srcArchiData, setSrcArchiData] = useState();
 
-useEffect(()=>{
-  if(state){
-    setSrcArchiData(state?.data);
-  }
-},[])
+  useEffect(() => {
+    if (state) {
+      setSrcArchiData(state?.data);
+      console.log(state.data);
+    }
+  }, [])
 
   return (
     <>
@@ -57,7 +58,7 @@ useEffect(()=>{
         {/* first  */}
         <div className="pricingWrap">
           {/* left side */}
-          <h2 className="priceHead">1,245 Architects </h2>
+          <h2 className="priceHead">{state.title}</h2>
 
           <div className="locaPrice">
             {/* location */}
@@ -98,123 +99,123 @@ useEffect(()=>{
         <main className="listsALl">
           <h2 className="listHead">List of the Expert Architects </h2>
 
-            <div className="allExpertArc">
-
-           
-          <div className="allExpertArcCont">
-            
+          <div className="allExpertArc">
 
 
-            {
-              srcArchiData?.length > 0 ?(
+            <div className="allExpertArcCont">
 
-                srcArchiData?.map((item, index) => (
 
-                  <div className="singleExpert" key={index}>
-    
-                    {/* left side */}
-                    <div className="sinExLeft">
-    
-                      {/* top */}
-                      <div className="sExTop">
-    
-                        {/* left side */}
-                        <div className="sExToLeft">
-    
+
+              {
+                srcArchiData?.length > 0 ? (
+
+                  srcArchiData?.map((item, index) => (
+
+                    <div className="singleExpert" key={index}>
+
+                      {/* left side */}
+                      <div className="sinExLeft">
+
+                        {/* top */}
+                        <div className="sExTop">
+
+                          {/* left side */}
+                          <div className="sExToLeft">
+
                             <img src={item?.img ? item?.img : hotel} alt="" />
-    
+
                             <div className="hotelName">
-    
-                                <h2>{item?.name}</h2>
-    
-                                <div className="rating">
-    
-                                    <img src={star} alt="" />
-    
-                                    <p>Rating {item?.rating ? item?.rating : "3.4"}/5</p>
-    
-                                    <span>{item?.reviews ? item?.reviews : "59"} Reviews </span>
-    
-                                </div>
-    
+
+                              <h2>{item?.name}</h2>
+
+                              <div className="rating">
+
+                                <img src={star} alt="" />
+
+                                <p>Rating {item?.rating ? item?.rating : "3.4"}/5</p>
+
+                                <span>{item?.reviews ? item?.reviews : "59"} Reviews </span>
+
+                              </div>
+
                             </div>
-    
-                        </div>
-    
-    
+
+                          </div>
+
+
                           {/* rigth side  */}
                           <div className="sExLefRight">
-    
+
                             <div className="verified">
                               <img src={verify} alt="" /> <span>Verified</span>
                             </div>
-    
+
                             <div className="Budget">
-                              <span>Budget: ${item?.budget ?item?.budget :"5000"}</span>
+                              <span>Budget: ${item?.budget ? item?.budget : "5000"}</span>
                             </div>
-    
+
                           </div>
-    
-    
-                       
-                      </div>
-    
-                      {/* bottom */}
-                      <div className="sExBottom">
-    
-                        {/* left side */}
-                        <div className="exBoLeft">
-    
-                             <div className="lHeading2">
-    
-                                <img src={loc} alt="" />
-                                <h2>2218 Bryan St #200, Dallas, TX 75201, United States</h2>
-    
-                             </div>
-    
-                             <p className="para2">
-                             Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. 
-                             </p>
-    
+
+
+
                         </div>
-    
-                        {/* right side */}
-                        <div className="exBtoRight">
-    
-                            <span>{item?.quote ?  item?.quote : "Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. "}</span>
-    
+
+                        {/* bottom */}
+                        <div className="sExBottom">
+
+                          {/* left side */}
+                          <div className="exBoLeft">
+
+                            <div className="lHeading2">
+
+                              <img src={loc} alt="" />
+                              <h2>2218 Bryan St #200, Dallas, TX 75201, United States</h2>
+
+                            </div>
+
+                            <p className="para2">
+                              Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage.
+                            </p>
+
+                          </div>
+
+                          {/* right side */}
+                          <div className="exBtoRight">
+
+                            <span>{item?.quote ? item?.quote : "Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage. "}</span>
+
+                          </div>
+
                         </div>
-    
+
                       </div>
-    
+
+                      {/* right side */}
+                      <div className="sinExRight">
+                        <div className="visitWev visit">
+                          <span>Visit Website</span> <img src={global} alt="" />
+                        </div>
+                        <div className="visitWev portfolio">
+                          <span>View Portfolio</span> <img src={portfolio} alt="" />
+                        </div>
+                        <div className="visitWev send">
+                          <span>Send Message</span> <img src={send} alt="" />
+                        </div>
+                      </div>
                     </div>
-    
-                    {/* right side */}
-                    <div className="sinExRight">
-                      <div className="visitWev visit">
-                        <span>Visit Website</span> <img src={global} alt="" />
-                      </div>
-                      <div className="visitWev portfolio">
-                        <span>View Portfolio</span> <img src={portfolio} alt="" />
-                      </div>
-                      <div className="visitWev send">
-                        <span>Send Message</span> <img src={send} alt="" />
-                      </div>
-                    </div>
+                  ))
+
+                ) : (
+                  <div className="technical23">
+                    <img src={technical23} alt="" />
+                    <p>{state?.title}</p>
                   </div>
-                ))
+                )
+              }
 
-              ):(
-               <div className="technical23">
-                <img src={technical23} alt="" />
-                <p>{state?.title}</p>
-               </div>
-              )
-            }
 
-           
 
-          </div>
+            </div>
 
           </div>
         </main>

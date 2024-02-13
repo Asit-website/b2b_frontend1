@@ -18,6 +18,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import Avatar from 'react-avatar';
 import { IoReorderThreeOutline } from "react-icons/io5";
 import fr from '../image/fr.svg'
+import trys from '../image/try.jpg';
 const navItems = [
   "Services","Manufacturers","Projects","Budgeting","Subscription","Bidding","About Us"
 ]
@@ -216,9 +217,10 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
         <nav className='nav'>
 
           <div className="nav1">
-            <div className="logo">
-              <img src={fr} alt="loho" />
-            </div>
+           <NavLink to="/"><div className="logo">
+              {/* <img src={fr} alt="loho" /> */}
+              <img className='trys' src={trys} alt="loho" />
+            </div></NavLink>
           </div>
 
           <div className="nav2">

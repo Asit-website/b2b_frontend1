@@ -169,7 +169,7 @@ const Home = ({pop,setPop }) => {
                   
                 </select>
                
-                <img src={find2} alt="" />
+                {/* <img src={find2} alt="" /> */}
               </div>
 
               <button onClick={getUsersByCategoryHandler}>

@@ -306,7 +306,7 @@ const updateProject = async({title , desc , location , file ,id , bidDate ,
     startDate,
     stage,
     buildingUse,
-    value: Value ,
+    Value ,
     sector , 
 };
 

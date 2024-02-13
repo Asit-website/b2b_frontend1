@@ -35,6 +35,7 @@ const data = [
   {
     img: coffee,
     title: "Upgrade Plan",
+    link: "upgrade"
   },
 ];
 

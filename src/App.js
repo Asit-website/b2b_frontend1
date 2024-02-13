@@ -23,6 +23,9 @@ import AllProject from './Pages/AllProject';
 import ArchitecturePage from './Pages/ArchitecturePage';
 import NotUser from './Pages/NotUser';
 import PageNotFound from './Pages/PageNotFound';
+import UpgradePlan from './Pages/UpgradePlan';
+import Budegting from './components/Budegting';
+import Biding from './components/Biding';
 // import PrivateRoute from './PrivateRoute/PrivateRoute';
 // import Navbar1 from './common/Navbar1';
 function App() {
@@ -120,15 +123,15 @@ function App() {
               <Route path='/pricing' element={<Pricing />} />
               <Route path='/allProject' element={<AllProject />}  />
               <Route path='/architecturePage'  element={<ArchitecturePage  />} />
-
+              <Route path='/budget' element={<Budegting/>}/>
+              <Route path='/biding' element={<Biding/>}/>
               {
                 user && <> <Route path="/Dashboard" element={<Dashboard userImage={userImage} /> }  />
                 <Route  path="/personalInformation" element={<PersonalInformation userImage={userImage} setImageId={setImageId} imageId={imageId} setUserImage={setUserImage} notify={notify}/> }  />
                 <Route path="/personalInfo" element={<PersonalInfo2 /> }  />
                 <Route path="/myProject" element={<MyProject notify={notify} /> }  />
                 <Route path='/postProject' element={<PostProject notify={notify} />}  /> 
-                
-                
+                <Route path='/upgrade' element={<UpgradePlan/>}/>
                 </> 
               }
               
