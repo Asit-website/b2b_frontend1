@@ -13,6 +13,9 @@ import find2 from "../image/find2.png"
 import Footer from "../common/Footer";
 import p1 from "../image/p1.png"
 import rating from "../image/rating.png"
+import ring1 from '../image/ring1.svg'
+import ring2 from '../image/ring2.svg'
+import ring3 from '../image/ring3.svg'
 import { useMain } from "../hooks/useMain";
 import { useNavigate } from "react-router-dom";
 
@@ -20,8 +23,7 @@ const data = [
   "Civil contractors","Architects","Consulting Engineers","Interior Designers","Fense","Main Contractors","Hauling & Excavating","Main contractors","Hauling & excavating","Structural contractors","Masonry","Carpenters","Concrete pouring","Mechanical contractors","Electrical contractors","Plumbing contractors","Fire protection","Roofing contractors","Painting contractors","Glass works","Drainage contractors","Garden /Lawn works","Wall Ceiling","Insulation","Realtors","Lenders","Investors","Owners"
 ]
 
-const Home = ({pop,setPop }) => {
-
+const Home = ({pop,setPop,notify }) => {
   const { fetchUserCategory } = useMain();
 
   const navigate = useNavigate();
@@ -1125,7 +1127,9 @@ const Home = ({pop,setPop }) => {
                     minutes.
                   </p>
                 </div>
-                <div className="back_section1"></div>
+                <div className="back_section1">
+                    <img src={ring1} alt="" />
+                </div>
               </div>
             </div>
             <div className="card">
@@ -1137,7 +1141,9 @@ const Home = ({pop,setPop }) => {
                   Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
                   </p>
                 </div>
-                <div className="back_section2"></div>
+                <div className="back_section2">
+                   <img src={ring2} alt="" />
+                </div>
               </div>
             </div>
             <div className="card">
@@ -1149,7 +1155,9 @@ const Home = ({pop,setPop }) => {
                   Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
                   </p>
                 </div>
-                <div className="back_section3"></div>
+                <div className="back_section3">
+                    <img src={ring3} alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -1409,7 +1417,9 @@ const Home = ({pop,setPop }) => {
                 Get in front of millions of active B2B buyers worldwide inside
                 the leading global business services marketplace. 
               </p>
-              <button><span>Create a Profile</span></button>
+              <button onClick={()=>{
+                  localStorage.getItem('b2b_user') ? navigate('/personalInformation') : notify("danger","need to signin before creating profile")
+             }}><span>Create a Profile</span></button>
             </div>
 
             <div className="home_last_section_second">
@@ -1423,7 +1433,9 @@ const Home = ({pop,setPop }) => {
                 Tell us how BuildLink Network helps in your process, and you
                 could be featured on this page.
               </p>
-              <a href="#"> Create a Profile</a>
+              <a onClick={()=>{
+                  localStorage.getItem('b2b_user') ? navigate('/personalInformation') : notify("error","need to signin before creating profile")
+              }} href="#"> Create a Profile</a>
             </div>
 
           </div>

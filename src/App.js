@@ -118,7 +118,7 @@ function App() {
             <Routes>
               
               
-              <Route path='/' element={<Home pop={pop} setPop={setPop}  />} />
+              <Route path='/' element={<Home pop={pop} setPop={setPop} notify={notify}  />} />
               <Route path='/about' element={<About />} />
               <Route path='/pricing' element={<Pricing />} />
               <Route path='/allProject' element={<AllProject />}  />

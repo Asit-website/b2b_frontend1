@@ -26,7 +26,7 @@ function ArchitecturePage() {
   useEffect(() => {
     if (state) {
       setSrcArchiData(state?.data);
-      console.log(state.data);
+      // console.log(state.data1);
     }
   }, [])
 
@@ -122,7 +122,7 @@ function ArchitecturePage() {
                           {/* left side */}
                           <div className="sExToLeft">
 
-                            <img src={item?.img ? item?.img : hotel} alt="" />
+                            <img className="reshy" src={item?.img ? item?.img?.url : hotel} alt="" />
 
                             <div className="hotelName">
 
@@ -169,12 +169,12 @@ function ArchitecturePage() {
                             <div className="lHeading2">
 
                               <img src={loc} alt="" />
-                              <h2>2218 Bryan St #200, Dallas, TX 75201, United States</h2>
+                              <h2>{ item.location ? item.location : `2218 Bryan St #200, Dallas, TX 75201, United States`}</h2>
 
                             </div>
 
                             <p className="para2">
-                              Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage.
+                              {item.desc ? item?.desc : `Strategic Insight Solutions excels in providing cutting-edge strategies to enhance your business's competitive advantage.`}
                             </p>
 
                           </div>
@@ -193,7 +193,7 @@ function ArchitecturePage() {
                       {/* right side */}
                       <div className="sinExRight">
                         <div className="visitWev visit">
-                          <span>Visit Website</span> <img src={global} alt="" />
+                         <a target="_blank" href={`${item.website ? item.website : null}`}><span>Visit Website</span> <img src={global} alt="" /></a>
                         </div>
                         <div className="visitWev portfolio">
                           <span>View Portfolio</span> <img src={portfolio} alt="" />

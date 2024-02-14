@@ -126,25 +126,25 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                         <NavLink
                           onClick={()=> setClick(false)}
                           to="/Dashboard"
-                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
                         >
                           <img src={trick} alt="trick" />
                           <span className='ml-2'>Dashboard</span>
                         </NavLink>
                       </li>
                       <li>
-                        <a
-                          href="#"
-                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        <NavLink
+                         to="/myProject"
+                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
                         > 
                           <img src={trick1} alt="" />
                           <span className='ml-2'>My Projects</span> 
-                        </a>
+                        </NavLink>
                       </li>
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
                         >
                           <img src={trick2} alt="" />
                          <span className='ml-2'>Shortlist</span>
@@ -153,7 +153,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
                         >
                          <img src={trick3} alt="trick3" />
                         <span className='ml-2'>My Messages</span> 
@@ -162,7 +162,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
                         >
                           <img src={trick4} alt="" />
                          <span className='ml-2'>Reviews</span> 
@@ -171,7 +171,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
                         >
                           <img src={trick5} alt="" />
                           <span className='ml-2'>Upgrade Plan</span> 
@@ -180,7 +180,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                       <hr />
                       <li>
                         <a
-                          className="block px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
+                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F] cursor-pointer"
                           onClick={()=>{
                             localStorage.removeItem('b2b_user');
                             localStorage.removeItem('b2b_token');
@@ -231,9 +231,9 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                 <li><a href="">Services</a></li>
                 <li><a href="">Manufacturers</a></li>
                 <li><a href="">Projects</a></li>
-                <li><a href="">Budgeting</a></li>
+                <li><NavLink to="/budget">Budgeting</NavLink></li>
                 <li><NavLink to="/pricing">Subscription</NavLink></li>
-                <li><a href="">Bidding</a></li>
+                <li><NavLink to="/biding">Bidding</NavLink></li>
                 <li><NavLink to="/about">About Us</NavLink></li>
               </ul>
 
