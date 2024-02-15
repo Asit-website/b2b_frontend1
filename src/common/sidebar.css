@@ -102,7 +102,7 @@ cursor: pointer;
     box-shadow: 0px 6px 12px 0px #00000014;
     position: fixed;
     left: 0;
-    top: 140px;
+    top: 160px;
     height: 100%;
     z-index: 200;
     animation-name: slidebar;

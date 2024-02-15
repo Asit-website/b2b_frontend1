@@ -3,6 +3,7 @@ import son from '../image/son.svg'
 import Footer from '../common/Footer'
 import yt from '../image/yt.svg'
 import kicking from '../image/kicking.svg'
+import { useNavigate } from 'react-router-dom'
 const Biding = () => {
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
@@ -10,6 +11,7 @@ const Biding = () => {
     const [open3, setOpen3] = useState(false);
     const [open4, setOpen4] = useState(false);
     const [open5, setOpen5] = useState(false);
+    const navigate = useNavigate()
     const stylePerr = {
         display: open ? "block" : "none",
     };
@@ -348,7 +350,11 @@ const Biding = () => {
                                </div>
                                <div className="client_right">
                                    <div className="client_btn">
-                                       <button>Create a Profile</button>
+                                       <button
+                                         onClick={()=>{
+                                            localStorage.getItem("b2b_user") ? navigate("/personalInformation") : alert("need to login for create profile")
+                                         }}
+                                       >Create a Profile</button>
                                    </div>
                                </div>
                           </div>

@@ -20,7 +20,13 @@ import { IoReorderThreeOutline } from "react-icons/io5";
 import fr from '../image/fr.svg'
 import trys from '../image/try.jpg';
 const navItems = [
-  "Services","Manufacturers","Projects","Budgeting","Subscription","Bidding","About Us"
+  "Services",
+  "Manufacturers",
+  "Projects",
+  "Budgeting",
+  "Subscription",
+  "Bidding",
+  "About Us"
 ]
 
 const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify , showNavbar , setShowNavbar , userImage }) => {
@@ -277,12 +283,19 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
   showNavbar && 
   <div className='showNavWrap'>
 
-            {
+            {/* {
               navItems?.map((item, index)=>(
                 <p key={index}>{item}</p>
               ))
-            }
+            } */}
 
+            <p>Services</p>
+            <p>Manufacturers</p>
+            <p>Projects</p>
+           <NavLink to="/budget"><p>Budgeting</p></NavLink>
+           <NavLink to="/pricing"><p>Subscription</p></NavLink>
+           <NavLink to="/biding"><p>Bidding</p></NavLink>
+           <NavLink to="/about"><p>About Us</p></NavLink>
   </div>
  }
 
