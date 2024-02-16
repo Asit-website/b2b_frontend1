@@ -3819,20 +3819,31 @@ hr{
 }
 .project-value-section{
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   justify-content:center;
   align-items: center;
 }
 .project-value-under-sec{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
-  gap: 10px;
+  width: 100%;
+  margin: 10px 5px;
+  width: 50;
+  /* gap: 10px; */
+}
+.project-value-under-sec a{
+  text-decoration: underline;
+}
+.project-value-under-sec svg{
+  margin-top: 5px;
+  margin-left: 5px;
 }
 .project-value-under-sec a p{
   font-size:16px;
   line-height: 33px;
   font-weight: 500;
   color: #1A73E8;
+  text-decoration: underline;
 }
