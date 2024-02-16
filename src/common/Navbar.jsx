@@ -236,7 +236,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
               <ul>
                 <li><a href="">Services</a></li>
                 <li><a href="">Manufacturers</a></li>
-                <li><a href="">Projects</a></li>
+                <li><NavLink to="/Project">Projects</NavLink></li>
                 <li><NavLink to="/budget">Budgeting</NavLink></li>
                 <li><NavLink to="/pricing">Subscription</NavLink></li>
                 <li><NavLink to="/biding">Bidding</NavLink></li>

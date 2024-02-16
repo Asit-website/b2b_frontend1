@@ -115,6 +115,14 @@ const Project = () => {
                 </div>
             </div>
           </div>
+
+          <div className="project-man3">
+            <div className="project-main3">
+              <div className="project-flex3">
+                <div className=""></div>
+              </div>
+            </div>
+          </div>
       </div>
    </>
   )
