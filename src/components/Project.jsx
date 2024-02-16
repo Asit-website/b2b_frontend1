@@ -119,7 +119,13 @@ const Project = () => {
           <div className="project-man3">
             <div className="project-main3">
               <div className="project-flex3">
-                <div className=""></div>
+                <div className="fproject3-left">
+                  <h2></h2>
+                  <p></p>
+                </div>
+                <div className="fproject3-right">
+                  <form></form>
+                </div>
               </div>
             </div>
           </div>
