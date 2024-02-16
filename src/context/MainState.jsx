@@ -275,6 +275,18 @@ const MainState = (props) => {
     }
 };
 
+const getProjects1 = async (id, query, page, perPage) => {
+  const resp = await fetch(`${baseUrl}/project/getProjects1`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json',
+      'token': localStorage.getItem('b2b_token')
+    }
+  });
+  const data = await resp.json();
+  return data;
+};
+
 const deleteProject = async (id) => {
   const resp = await fetch(`${baseUrl}/project/deleteProject/${id}`, {
     method: 'DELETE',
@@ -357,7 +369,7 @@ const fetchUserCategory = async({category})=>{
   
 
   return (
-    <MainContext.Provider value={{ login,fetchUserCategory, register,updateProject , getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects,deleteProject}}>
+    <MainContext.Provider value={{ login,fetchUserCategory, register,updateProject , getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects,deleteProject,getProjects1}}>
       {props.children}
     </MainContext.Provider>
   );
