@@ -65,7 +65,9 @@ const Project = () => {
                             </div>
                         </div>
                     </div>
-                    <hr/>
+                    <div className="project-hr">
+                       <hr/>
+                    </div>
                     <div className="left-project1">
                         <h2>All Projects</h2>
                         <div className="map-content-main">
