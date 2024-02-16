@@ -126,7 +126,7 @@ function ArchitecturePage() {
 
                             <div className="hotelName">
 
-                              <h2>{item?.title}</h2>
+                              <h2>{item?.name}</h2>
 
                               <div className="rating">
 
