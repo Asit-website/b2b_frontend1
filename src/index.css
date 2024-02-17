@@ -3667,12 +3667,12 @@ p {
 
 
 .main_projects{
-  margin-top: 11rem;
+  margin-top: 10rem;
 }
 .project_main{
   max-width: 1440px;
   width: 100%;
-  padding: 50px 150px;
+  padding: 50px 150px 80px 150px;
   display: block;
   margin: auto;
 }
@@ -3954,4 +3954,239 @@ width: 15em;
     width: 100%;
     padding-bottom: 20px;
    }
+}
+
+@media (max-width:1000px) {
+  .project_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .right_project{
+    padding-top: 30px;
+  }
+}
+@media (max-width:880px) {
+  .project_man1{
+    width: 100%;
+    height: auto;
+  }
+  .project_main {
+    padding: 50px 80px;
+  }
+  .project-flex1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .project-main1{
+    padding: 40px 80px;
+  }
+  .project-main2{
+    padding:0px 80px 50px 80px;
+  }
+  .project-main3{
+    padding: 50px 75px;
+  }
+  .project-hr{
+    display: none;
+  }
+  .project-man2{
+    margin-top: 0px;
+  }
+}
+@media (max-width:700px) {
+  .form-label{
+    display: flex;
+    flex-direction: column;
+  }
+  .form-label-section input{
+    width: 100%;
+  }
+  #company-input{
+    width: 100%;
+  }
+  form{
+    width: 100%;
+  }
+  .form-label-section{
+    width: 100%;
+  }
+}
+
+@media (max-width:600px) {
+  .project_main{
+    padding: 40px 40px;
+  }
+  .project-main1 {
+    padding: 40px 40px;
+}
+.project-main2 {
+  padding: 0px 40px 40px 40px;
+}
+.project-main3 {
+  padding: 40px 40px;
+}
+}
+
+@media (max-width:450px) {
+  .project_main{
+    padding: 20px 20px;
+  }
+  .project-main1 {
+    padding: 40px 20px;
+}
+.project-main2 {
+  padding: 0px 20px 40px 20px;
+}
+.project-main3 {
+  padding: 40px 20px;
+}
+.left_project h1{
+  font-size: 36px;
+  line-height: 44px;
+}
+.project-first-btn {
+  padding-top: 28px;
+}
+.project-man2-heading h2{
+  text-align: center;
+}
+.map-content-main{
+gap: 50px;
+}
+.left-project1 h2{
+  font-size: 30px;
+  line-height: 26px;
+}
+.map-under-content p {
+  font-size: 40px;
+  line-height: 46.48px;
+}
+}
+
+
+/* ----------------viewproject-------------------- */
+
+.ViewProject-man{
+  background-color: #E1E1E2;
+}
+.ViewProject-main{
+  max-width: 1440px;
+  width: 100%;
+  padding: 50px 150px 80px 150px;
+  display: block;
+  margin: auto;
+}
+.ViewProject-flex h1{
+  font-size: 32px;
+  line-height: 40.32px;
+  font-weight: 700;
+  width: 27em;
+}
+
+.viewproject-man1{
+  width: 100%;
+  height: auto;
+}
+.viewproject-main1{
+  max-width: 1440px;
+  width: 100%;
+  padding: 50px 150px;
+  display: block;
+  margin: auto;
+}
+.viewproject-flex1{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.viewproject-left-main{
+  width: 50%;
+  /* margin-right: 40px; */
+}
+.viewproject-left-main h2{
+  font-size: 24px;
+  line-height: 30.24px;
+  font-weight: 700;
+  color: #2C868F;
+  padding-bottom: 15px;
+}
+.viewproject-left{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  /* margin-right: 100px; */
+  padding-top: 10px;
+}
+.viewproject-map-img{
+  padding-top: 30px;
+}
+.viewproject-map-img p{
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 500;
+  color: #161B32;
+  padding: 20px 0px;
+}
+.viewproject-left11{
+  padding-top: 25px;
+  padding-bottom:0px;
+}
+.viewproject-line{
+  padding-top: 20px;
+}
+.viewproject-left-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.viewproject-left-text p{
+  font-size: 16px;
+  line-height: 19.36px;
+  font-weight: 400;
+  color: #303550;
+}
+.viewproject-right-main{
+  width: 50%;
+  margin-left: 160px;
+}
+.viewproject-right-main h2{
+  font-size: 24px;
+  line-height: 30.24px;
+  font-weight: 700;
+  color: #2C868F;
+}
+.viewproject-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+.viewproject-right h2{
+  font-size: 16px;
+  line-height: 25.22px;
+  font-weight: 500;
+  color: #1A73E8;
+  padding-top: 25px;
+  text-decoration: underline;
+}
+.viewproject-right p {
+  font-size: 13px;
+  line-height: 15.73px;
+  font-weight: 400;
+  color: #596080;
+  padding-top: 5px;
+}
+.viewproject-para{
+  display: flex;
+  justify-content:start;
+  align-items:flex-start;
+  gap:3rem;
 }
