@@ -122,11 +122,43 @@ const Project = () => {
             <div className="project-main3">
               <div className="project-flex3">
                 <div className="fproject3-left">
-                  <h2></h2>
-                  <p></p>
+                  <h2>Growth with access to the bidding project info your business needs.</h2>
+                  <p>Full details, including key contact information, important dates, plans and specifications, on over 500,000 Projects including 5000 updated daily available to subscribers.</p>
                 </div>
                 <div className="fproject3-right">
-                  <form></form>
+                  <form >
+                    <div className="form-label">
+                      <div className="form-label-section">
+                        <label for="fname">Email*</label><br/>
+                        <input type="email" placeholder="Email"/>
+                      </div>
+                      <div className="form-label-section">
+                        <label for="fname">What is your Bussiness Type?*</label><br/>
+                        <input type="text" name="fname" placeholder="Please select"/>
+                      </div>
+                    </div>
+                    <div className="form-label">
+                      <div className="form-label-section">
+                        <label for="fname">First name</label><br/>
+                        <input type="text" name="fname" placeholder="First Name"/>
+                      </div>
+                      <div className="form-label-section">
+                        <label for="fname">Phone number</label><br/>
+                        <input type="text" name="fname" placeholder="Phone number"/>
+                      </div>
+                    </div>
+                    <div className="form-label">
+                      <div className="form-label-section">
+                        <label for="fname">Company Name</label><br/>
+                        <input type="text" id="company-input" name="fname" placeholder="Company Name"/>
+                      </div>
+                    </div>
+                    <div className="form-label">
+                      <div className="project-first-btn project-form-btn">
+                          <button type button>Free Demo</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
