@@ -89,7 +89,8 @@ const Project = () => {
             <div className="project-main2">
                 <div className="project-flex2">
                     <div className="project-man2-heading">
-                      <h2>Top 100 Projects By Value</h2>
+                      {/* 100 */}
+                      <h2>Top  Projects By Value</h2>
                     </div>
                     <div className="project-value-section">
                         {
