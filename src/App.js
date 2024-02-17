@@ -27,6 +27,7 @@ import Budegting from "./components/Budegting";
 import Biding from "./components/Biding";
 import Project from "./components/Project";
 import ProjectDetails from "./components/ProjectDetails";
+import Viewproject from "./components/Viewproject";
 // import PrivateRoute from './PrivateRoute/PrivateRoute';
 // import Navbar1 from './common/Navbar1';
 function App() {
@@ -123,6 +124,7 @@ function App() {
             <Route path="/budget" element={<Budegting />} />
             <Route path="/biding" element={<Biding />} />
             <Route path="/project" element={<Project/>}/>
+            <Route path="/viewproject" element={<Viewproject/>}/>
             <Route path="/project/:id" element={<ProjectDetails/>}/>
             {user && (
               <>
