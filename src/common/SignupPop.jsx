@@ -7,6 +7,7 @@ import { gapi } from 'gapi-script';
 
 
 
+
 const SignupPop = ({ setSignupPop, setPop, notify }) => {
 
     const clientId = "60170623913-b5hacib7e1p19lg2cpf2abg1amor8fj0.apps.googleusercontent.com";
@@ -132,14 +133,26 @@ const SignupPop = ({ setSignupPop, setPop, notify }) => {
                                     <div className="continue_google">
                                         <div className='try'>
                                             {/* Continue with Google */}
+                                            {/* <GoogleLogin 
+                                        clientId={clientId}
+                                        buttonText='Signup'
+                                        onSuccess={onSuccess}
+                                        onFailure={onFailure}
+                                        cookiePolicy='single_host_origin'
+                                        isSignedIn = {true}
+                                        /> */}
+
                                             <GoogleLogin
+                                                onSuccess={credentialResponse => {
+                                                    console.log(credentialResponse);
+                                                }}
+                                                onError={() => {
+                                                    console.log('Login Failed');
+                                                }}
+                                                useOneTap
+                                                buttonText=''
                                                 clientId={clientId}
-                                                buttonText='Signup'
-                                                onSuccess={onSuccess}
-                                                onFailure={onFailure}
-                                                cookiePolicy='single_host_origin'
-                                                isSignedIn={true}
-                                            />
+                                            />;
 
                                         </div>
                                     </div>
