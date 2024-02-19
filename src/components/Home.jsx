@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import left1 from "../image/home_left1.png";
 import join1 from "../image/join1.png";
 import join2 from "../image/join2.png";
@@ -23,14 +23,19 @@ const data = [
   "Civil contractors","Architects","Consulting Engineers","Interior Designers","Fense","Main Contractors","Hauling & Excavating","Main contractors","Hauling & excavating","Structural contractors","Masonry","Carpenters","Concrete pouring","Mechanical contractors","Electrical contractors","Plumbing contractors","Fire protection","Roofing contractors","Painting contractors","Glass works","Drainage contractors","Garden /Lawn works","Wall Ceiling","Insulation","Realtors","Lenders","Investors","Owners"
 ]
 
+
 const Home = ({pop,setPop,notify }) => {
-  const { fetchUserCategory } = useMain();
+  const { fetchUserCategory , fetchAllLocation , fetchProjectByLoc } = useMain();
 
   const navigate = useNavigate();
 
   const [openModal, setOpenModal] = useState(false);
 
   const [searchArch , setSearchArch] = useState("");
+
+  const [searchLocation , setSearchLocation] = useState("");
+
+  const [allLocation , setAllLocation] = useState([]);
 
 
    const getUsersByCategoryHandler = async()=>{
@@ -44,8 +49,7 @@ const Home = ({pop,setPop,notify }) => {
       });
 
       if (ans?.status) {
-       
-       
+      
         navigate("/architecturePage", { state: { data: ans?.data, title: searchArch }});
       
         } else {
@@ -58,7 +62,51 @@ const Home = ({pop,setPop,notify }) => {
     }
    }
 
+
+   const getAllLocation = async()=>{
+    try{
+
+      const ans = await fetchAllLocation();
+
+     if(ans?.status){
+
+       setAllLocation(ans?.locations);
+      }
+
+
+    } catch(error){
+      console.log(error);
+    }
+   }
+
+   const getProjectByLocation = async()=>{
+    try{
+
+      if(searchLocation === ""){
+        return 
+      }
+      const ans = await fetchProjectByLoc({
+      location:searchLocation
+      });
+
+ console.log("anss" , ans);
+      if (ans?.status) {
+      
+        // navigate("/architecturePage", { state: { data: ans?.data, title: searchArch }});
+      
+        } else {
+        alert("Something went wrong");
+      }
+
+
+    } catch(error){
+      console.log(error);
+    }
+   }
   
+   useEffect(()=>{
+    getAllLocation();
+   },[])
 
   return (
     <>
@@ -104,6 +152,7 @@ const Home = ({pop,setPop,notify }) => {
                 for brands & local businesses
               </p>
             </div>
+
             <div className="home_banner_buttons">
               {/* <div>
                 <form class="flex items-center">
@@ -159,6 +208,7 @@ const Home = ({pop,setPop,notify }) => {
                 </form>
               </div> */}
 
+            
               <div className="serchFind">
                 <img src={find} alt="" />
                 <select required name="searchArch" id="" value={searchArch} onChange={(e)=>setSearchArch(e.target.value)}>
@@ -179,6 +229,25 @@ const Home = ({pop,setPop,notify }) => {
               </button>
               
             </div>
+
+            <div className="home_banner_buttons">
+          
+            <select className="searchLocation" required name="searchLocation" id="" value={searchLocation} onChange={(e)=>setSearchLocation(e.target.value)}>
+                  <option value="Search Location">Search Location </option>
+                  {
+                    allLocation.map((item ,index)=>(
+                      <option value={item} key={index}>{item}</option>
+                    ))
+                  }
+                  
+                </select>
+
+              <button onClick={getProjectByLocation}>
+                <span>Search</span>
+              </button>
+              
+            </div>
+
           </div>
 
           <div className="home_banner2">

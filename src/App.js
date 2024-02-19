@@ -26,11 +26,13 @@ import UpgradePlan from "./Pages/UpgradePlan";
 import Budegting from "./components/Budegting";
 import Biding from "./components/Biding";
 import Project from "./components/Project";
-import ProjectDetails from "./components/ProjectDetails";
+// import ProjectDetails from "./components/ProjectDetails";
 import Viewproject from "./components/Viewproject";
 import ViewProfile from "./Pages/viewProfile";
+import ProjectDetail from "./components/ProjectDetail";
 // import PrivateRoute from './PrivateRoute/PrivateRoute';
 // import Navbar1 from './common/Navbar1';
+
 function App() {
   const [pop, setPop] = useState(false);
   const [signupPop, setSignupPop] = useState(false);
@@ -86,7 +88,8 @@ function App() {
 
   let user = JSON?.parse(localStorage?.getItem("b2b_user"));
 
-  //  const [srcArchiData , setSrcArchiData] = useState([]);
+
+
 
   return (
     <div className={`${showNavbar && "heightAdjust"}`}>
@@ -150,6 +153,7 @@ function App() {
                   path="/myProject"
                   element={<MyProject notify={notify} />}
                 />
+                <Route path="/projectDetail" element={<ProjectDetail />}  />
                 <Route
                   path="/postProject"
                   element={<PostProject notify={notify} />}

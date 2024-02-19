@@ -347,7 +347,6 @@ try {
 
 
 const fetchUserCategory = async({category})=>{
-  console.log("ca" ,category);
   try {
     const resp = await fetch(`${baseUrl}/user/getUserByCategory/${category}`, {
         method: 'GET',
@@ -368,8 +367,72 @@ const fetchUserCategory = async({category})=>{
 }
   
 
+const getProjectDetailById = async({id})=>{
+  const token = localStorage.getItem('b2b_token');
+
+  try{
+
+    const resp = await fetch(`${baseUrl}/project/getProjectDetail/${id}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
+    });
+    
+
+    
+    return await resp.json();
+  }
+  catch(error){
+    console.error('There was an error!', error);
+    throw error;
+  }
+}
+
+const fetchAllLocation = async()=>{
+  const token = localStorage.getItem('b2b_token');
+
+  try{
+
+    const resp = await fetch(`${baseUrl}/project/fetchAllLocation`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      },
+    });
+  
+    return await resp.json();
+  }
+  catch(error){
+    console.error('There was an error!', error);
+    throw error;
+  }
+}
+
+const fetchProjectByLoc = async({location})=>{
+  const token = localStorage.getItem('b2b_token');
+
+  try{
+
+    const resp = await fetch(`${baseUrl}/project/fetchProjectByLocation`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({location: location})
+    });
+  
+    return await resp.json();
+  }
+  catch(error){
+    console.error('There was an error!', error);
+    throw error;
+  }
+}
+
   return (
-    <MainContext.Provider value={{ login,fetchUserCategory, register,updateProject , getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects,deleteProject,getProjects1}}>
+    <MainContext.Provider value={{ login,getProjectDetailById,fetchUserCategory, register,updateProject , getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects,deleteProject,getProjects1 , fetchAllLocation , fetchProjectByLoc}}>
       {props.children}
     </MainContext.Provider>
   );

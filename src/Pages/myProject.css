@@ -159,6 +159,7 @@
 
 .allProjects .singPro img {
     height: 80%;
+    cursor: pointer;
     width: 100%;
    object-fit: cover;
 }

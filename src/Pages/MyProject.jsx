@@ -66,7 +66,6 @@ function MyProject({notify}) {
         const fetchData = async () => {
         
           const ans = await getProjects({userId: value._id});
-          console.log("ans" ,ans);
           setAllProjects(ans?.data?.project);
         };
       
@@ -198,7 +197,7 @@ function MyProject({notify}) {
                                         <div className="singPro" key={index}>
 
 
-                                            <img src={pro?.img[0]?.url} alt="" />
+                                            <img onClick={()=>navigate("/projectDetail" , {state:pro._id})} src={pro?.img[0]?.url} alt="" />
 
                                             <div className=" flex items-center ">
                                             <div className="proTitlDDes">
