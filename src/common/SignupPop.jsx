@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React,{useEffect, useState} from 'react'
 import OutsideClickHandler from 'react-outside-click-handler';
-import { useMain } from '../hooks/useMain'
+import {useMain} from '../hooks/useMain'
 import { useNavigate } from 'react-router-dom';
-import { GoogleLogin } from "@react-oauth/google"
+import {GoogleLogin} from "react-google-login"
 import { gapi } from 'gapi-script';
 
 
 
-
-
-const SignupPop = ({ setSignupPop, setPop, notify }) => {
+const SignupPop = ({ setSignupPop, setPop,notify }) => {
 
     const clientId = "60170623913-b5hacib7e1p19lg2cpf2abg1amor8fj0.apps.googleusercontent.com";
 
 
     const navigate = useNavigate();
-    const { register, setUser } = useMain();
+    const { register,setUser } = useMain();
 
     const [value, setValue] = useState({
         name: '',
         email: '',
         password: '',
-        confirmPassword: '',
-        categoryies: ''
+        confirmPassword:'',
+        categoryies:''
     });
 
     const handleChange = (e) => {
@@ -32,9 +30,9 @@ const SignupPop = ({ setSignupPop, setPop, notify }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const ans = await register(value);
-        console.log("ans", ans);
+        console.log("ans" , ans);
         notify(ans.status, ans.message);
-
+      
         if (ans.status) {
             setUser(ans.user);
             localStorage.setItem('b2b_user', JSON.stringify(ans?.data));
@@ -46,15 +44,15 @@ const SignupPop = ({ setSignupPop, setPop, notify }) => {
     }
 
 
-    const onSuccess = (res) => {
-        console.log("login succes", res.profileObj);
+    const onSuccess = (res)=>{
+        console.log("login succes" , res.profileObj);
     }
 
-    const onFailure = (res) => {
-        console.log("fail", res);
+    const onFailure = (res)=>{
+        console.log("fail" ,res);
     }
 
-
+  
 
     return (
         <>
@@ -93,8 +91,8 @@ const SignupPop = ({ setSignupPop, setPop, notify }) => {
                                         <div className="inp1">
                                             <label htmlFor="categoryies">Category</label>
                                             <select name="categoryies" id="categoryies" onChange={handleChange} value={value.categoryies}>
-
-
+                                              
+                                            
                                                 <option>Civil contractors</option>
                                                 <option>Architects</option>
                                                 <option>Consulting Engineers</option>
@@ -123,7 +121,7 @@ const SignupPop = ({ setSignupPop, setPop, notify }) => {
                                                 <option>Lenders</option>
                                                 <option>Investors</option>
                                                 <option>Owners</option>
-
+                                               
 
                                             </select>
                                         </div>
@@ -131,29 +129,17 @@ const SignupPop = ({ setSignupPop, setPop, notify }) => {
                                     <div className="login_btn">
                                         <button type='submit'>Create account</button>
                                     </div>
-                                    <div className="continue_google">
+                                    <div   className="continue_google">
                                         <div className='try'>
                                             {/* Continue with Google */}
-                                            {/* <GoogleLogin 
+                                        <GoogleLogin 
                                         clientId={clientId}
                                         buttonText='Signup'
                                         onSuccess={onSuccess}
                                         onFailure={onFailure}
                                         cookiePolicy='single_host_origin'
                                         isSignedIn = {true}
-                                        /> */}
-
-                                            <GoogleLogin
-                                                onSuccess={credentialResponse => {
-                                                    console.log(credentialResponse);
-                                                }}
-                                                onError={() => {
-                                                    console.log('Login Failed');
-                                                }}
-                                                useOneTap
-                                                buttonText=''
-                                                clientId={clientId}
-                                            />;
+                                        />
 
                                         </div>
                                     </div>
