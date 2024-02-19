@@ -28,6 +28,7 @@ import Biding from "./components/Biding";
 import Project from "./components/Project";
 import ProjectDetails from "./components/ProjectDetails";
 import Viewproject from "./components/Viewproject";
+import ViewProfile from "./Pages/viewProfile";
 // import PrivateRoute from './PrivateRoute/PrivateRoute';
 // import Navbar1 from './common/Navbar1';
 function App() {
@@ -124,8 +125,7 @@ function App() {
             <Route path="/budget" element={<Budegting />} />
             <Route path="/biding" element={<Biding />} />
             <Route path="/project" element={<Project/>}/>
-            <Route path="/viewproject" element={<Viewproject/>}/>
-            <Route path="/project/:id" element={<ProjectDetails/>}/>
+            <Route path="/project/:id" element={<Viewproject/>}/>
             {user && (
               <>
                 {" "}
@@ -155,6 +155,7 @@ function App() {
                   element={<PostProject notify={notify} />}
                 />
                 <Route path="/upgrade" element={<UpgradePlan />} />
+                <Route path="/viewProfile" element={<ViewProfile userImage={userImage}/>}/>
               </>
             )}
 

@@ -40,9 +40,13 @@ function Dashboard({userImage}){
                     <p>{user?.categoryies}</p>
                    </div>
 
-                 <NavLink to="/personalInformation"><button className="eidtProfile"><span>Edit Profile</span></button></NavLink>
+                   <NavLink to="/viewProfile"><button className="eidtProfile"><span>View Profile</span></button></NavLink>
 
+             
                    </div>
+                  
+
+                   <NavLink to="/personalInformation"><button className="eidtProfile"><span>Edit Profile</span></button></NavLink>
 
                 </div>
 
