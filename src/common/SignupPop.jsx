@@ -1,10 +1,20 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import OutsideClickHandler from 'react-outside-click-handler';
 import {useMain} from '../hooks/useMain'
 import { useNavigate } from 'react-router-dom';
+import {GoogleLogin} from "react-google-login"
+import { gapi } from 'gapi-script';
+
+
+
 const SignupPop = ({ setSignupPop, setPop,notify }) => {
+
+    const clientId = "82634085693-2q0v1o04veu5bb0nj59jgujrvod8rggi.apps.googleusercontent.com";
+
+
     const navigate = useNavigate();
     const { register,setUser } = useMain();
+
     const [value, setValue] = useState({
         name: '',
         email: '',
@@ -32,6 +42,18 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
             setSignupPop(false);
         }
     }
+
+
+    const onSuccess = (res)=>{
+        console.log("login succes" , res.profileObj);
+    }
+
+    const onFailure = (res)=>{
+        console.log("fail" ,res);
+    }
+
+  
+
     return (
         <>
             <div className='login_pop'>
@@ -107,8 +129,19 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
                                     <div className="login_btn">
                                         <button type='submit'>Create account</button>
                                     </div>
-                                    <div className="continue_google">
-                                        <div className='try'>Continue with Google</div>
+                                    <div   className="continue_google">
+                                        <div className='try'>
+                                            {/* Continue with Google */}
+                                        <GoogleLogin 
+                                        clientId={clientId}
+                                        buttonText='Signup'
+                                        onSuccess={onSuccess}
+                                        onFailure={onFailure}
+                                        cookiePolicy='single_host_origin'
+                                        isSignedIn = {true}
+                                        />
+
+                                        </div>
                                     </div>
                                     <div className="join_now">
                                         <p>Don't have an account yet? </p>
