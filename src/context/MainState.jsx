@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MainContext from "./MainContext";
 
-// const baseUrl = 'http://localhost:5000';
-const baseUrl = 'https://backend.bln.obtechenterprise.com';
+const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'https://backend.bln.obtechenterprise.com';
 
 const MainState = (props) => {
   const [user, setUser] = useState({})
@@ -276,7 +276,7 @@ const MainState = (props) => {
 };
 
 const getProjects1 = async (id, query, page, perPage) => {
-  const resp = await fetch(`${baseUrl}/project/getProjects1`, {
+  const resp = await fetch(`${baseUrl}/project/getProjects1?id=${id}&query=${query}&page=${page}&perPage=${perPage}`, {
     method: 'GET',
     headers: {
       'content-type': 'application/json',

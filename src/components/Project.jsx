@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react'
-
+import { useNavigate } from 'react-router-dom';
 import BuildLinkNetwork from "../image/BuildLinkNetwork.png";
 import { useMain } from '../hooks/useMain';
 const Project = () => {
     const [project,setProject] = useState([]);
+    const navigate = useNavigate();
     const {getProjects1} = useMain();
     useEffect(()=>{
        getData();
     },[])
     const getData = async () => {
         // setLoadFlag1(true);
-        const ans = await getProjects1();
+        const ans = await getProjects1("","","","");
 
         setProject(ans.data);
         console.log(ans.data);
@@ -101,7 +102,9 @@ const Project = () => {
                                   <path d="M15 3.5H21V9.5" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                   <path d="M10 14.5L21 3.5" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <a href="#"><p>{e?.title}</p></a>
+                                <a style={{cursor:'pointer'}} onClick={()=>{
+                                   navigate(`/project/${e._id}`)
+                                }}><p>{e?.title}</p></a>
                               </div>
                             })
                         }
