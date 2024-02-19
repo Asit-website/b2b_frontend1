@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import OutsideClickHandler from 'react-outside-click-handler';
 import { useMain } from '../hooks/useMain'
 import { useNavigate } from 'react-router-dom';
-import { GoogleLogin } from "react-google-login"
+import { GoogleLogin } from "@react-oauth/google"
 import { gapi } from 'gapi-script';
+
 
 
 
