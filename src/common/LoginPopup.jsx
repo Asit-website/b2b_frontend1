@@ -40,6 +40,11 @@ const LoginPopup = ({setSignupPop,setPop,setForgot,notify}) => {
             }
         }
     }
+
+    const loginWithGoogle = ()=>{
+        window.open("http://localhost:5000/auth/google/callback" , "_self");
+     }
+
     return (
         <>
         <div className='login_pop'>
@@ -72,7 +77,7 @@ const LoginPopup = ({setSignupPop,setPop,setForgot,notify}) => {
                         <div className="login_btn">
                             <button>Log In</button>
                         </div>
-                        <div className="continue_google">
+                        <div onClick={loginWithGoogle} className="continue_google">
                             <div className='try'>Continue with Google</div>
                         </div>
                         <div onClick={()=>{

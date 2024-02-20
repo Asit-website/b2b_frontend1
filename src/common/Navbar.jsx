@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect } from 'react'
 import LoginPopup from './LoginPopup';
 import SignupPop from './SignupPop';
 import ForgotPassword from './ForgotPassword';
@@ -30,22 +30,25 @@ const navItems = [
 ]
 
 const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify , showNavbar , setShowNavbar , userImage }) => {
-
-
+  
+  
   let user = JSON?.parse(localStorage?.getItem('b2b_user')) ? JSON.parse(localStorage.getItem("b2b_user")):null;
 
+  
   const [click, setClick] = useState(false);
   const styleClick = {
     display: click ? "block" : "none"
   }
-
-  const navigate = useNavigate();
-
- 
-  // const styleAvatar = {
-  //   background:"linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%)"
-  // }
   
+  const navigate = useNavigate();
+  
+  
+  // const styleAvatar = {
+    //   background:"linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%)"
+    // }
+    
+    
+ 
   return (
     <>
       <div className="header">

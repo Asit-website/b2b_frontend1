@@ -89,7 +89,6 @@ const Home = ({pop,setPop,notify }) => {
       location:searchLocation
       });
 
- console.log("anss" , ans);
       if (ans?.status) {
       
         // navigate("/architecturePage", { state: { data: ans?.data, title: searchArch }});
