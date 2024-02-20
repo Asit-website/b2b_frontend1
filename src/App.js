@@ -32,6 +32,9 @@ import ViewProfile from "./Pages/viewProfile";
 import ProjectDetail from "./components/ProjectDetail";
 // import PrivateRoute from './PrivateRoute/PrivateRoute';
 // import Navbar1 from './common/Navbar1';
+import axios from "axios";
+
+
 
 function App() {
   const [pop, setPop] = useState(false);
@@ -39,6 +42,8 @@ function App() {
   const [forgot, setForgot] = useState(false);
   const [otpPop, setOtpPop] = useState(false);
   const [reset, setReset] = useState(false);
+
+
 
   const notify = (status, message) => {
     if (status) {
@@ -82,6 +87,8 @@ function App() {
     }
   };
 
+ console.log("userImg" ,userImage);
+
   useEffect(() => {
     getUserImageFromLocalStorage();
   }, []);
@@ -89,7 +96,36 @@ function App() {
   let user = JSON?.parse(localStorage?.getItem("b2b_user"));
 
 
+  const [userData , setUserData] = useState({});
 
+const getUser = async()=>{
+  try{
+    
+      const resp = await axios.get("http://localhost:5000/login/success" , {withCredentials:true});
+    
+    if(resp.status === 200){
+      setUserData(resp?.data?.user);
+      localStorage.setItem('b2b_user', JSON.stringify(resp?.data?.user));
+
+      localStorage.setItem('b2b_token', JSON.stringify({
+        token: resp?.data?.token,
+        rememberMe: document.getElementById('remember')?.checked,
+        expiry: new Date().getTime() + 24 * 60 * 60 * 1000 
+    }));
+    
+    }
+
+   } catch(error){
+      console.log("manish" ,error);
+
+   }
+}
+
+console.log("user" , userData);
+
+useEffect(()=>{
+   getUser();
+},[])
 
   return (
     <div className={`${showNavbar && "heightAdjust"}`}>

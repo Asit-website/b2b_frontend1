@@ -2,15 +2,12 @@ import React,{useEffect, useState} from 'react'
 import OutsideClickHandler from 'react-outside-click-handler';
 import {useMain} from '../hooks/useMain'
 import { useNavigate } from 'react-router-dom';
-import {GoogleLogin} from "react-google-login"
-import { gapi } from 'gapi-script';
-
+import axios from "axios"
 
 
 const SignupPop = ({ setSignupPop, setPop,notify }) => {
 
-    const clientId = "60170623913-b5hacib7e1p19lg2cpf2abg1amor8fj0.apps.googleusercontent.com";
-
+   
 
     const navigate = useNavigate();
     const { register,setUser } = useMain();
@@ -43,16 +40,10 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
         }
     }
 
+     const loginWithGoogle = ()=>{
+        window.open("http://localhost:5000/auth/google/callback" , "_self");
+     }
 
-    const onSuccess = (res)=>{
-        console.log("login succes" , res.profileObj);
-    }
-
-    const onFailure = (res)=>{
-        console.log("fail" ,res);
-    }
-
-  
 
     return (
         <>
@@ -67,6 +58,7 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
                             </div>
                             <div className="construction_body">
                                 <form onSubmit={handleSubmit}>
+
                                     <div className="form_ino">
                                         <div className="inp1">
                                             <label htmlFor="name">Username</label>
@@ -77,6 +69,7 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
                                             <input onChange={handleChange} value={value.email} type="email" placeholder='Email' id='email' name='email' />
                                         </div>
                                     </div>
+
                                     <div className="form_ino form_ino1">
                                         <div className="inp1">
                                             <label htmlFor="password">Password</label>
@@ -87,6 +80,7 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
                                             <input name='confirmPassword' onChange={handleChange} id='confirmPassword' value={value.confirmPassword} type="Password" placeholder='Repeat Password' />
                                         </div>
                                     </div>
+
                                     <div className="form_ino form_ino1">
                                         <div className="inp1">
                                             <label htmlFor="categoryies">Category</label>
@@ -126,23 +120,17 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
                                             </select>
                                         </div>
                                     </div>
+
                                     <div className="login_btn">
                                         <button type='submit'>Create account</button>
                                     </div>
-                                    <div   className="continue_google">
-                                        <div className='try'>
-                                            {/* Continue with Google */}
-                                        <GoogleLogin 
-                                        clientId={clientId}
-                                        buttonText='Signup'
-                                        onSuccess={onSuccess}
-                                        onFailure={onFailure}
-                                        cookiePolicy='single_host_origin'
-                                        isSignedIn = {true}
-                                        />
 
+                                    <div   onClick={loginWithGoogle} className="continue_google">
+                                        <div className='try'>
+                                            Continue with Google
                                         </div>
                                     </div>
+
                                     <div className="join_now">
                                         <p>Don't have an account yet? </p>
                                         <div className="join_n">
@@ -156,6 +144,7 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
 
                                         </div>
                                     </div>
+
                                 </form>
                             </div>
                         </div>

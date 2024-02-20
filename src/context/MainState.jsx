@@ -433,8 +433,13 @@ const fetchProjectByLoc = async({location})=>{
   }
 }
 
+
+
+
+
+
   return (
-    <MainContext.Provider value={{ login,getProjectDetailById,fetchUserCategory, register,updateProject , getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects,deleteProject,getProjects1 , fetchAllLocation , fetchProjectByLoc}}>
+    <MainContext.Provider value={{ login,getProjectDetailById,fetchUserCategory, register,updateProject , getUsers, user, setUser, updateUser,verify,sendOtp,submitOtp,changePassword,deleteImage,resetPassword ,projectPostImage , projectDeleteImg ,postProject  , getProjects,deleteProject,getProjects1 , fetchAllLocation , fetchProjectByLoc }}>
       {props.children}
     </MainContext.Provider>
   );
