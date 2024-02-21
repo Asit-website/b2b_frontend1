@@ -5,12 +5,16 @@ import Footer from "../common/Footer"
 import { useLocation } from "react-router-dom"
 import { useMain } from "../hooks/useMain";
 import { useEffect, useState } from "react"
-
-
+import ShareModal from "./ShareModel"
+import OutsideClickHandler from 'react-outside-click-handler';
+import { BASE_URL } from '../utils/Config'
+import Sidebar from "../common/Sidebar"
 
 function ProjectDetail() {
 
     const { getProjectDetailById } = useMain();
+
+    const [share, setShare] = useState(false);
 
     const location = useLocation();
     const projectId = location.state;
@@ -31,6 +35,7 @@ function ProjectDetail() {
             const ans = await getProjectDetailById({ id: projectId });
             console.log("ans", ans);
             setProjectDetails(ans?.data);
+            // console.log(projectDetails._id)
         };
 
         fetchData();
@@ -42,9 +47,9 @@ function ProjectDetail() {
 
     return (
 
-        <div className="proDetWrap">
-
-            <div className="proDeCont">
+        <div className="proDetWrap myProjectWrap">
+            <Sidebar />
+            <div className="myProjectRightCon">
 
                 {/* top */}
                 <div className="proDeTop">
@@ -98,6 +103,14 @@ function ProjectDetail() {
 
                             </div>
 
+                            <div className="proDeBtm">
+
+                                <h2>Description</h2>
+
+                                <p>{projectDetails?.desc}</p>
+
+                            </div>
+
                         </div>
 
                         {/* right side  */}
@@ -130,7 +143,7 @@ function ProjectDetail() {
                             {/* first  */}
                             <div className="rpDetaSin">
                                 <p className="SiDtIL">Value  </p>
-                                <p className="siAns">{projectDetails?.value}</p>
+                                <p className="siAns">${projectDetails?.Value}</p>
                             </div>
 
                             {/* first  */}
@@ -149,18 +162,14 @@ function ProjectDetail() {
 
 
                 {/* bottom  description */}
-                <div className="proDeBtm">
-
-                    <h2>Description</h2>
-
-                    <p>{projectDetails?.desc}</p>
-
-                </div>
-
+                <button className="testr" onClick={() => setShare(true)}>Invite Bid <i class="fa-solid fa-share"></i></button>
+               
             </div>
-
-
-            <Footer />
+           
+            {
+                share && <ShareModal  setShare={setShare} url={`${BASE_URL}`} />
+            }
+            <Footer adjustFirst={true} />
 
         </div>
     )

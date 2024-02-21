@@ -1,4 +1,4 @@
-import React, { useState ,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import LoginPopup from './LoginPopup';
 import SignupPop from './SignupPop';
 import ForgotPassword from './ForgotPassword';
@@ -19,6 +19,7 @@ import Avatar from 'react-avatar';
 import { IoReorderThreeOutline } from "react-icons/io5";
 import fr from '../image/fr.svg'
 import trys from '../image/try.jpg';
+import op from '../image/op.png'
 const navItems = [
   "Services",
   "Manufacturers",
@@ -29,26 +30,28 @@ const navItems = [
   "About Us"
 ]
 
-const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify , showNavbar , setShowNavbar , userImage }) => {
-  
-  
-  let user = JSON?.parse(localStorage?.getItem('b2b_user')) ? JSON.parse(localStorage.getItem("b2b_user")):null;
+const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPop, setOtpPop, reset, setReset, notify, showNavbar, setShowNavbar, userImage }) => {
 
-  
+
+  let user = JSON?.parse(localStorage?.getItem('b2b_user')) ? JSON.parse(localStorage.getItem("b2b_user")) : null;
+
+
   const [click, setClick] = useState(false);
   const styleClick = {
     display: click ? "block" : "none"
   }
-  
+
   const navigate = useNavigate();
-  
-  
+
+  const [point, setPoint] = useState(false)
   // const styleAvatar = {
-    //   background:"linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%)"
-    // }
-    
-    
- 
+  //   background:"linear-gradient(90deg, #3C716A 0%, #4F9C8E 100%)"
+  // }
+
+  const stylePoint = {
+    display: point ? "block" : "none"
+  }
+
   return (
     <>
       <div className="header">
@@ -86,129 +89,129 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
 
           <div className="header2">
             {
-             localStorage.getItem('b2b_token') ?
-                  <OutsideClickHandler
-                    onOutsideClick={()=>{
-                       setClick(false)
-                    }}
-                  >
-                <div>
-                  <div onClick={()=> setClick(!click)} className='test_user flex items-center'>
-                    <div className="user_icon">
-                      <img src={ust} alt="ust" />
-                    </div>
-                    <div className="user_para">
-                      <p className='ml-2'>{user?.name}</p>
-                    </div>
+              localStorage.getItem('b2b_token') ?
+                <OutsideClickHandler
+                  onOutsideClick={() => {
+                    setClick(false)
+                  }}
+                >
+                  <div>
+                    <div onClick={() => setClick(!click)} className='test_user flex items-center'>
+                      <div className="user_icon">
+                        <img src={ust} alt="ust" />
+                      </div>
+                      <div className="user_para">
+                        <p className='ml-2'>{user?.name}</p>
+                      </div>
 
 
-                  </div>
-                  <div
-                    style={styleClick}
-                    id="dropdown"
-                    className=" hidden z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44  dropThing"
-                  >
-                    
-                    <ul
-                      className="py-2 text-sm text-gray-700 dark:text-gray-200 ul_res"
-                      aria-labelledby="dropdownDefaultButton"
+                    </div>
+                    <div
+                      style={styleClick}
+                      id="dropdown"
+                      className=" hidden z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44  dropThing"
                     >
-                      <div className='user_avatar'>
-                            <div className='user_am'>
-                                <div className="icons">
-                                    {/* <p>AM</p> */}
-                                    {
-                                      userImage ? <img className='userImage' src={userImage} alt="" /> :
-                                    <Avatar  name={user?.name} size='51px' round={true} textSizeRatio={2} />
-                                    }
-                                </div>
-                            </div>
-                            <div className="user_info">
-                                 <div className="tright">
-                                     <h3>{user?.name}</h3>
-                                     <p className='mt-2'>{user?.email}</p>
-                                 </div>
-                            </div>
-                      </div>
-                      <div className='mt-4'>
-                      <li>
-                        <NavLink
-                          onClick={()=> setClick(false)}
-                          to="/Dashboard"
-                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
-                        >
-                          <img src={trick} alt="trick" />
-                          <span className='ml-2'>Dashboard</span>
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink
-                         to="/myProject"
-                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
-                        > 
-                          <img src={trick1} alt="" />
-                          <span className='ml-2'>My Projects</span> 
-                        </NavLink>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
-                        >
-                          <img src={trick2} alt="" />
-                         <span className='ml-2'>Shortlist</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
-                        >
-                         <img src={trick3} alt="trick3" />
-                        <span className='ml-2'>My Messages</span> 
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
-                        >
-                          <img src={trick4} alt="" />
-                         <span className='ml-2'>Reviews</span> 
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
-                        >
-                          <img src={trick5} alt="" />
-                          <span className='ml-2'>Upgrade Plan</span> 
-                        </a>
-                      </li>
-                      <hr />
-                      <li>
-                        <a
-                          className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F] cursor-pointer"
-                          onClick={()=>{
-                            localStorage.removeItem('b2b_user');
-                            localStorage.removeItem('b2b_token');
-                            navigate('/');
-                            // setPop(true);
-                            notify("success","Logout successfully");
-                            setClick(false);
-                          }}
-                        >
-                        <img src={trick6} alt="" />
-                         <span className='ml-2'>Logout</span> 
-                        </a>
-                      </li>
-                      </div>
-                    </ul>
-                  </div>
 
-                </div>
-                  </OutsideClickHandler>
+                      <ul
+                        className="py-2 text-sm text-gray-700 dark:text-gray-200 ul_res"
+                        aria-labelledby="dropdownDefaultButton"
+                      >
+                        <div className='user_avatar'>
+                          <div className='user_am'>
+                            <div className="icons">
+                              {/* <p>AM</p> */}
+                              {
+                                userImage ? <img className='userImage' src={userImage} alt="" /> :
+                                  <Avatar name={user?.name} size='51px' round={true} textSizeRatio={2} />
+                              }
+                            </div>
+                          </div>
+                          <div className="user_info">
+                            <div className="tright">
+                              <h3>{user?.name}</h3>
+                              <p className='mt-2'>{user?.email}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='mt-4'>
+                          <li>
+                            <NavLink
+                              onClick={() => setClick(false)}
+                              to="/Dashboard"
+                              className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
+                            >
+                              <img src={trick} alt="trick" />
+                              <span className='ml-2'>Dashboard</span>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="/myProject"
+                              className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
+                            >
+                              <img src={trick1} alt="" />
+                              <span className='ml-2'>My Projects</span>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
+                            >
+                              <img src={trick2} alt="" />
+                              <span className='ml-2'>Shortlist</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
+                            >
+                              <img src={trick3} alt="trick3" />
+                              <span className='ml-2'>My Messages</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
+                            >
+                              <img src={trick4} alt="" />
+                              <span className='ml-2'>Reviews</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F]"
+                            >
+                              <img src={trick5} alt="" />
+                              <span className='ml-2'>Upgrade Plan</span>
+                            </a>
+                          </li>
+                          <hr />
+                          <li>
+                            <a
+                              className="block px-4 py-4 hover:bg-[#EBF9F7] dark:hover:bg-[#EBF9F7] dark:hover:text-[#2C868F] cursor-pointer"
+                              onClick={() => {
+                                localStorage.removeItem('b2b_user');
+                                localStorage.removeItem('b2b_token');
+                                navigate('/');
+                                // setPop(true);
+                                notify("success", "Logout successfully");
+                                setClick(false);
+                              }}
+                            >
+                              <img src={trick6} alt="" />
+                              <span className='ml-2'>Logout</span>
+                            </a>
+                          </li>
+                        </div>
+                      </ul>
+                    </div>
+
+                  </div>
+                </OutsideClickHandler>
                 : <div className="btn_auth">
                   <button onClick={() => setPop(true)} className='login'>Log in</button>
                   <button onClick={() => setSignupPop(true)} className='signup'>Sign up</button>
@@ -221,12 +224,12 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
 
       </div>
 
-      
+
       <div className="navbar">
         <nav className='nav'>
 
           <div className="nav1">
-           <NavLink to="/"><div className="logo">
+            <NavLink to="/"><div className="logo">
               {/* <img src={fr} alt="loho" /> */}
               <img className='trys' src={trys} alt="loho" />
             </div></NavLink>
@@ -237,7 +240,150 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
             <div className="ul">
 
               <ul>
-                <li><a href="">Services</a></li>
+                 <OutsideClickHandler onOutsideClick={()=>{
+                  setPoint(false);
+                 }}>
+                <li className='sio'><a className='cursor-pointer' onClick={() => setPoint(!point)}>Services</a>
+                 
+                  <div>
+                    <div style={stylePoint} className="layout">
+                      <div>
+                        <div className="first_const">
+                          <div className="construction_flex">
+                            <div className="img_right">
+                              <img src={op} />
+                            </div>
+                            <div className="text_left">
+                              <p className="text_first">Construction Services</p>
+                              <p className="text_second">
+                                {" "}
+                                Building dreams into reality with expert construction
+                                services.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="drop_pro">
+                          <div className="drop_flex">
+                            <div className="drop_c">
+                              <div>
+
+                                <p className="para_text">Architects</p>
+
+                              </div>
+                              <div>
+                                <p className="para_text">Consulting Engineers</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Interior Designers</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Fense</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Main Contractors</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Hauling & Excavating</p>
+                              </div>
+                            </div>
+
+                            <div className="drop_c">
+                              <div>
+                                <p className="para_text">Main contractors</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Hauling & excavating</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Structural contractors</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Masonry</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Carpenters</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Civil contractors</p>
+                              </div>
+                            </div>
+
+                            <div className="drop_c">
+                              <div>
+                                <p className="para_text">Concrete pouring</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Mechanical contractors</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Electrical contractors</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Plumbing contractors</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Fire protection</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Roofing contractors</p>
+                              </div>
+                            </div>
+
+                            <div className="drop_c">
+                              <div>
+                                <p className="para_text">Painting contractors</p>
+                              </div>
+
+                              <div>
+                                <p className="para_text">Roofing contractors</p>
+                              </div>
+                              <div>
+                                {" "}
+                                <p className="para_text">Glass works</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Drainage contractors</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Garden /Lawn works</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Wall /Ceiling</p>
+                              </div>
+                            </div>
+
+                            <div className="drop_c">
+                              <div>
+                                <p className="para_text">Insulation</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Realtors</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Lenders</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Investors</p>
+                              </div>
+                              <div>
+                                <p className="para_text">Owners</p>{" "}
+                              </div>
+                              <div>
+                                <p className="para_text">Roofing contractors</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </li>
+                </OutsideClickHandler>
                 <li><a href="">Manufacturers</a></li>
                 <li><NavLink to="/Project">Projects</NavLink></li>
                 <li><NavLink to="/budget">Budgeting</NavLink></li>
@@ -249,12 +395,12 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
 
 
             </div>
-            
+
           </div>
 
           <div className='threeline'>
-              <IoReorderThreeOutline onClick={()=>setShowNavbar((prev)=>!prev)} className='lineIcons' />
-              </div>
+            <IoReorderThreeOutline onClick={() => setShowNavbar((prev) => !prev)} className='lineIcons' />
+          </div>
 
         </nav>
       </div>
@@ -282,25 +428,25 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
         reset && <ResetPassword setReset={setReset} notify={notify} />
       }
 
- {
-  showNavbar && 
-  <div className='showNavWrap'>
+      {
+        showNavbar &&
+        <div className='showNavWrap'>
 
-            {/* {
+          {/* {
               navItems?.map((item, index)=>(
                 <p key={index}>{item}</p>
               ))
             } */}
 
-            <p>Services</p>
-            <p>Manufacturers</p>
-            <p>Projects</p>
-           <NavLink to="/budget"><p>Budgeting</p></NavLink>
-           <NavLink to="/pricing"><p>Subscription</p></NavLink>
-           <NavLink to="/biding"><p>Bidding</p></NavLink>
-           <NavLink to="/about"><p>About Us</p></NavLink>
-  </div>
- }
+          <p>Services</p>
+          <p>Manufacturers</p>
+          <p>Projects</p>
+          <NavLink to="/budget"><p>Budgeting</p></NavLink>
+          <NavLink to="/pricing"><p>Subscription</p></NavLink>
+          <NavLink to="/biding"><p>Bidding</p></NavLink>
+          <NavLink to="/about"><p>About Us</p></NavLink>
+        </div>
+      }
 
     </>
   )

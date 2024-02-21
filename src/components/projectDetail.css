@@ -3,6 +3,7 @@
     position: relative;
     min-height: 90vh;
     margin-top: 10rem;
+    display: block !important;
 }
 
 .proDeCont{
@@ -197,7 +198,12 @@ color: #161B32;
     position: relative;
 
 }
-
+.testr{
+    padding: 10px 28px;
+    background-color: #2C868F;
+    color: white;
+    border-radius: 8px;
+}
 .mapRes iframe{
     border: 0;
     height: 100%;
@@ -206,7 +212,11 @@ color: #161B32;
     top: 0;
     position: absolute;
 }
-
+@media only screen and (max-width:1200px){
+    .proDetWrap .myProjectRightCon{
+        padding: 0px 20px 40px 20px;
+    }
+}
 @media (max-width:1000px) {
     .proDeTop .topFlex{
         gap: 20px;

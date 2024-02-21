@@ -253,20 +253,21 @@ function PersonalInformation({ notify, userImage, setUserImage, imageId, setImag
               <div className="webbud">
                 <label htmlFor="city">
                   <p>City *</p>
-                  <select
+                  {/* <select
                     name="city"
                     id="city"
                     onChange={handleChange}
                     value={value.city}
                   >
-                    {/* <option>Select</option> */}
+                    
                     <option>city1</option>
                     <option>city2</option>
                     <option>city3</option>
                     <option>city4</option>
                     <option>city5</option>
                     <option>city6</option>
-                  </select>
+                  </select> */}
+                  <input type="Enter City Name" name="city" id="city" value={value.city} onChange={handleChange} />
                 </label>
 
                 <label htmlFor="location">
