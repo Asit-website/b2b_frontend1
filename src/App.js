@@ -33,6 +33,8 @@ import ProjectDetail from "./components/ProjectDetail";
 // import PrivateRoute from './PrivateRoute/PrivateRoute';
 // import Navbar1 from './common/Navbar1';
 import axios from "axios";
+import SuccessPage from "./Pages/Success";
+import CancelPage from "./Pages/Cancel";
 
 
 
@@ -87,7 +89,6 @@ function App() {
     }
   };
 
- console.log("userImg" ,userImage);
 
   useEffect(() => {
     getUserImageFromLocalStorage();
@@ -116,12 +117,11 @@ const getUser = async()=>{
     }
 
    } catch(error){
-      console.log("manish" ,error);
+      console.log("error" ,error);
 
    }
 }
 
-console.log("user" , userData);
 
 useEffect(()=>{
    getUser();
@@ -199,6 +199,8 @@ useEffect(()=>{
               </>
             )}
 
+            <Route path="/success" element={<SuccessPage />} />
+            <Route path="/failure" element={<CancelPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
