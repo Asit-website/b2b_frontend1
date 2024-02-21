@@ -42,7 +42,7 @@ const LoginPopup = ({setSignupPop,setPop,setForgot,notify}) => {
     }
 
     const loginWithGoogle = ()=>{
-        window.open("http://localhost:5000/auth/google/callback" , "_self");
+        window.open("https://backend.bln.obtechenterprise.com/auth/google/callback" , "_self");
      }
 
     return (
