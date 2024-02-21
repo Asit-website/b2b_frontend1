@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import gt1 from "../image/pricing_img.svg";
 import t from "../image/try.svg";
 import Footer from "../common/Footer";
+
+import {loadStripe} from '@stripe/stripe-js';
+
 const Pricing = () => {
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
@@ -27,6 +30,41 @@ const Pricing = () => {
   const stylePerr5 = {
     display: open5 ? "block" : "none",
   };
+
+
+  // for payment integration 
+   const makePayment = async(amount)=>{
+ const stripe = await loadStripe("pk_test_51OmCLvSBps3k53HfMHZGby0kGGTZ5KTUVUpjkwUIO905MFoqNHtd0PWRj4KeMdVud0bCpsdHQSmetCHwtfaD1mnk003JvDFm9z");
+
+  const body = {
+    amount :amount
+  }
+
+  const headers = {
+    "content-type": "application/json"
+  }
+
+  const response = await fetch("http://localhost:5000/api/create-checkout-session" , {
+    method:"POST" ,
+    headers: headers , 
+    body: JSON.stringify(body)
+  })
+
+  const session = await response.json();
+
+   console.log("session" , session);
+
+  //  redirect 
+  const result = stripe.redirectToCheckout({
+    sessionId: session.id 
+  });
+
+  if(result?.error){
+    console.log(result.error);
+  }
+
+   }
+
   return (
     <>
      <div id="today_section">
@@ -37,7 +75,9 @@ const Pricing = () => {
         </div>
       </div>
      </div>
+
       <div id="procard_section">
+
         <div id="procard">
           <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
             <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
@@ -214,6 +254,7 @@ const Pricing = () => {
             </p>
           </div>
         </div>
+
         <div id="procard">
           <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
             <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
@@ -380,6 +421,7 @@ const Pricing = () => {
               </li>
             </ul>
             <button
+               onClick={()=>makePayment(350)}
               type="button"
               className="probutton bg-#FCFDFD-600 hover:bg-#2C868F-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
             >
@@ -390,6 +432,7 @@ const Pricing = () => {
             </p>
           </div>
         </div>
+
         <div id="procard" className="proding">
         <div className="headery">
               <h2>Recommended</h2>
@@ -559,7 +602,7 @@ const Pricing = () => {
                 </span>
               </li>
             </ul>
-            <button
+            <button onClick={()=>makePayment(125)}
               type="button"
               className="probutton bg-#FCFDFD-600 hover:bg-#2C868F-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
             >
