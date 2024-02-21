@@ -41,7 +41,7 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
     }
 
      const loginWithGoogle = ()=>{
-        window.open("https://backend.bln.obtechenterprise.com/auth/google/callback" , "_self");
+        window.open("http://localhost:5000/auth/google/callback" , "_self");
      }
 
 
