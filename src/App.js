@@ -38,6 +38,7 @@ import CancelPage from "./Pages/Cancel";
 import Message from "./components/Message";
 import TermsAndCondition from "./components/TermsAndCondition";
 import Privacy from "./components/Privacy";
+import Manufacture from "./components/Manufacture";
 
 
 function App() {
@@ -170,6 +171,7 @@ useEffect(()=>{
             <Route path="/success" element={<Message/>}/>
             <Route path="/terms" element={<TermsAndCondition/>}/>
             <Route path="/privacy" element={<Privacy/>}/>
+            <Route path="/manufacture" element={<Manufacture/>}/>
             {user && (
               <>
                 {" "}
