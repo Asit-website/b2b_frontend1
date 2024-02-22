@@ -20,15 +20,15 @@ function ArchitecturePage() {
 
   const state = location.state;
 
-  console.log("stte", state);
   const [srcArchiData, setSrcArchiData] = useState();
 
   useEffect(() => {
     if (state) {
       setSrcArchiData(state?.data);
-      // console.log(state.data1);
     }
   }, [])
+
+  console.log("srha" , srcArchiData);
 
   return (
     <>
@@ -122,7 +122,7 @@ function ArchitecturePage() {
                           {/* left side */}
                           <div className="sExToLeft">
 
-                            <img className="reshy" src={item?.img ? item?.img?.url : hotel} alt="" />
+                            <img className="reshy" src={item?.img ? item?.img[0]?.url : hotel} alt="" />
 
                             <div className="hotelName">
 
