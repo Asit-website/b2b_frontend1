@@ -3,6 +3,7 @@ import tus from '../image/tus.svg';
 import vector from '../image/Vector.svg'
 import vect1 from '../image/vect1.svg'
 import vect2 from '../image/vect2.svg'
+import { NavLink } from 'react-router-dom';
 const Footer = ({adjustFirst = false}) => {
   return (
     <>
@@ -65,13 +66,13 @@ const Footer = ({adjustFirst = false}) => {
              </div>
              <div className="lower_sect2">
                 <div className="item1">
-                   <p>Terms of Services</p>
+                  <NavLink to="/terms"><p>Terms of Services</p></NavLink>
                 </div>
                
              </div>
              <div className="lower_sect3">
              <div className="item2">
-                    <p>Privacy Policy</p>
+                  <NavLink to="/privacy"><p>Privacy Policy</p></NavLink>
                 </div>
              </div>
          </div>

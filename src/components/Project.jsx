@@ -57,11 +57,11 @@ const Project = () => {
                         <h2>Bidding Projects</h2>
                         <div className="map-content-main">
                             <div className="map-under-content">
-                                <p>2,458</p>
+                                <p>0</p>
                                 <span>Update last day</span>
                             </div>
                             <div className="map-under-content">
-                                <p>2,458</p>
+                                <p>0</p>
                                 <span>Update last day</span>
                             </div>
                         </div>
@@ -73,11 +73,11 @@ const Project = () => {
                         <h2>All Projects</h2>
                         <div className="map-content-main">
                             <div className="map-under-content">
-                                <p>2,458</p>
+                                <p>{project.length}</p>
                                 <span>Update last day</span>
                             </div>
                             <div className="map-under-content">
-                                <p>2,458</p>
+                                <p>{project.length}</p>
                                 <span>Update last day</span>
                             </div>
                         </div>

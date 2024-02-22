@@ -122,7 +122,7 @@ function ArchitecturePage() {
                           {/* left side */}
                           <div className="sExToLeft">
 
-                            <img className="reshy" src={item?.img ? item?.img[0]?.url : hotel} alt="" />
+                            <img className="reshy" src={item?.img ? item?.img?.url : hotel} alt="" />
 
                             <div className="hotelName">
 
