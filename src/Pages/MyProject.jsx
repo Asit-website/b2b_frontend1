@@ -117,7 +117,7 @@ function MyProject({notify}) {
     return (
         <>
             <div className="myProjectWrap">
-
+                
                 <Sidebar />
 
                 <div className="myProjectRightCon">
@@ -127,10 +127,8 @@ function MyProject({notify}) {
 
 
                         <div className="myProjectSlide">
-
-
                             <h2>Welcome to BuildLink Network </h2>
-
+                            {/* <p>{allProject?.length}</p> */}
                             <div>
                                 <Splide options={splideOptions}>
                                     <SplideSlide>

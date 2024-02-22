@@ -12,7 +12,7 @@ import loc from "../image/loc.png"
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import technical23 from "../image/technician23.png"
-
+import senerio from '../image/senerio.jpg';
 
 function ArchitecturePage() {
 
@@ -49,7 +49,7 @@ function ArchitecturePage() {
 
           {/* right side */}
           <div className="arctS1Right">
-            <img src={technical} alt="" />
+            <img src={senerio} alt="" />
           </div>
         </div>
       </div>

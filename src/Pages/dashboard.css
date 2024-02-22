@@ -21,9 +21,27 @@
     flex-direction: column;
     gap: 34px;
     text-align: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
-
+.mainPart h2{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+.sjk{
+   border: 1px solid #D8DBEB; 
+   max-width: 540px;
+   width: 100%;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.sjk p{
+    color: #596080;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif !important;
+}
 @media (max-width:1200px) {
     .dashRightContain {
         max-width: 100%;
@@ -204,5 +222,19 @@
         font-size: 20px;
 
     }
-
+   
+}
+.spp{
+    display: block !important;
+}
+.spp1{
+    display: none !important;
+}
+@media only screen and (max-width:404px){
+    .spp{
+        display: none !important;
+    }
+    .spp1{
+        display: block !important;
+    }
 }

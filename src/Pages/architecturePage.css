@@ -1,7 +1,8 @@
 .arct_wrapS1{
     width: 100%;
     position: relative;
-    background-color: #333333;
+    /* background-color: #333333; */
+    background-color:#2C868F ;
     margin-top: 10rem;
 }
 .arct_wrapS1 .arct_ContS1{
@@ -41,10 +42,10 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-width: 721px;
+    /* max-width: 721px; */
 }
 .arct_wrapS1 .arctS1Right{
-    max-width: 166px;
+    /* max-width: 166px; */
    width: 100%;
 
 }
