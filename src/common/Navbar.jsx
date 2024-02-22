@@ -295,109 +295,109 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                             <div className="drop_c">
                               <div>
 
-                                <p onClick={()=>serviceHandler("Architects")} className="para_text">Architects</p>
+                                <p onClick={()=>{serviceHandler("Architects"); setPoint(!point)}} className="para_text">Architects</p>
 
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Consulting Engineers")} className="para_text">Consulting Engineers</p>
+                                <p onClick={()=>{serviceHandler("Consulting Engineers"); setPoint(!point)}} className="para_text">Consulting Engineers</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Interior Designers")} className="para_text">Interior Designers</p>
+                                <p onClick={()=>{serviceHandler("Interior Designers"); setPoint(!point)}} className="para_text">Interior Designers</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Fense")} className="para_text">Fense</p>
+                                <p onClick={()=>{serviceHandler("Fense"); setPoint(!point)}} className="para_text">Fense</p>
                               </div>
                               <div>
-                             <p    onClick={()=>serviceHandler("Main Contractors")} className="para_text">Main Contractors</p>
+                             <p    onClick={()=>{serviceHandler("Main Contractors"); setPoint(!point)}} className="para_text">Main Contractors</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Hauling & Excavating")} className="para_text">Hauling & Excavating</p>
+                                <p onClick={()=>{serviceHandler("Hauling & Excavating"); setPoint(!point)}} className="para_text">Hauling & Excavating</p>
                               </div>
                             </div>
 
                             <div className="drop_c">
                               <div>
-                                <p onClick={()=>serviceHandler("Main contractors")} className="para_text">Main contractors</p>
+                                <p onClick={()=>{serviceHandler("Main contractors"); setPoint(!point)}} className="para_text">Main contractors</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Hauling & excavating")} className="para_text">Hauling & excavating</p>
+                                <p onClick={()=>{serviceHandler("Hauling & excavating"); setPoint(!point)}} className="para_text">Hauling & excavating</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Structural contractors")} className="para_text">Structural contractors</p>
+                                <p onClick={()=>{serviceHandler("Structural contractors"); setPoint(!point)}} className="para_text">Structural contractors</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Masonry")} className="para_text">Masonry</p>
+                                <p onClick={()=>{serviceHandler("Masonry"); setPoint(!point)}} className="para_text">Masonry</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Carpenters")} className="para_text">Carpenters</p>
+                                <p onClick={()=>{serviceHandler("Carpenters"); setPoint(!point)}} className="para_text">Carpenters</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Civil contractors")} className="para_text">Civil contractors</p>
-                              </div>
-                            </div>
-
-                            <div className="drop_c">
-                              <div>
-                                <p onClick={()=>serviceHandler("Concrete pouring")} className="para_text">Concrete pouring</p>
-                              </div>
-                              <div>
-                                <p onClick={()=>serviceHandler("Mechanical contractors")} className="para_text">Mechanical contractors</p>
-                              </div>
-                              <div>
-                                <p onClick={()=>serviceHandler("Electrical contractors")} className="para_text">Electrical contractors</p>
-                              </div>
-                              <div>
-                                <p onClick={()=>serviceHandler("Plumbing contractors")} className="para_text">Plumbing contractors</p>
-                              </div>
-                              <div>
-                                <p onClick={()=>serviceHandler("Fire protection")} className="para_text">Fire protection</p>
-                              </div>
-                              <div>
-                                <p onClick={()=>serviceHandler("Roofing contractors")} className="para_text">Roofing contractors</p>
+                                <p onClick={()=>{serviceHandler("Civil contractors"); setPoint(!point)}} className="para_text">Civil contractors</p>
                               </div>
                             </div>
 
                             <div className="drop_c">
                               <div>
-                                <p onClick={()=>serviceHandler("Painting contractors")} className="para_text">Painting contractors</p>
+                                <p onClick={()=>{serviceHandler("Concrete pouring"); setPoint(!point)}} className="para_text">Concrete pouring</p>
+                              </div>
+                              <div>
+                                <p onClick={()=>{serviceHandler("Mechanical contractors"); setPoint(!point)}} className="para_text">Mechanical contractors</p>
+                              </div>
+                              <div>
+                                <p onClick={()=>{serviceHandler("Electrical contractors"); setPoint(!point)}} className="para_text">Electrical contractors</p>
+                              </div>
+                              <div>
+                                <p onClick={()=>{serviceHandler("Plumbing contractors"); setPoint(!point)}} className="para_text">Plumbing contractors</p>
+                              </div>
+                              <div>
+                                <p onClick={()=>{serviceHandler("Fire protection"); setPoint(!point)}} className="para_text">Fire protection</p>
+                              </div>
+                              <div>
+                                <p onClick={()=>{serviceHandler("Roofing contractors");setPoint(!point)}} className="para_text">Roofing contractors</p>
+                              </div>
+                            </div>
+
+                            <div className="drop_c">
+                              <div>
+                                <p onClick={()=>{serviceHandler("Painting contractors"); setPoint(!point)}} className="para_text">Painting contractors</p>
                               </div>
 
                               <div>
-                                <p onClick={()=>serviceHandler("Roofing contractors")} className="para_text">Roofing contractors</p>
+                                <p onClick={()=>{serviceHandler("Roofing contractors"); setPoint(!point)}} className="para_text">Roofing contractors</p>
                               </div>
                               <div>
                                 {" "}
-                                <p onClick={()=>serviceHandler("Glass works")} className="para_text">Glass works</p>
+                                <p onClick={()=>{serviceHandler("Glass works"); setPoint(!point)}} className="para_text">Glass works</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Drainage contractors")} className="para_text">Drainage contractors</p>
+                                <p onClick={()=>{serviceHandler("Drainage contractors"); setPoint(!point)}} className="para_text">Drainage contractors</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Garden /Lawn works")} className="para_text">Garden /Lawn works</p>
+                                <p onClick={()=>{serviceHandler("Garden /Lawn works"); setPoint(!point)}} className="para_text">Garden /Lawn works</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Wall /Ceiling")} className="para_text">Wall /Ceiling</p>
+                                <p onClick={()=>{serviceHandler("Wall /Ceiling"); setPoint(!point)}} className="para_text">Wall /Ceiling</p>
                               </div>
                             </div>
 
                             <div className="drop_c">
                               <div>
-                                <p onClick={()=>serviceHandler("Insulation")} className="para_text">Insulation</p>
+                                <p onClick={()=>{serviceHandler("Insulation"); setPoint(!point)}} className="para_text">Insulation</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Realtors")} className="para_text">Realtors</p>
+                                <p onClick={()=>{serviceHandler("Realtors"); setPoint(!point)}} className="para_text">Realtors</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Lenders")} className="para_text">Lenders</p>
+                                <p onClick={()=>{serviceHandler("Lenders"); setPoint(!point)}} className="para_text">Lenders</p>
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Investors")} className="para_text">Investors</p>
+                                <p onClick={()=>{serviceHandler("Investors"); setPoint(!point)}} className="para_text">Investors</p>
                               </div>
                               <div>
-                                <p  onClick={()=>serviceHandler("Owners")} className="para_text">Owners</p>{" "}
+                                <p  onClick={()=>{serviceHandler("Owners"); setPoint(!point)}} className="para_text">Owners</p>{" "}
                               </div>
                               <div>
-                                <p onClick={()=>serviceHandler("Roofing contractors")} className="para_text">Roofing contractors</p>
+                                <p onClick={()=>{serviceHandler("Roofing contractors"); setPoint(!point)}} className="para_text">Roofing contractors</p>
                               </div>
                             </div>
                           </div>
