@@ -62,12 +62,11 @@ const Home = ({pop,setPop,notify }) => {
     }
    }
 
-
    const getAllLocation = async()=>{
     try{
 
       const ans = await fetchAllLocation();
-
+       console.log("loc" ,ans);
      if(ans?.status){
 
        setAllLocation(ans?.locations);
@@ -91,8 +90,7 @@ const Home = ({pop,setPop,notify }) => {
 
       if (ans?.status) {
       
-        // navigate("/architecturePage", { state: { data: ans?.data, title: searchArch }});
-      
+        navigate("/architecturePage", { state: { data: ans?.data, title: searchLocation }});      
         } else {
         alert("Something went wrong");
       }
@@ -207,6 +205,16 @@ const Home = ({pop,setPop,notify }) => {
                 </form>
               </div> */}
 
+<select className="searchLocation" required name="searchLocation" id="" value={searchLocation} onChange={(e)=>setSearchLocation(e.target.value)}>
+                  <option value="Search Location">Search Location </option>
+                  {
+                    allLocation.map((item ,index)=>(
+                      <option value={item} key={index}>{item}</option>
+                    ))
+                  }
+                  
+                </select>
+
             
               <div className="serchFind">
                 <img src={find} alt="" />
@@ -223,30 +231,20 @@ const Home = ({pop,setPop,notify }) => {
                 {/* <img src={find2} alt="" /> */}
               </div>
 
-              <button onClick={getUsersByCategoryHandler}>
+              <button onClick={()=>{
+                if(searchLocation !== ""){
+                  getProjectByLocation();
+                }
+                else {
+                  getUsersByCategoryHandler();
+                }
+              }}>
                 <span>Search</span>
               </button>
               
             </div>
 
-            <div className="home_banner_buttons">
           
-            <select className="searchLocation" required name="searchLocation" id="" value={searchLocation} onChange={(e)=>setSearchLocation(e.target.value)}>
-                  <option value="Search Location">Search Location </option>
-                  {
-                    allLocation.map((item ,index)=>(
-                      <option value={item} key={index}>{item}</option>
-                    ))
-                  }
-                  
-                </select>
-
-              <button onClick={getProjectByLocation}>
-                <span>Search</span>
-              </button>
-              
-            </div>
-
           </div>
 
           <div className="home_banner2">

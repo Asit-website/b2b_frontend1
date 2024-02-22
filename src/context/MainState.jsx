@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MainContext from "./MainContext";
 
-// const baseUrl = 'http://localhost:5000';
-const baseUrl = 'https://backend.bln.obtechenterprise.com/';
+const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'https://backend.bln.obtechenterprise.com/';
 
 
 
@@ -349,6 +349,7 @@ const MainState = (props) => {
 
 
   const fetchUserCategory = async ({ category }) => {
+    
     try {
       const resp = await fetch(`${baseUrl}/user/getUserByCategory/${category}`, {
         method: 'GET',
@@ -356,6 +357,8 @@ const MainState = (props) => {
           'Content-Type': 'application/json',
         },
       });
+
+      console.log("res" ,resp);
 
       if (!resp.ok) {
         throw new Error('Network response was not ok');
