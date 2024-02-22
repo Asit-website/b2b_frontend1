@@ -54,7 +54,9 @@ function Viewproject() {
                                     <p><spn>{data?.startDate}</spn></p>
                                 </div>
                                 <div className="viewproject-map-img">
-                                    <img src={viewpagemapimg} alt="" />
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d64512822.89599915!2d176.4715907466437!3d9.284417597417535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1708612073077!5m2!1sen!2sin" width="550" height="228"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                    {/* <img src={viewpagemapimg} alt="" /> */}
                                     <p>{data?.location}</p>
                                 </div>
                                 <div className="">

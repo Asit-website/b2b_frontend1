@@ -35,7 +35,9 @@ import ProjectDetail from "./components/ProjectDetail";
 import axios from "axios";
 import SuccessPage from "./Pages/Success";
 import CancelPage from "./Pages/Cancel";
-
+import Message from "./components/Message";
+import TermsAndCondition from "./components/TermsAndCondition";
+import Privacy from "./components/Privacy";
 
 
 function App() {
@@ -102,7 +104,7 @@ function App() {
 const getUser = async()=>{
   try{
     
-      const resp = await axios.get("https://backend.bln.obtechenterprise.com/login/success" , {withCredentials:true});
+      const resp = await axios.get("http://localhost:5000/login/success" , {withCredentials:true});
     
     if(resp.status === 200){
       setUserData(resp?.data?.user);
@@ -165,6 +167,9 @@ useEffect(()=>{
             <Route path="/biding" element={<Biding />} />
             <Route path="/project" element={<Project/>}/>
             <Route path="/project/:id" element={<Viewproject/>}/>
+            <Route path="/success" element={<Message/>}/>
+            <Route path="/terms" element={<TermsAndCondition/>}/>
+            <Route path="/privacy" element={<Privacy/>}/>
             {user && (
               <>
                 {" "}

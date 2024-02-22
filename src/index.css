@@ -4662,3 +4662,87 @@ p {
   margin-right: 10px;
   margin-left: -14px;
 } */
+.thank_yoiu{
+  margin-top: 11rem;
+  text-align: center;
+  display: flex;align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.thank_msg{
+  margin-top: 50px;
+}
+.thank_msg h2{
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+}
+.terms{
+  margin-top: 10rem;
+}
+.terms{
+  background-color: white;
+}
+.main_terms{
+  max-width: 1440px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 60px 120px;
+}
+.main_terms h2{
+   font-size: 32px;
+   font-weight: 700;
+}
+.main_terms p{
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 30px;
+}
+.privacy_policy{
+  margin-top: 10rem;
+}
+.privacy_policy{
+  background-color: #fff;
+}
+.privacy_main{
+  max-width: 1440px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 50px 120px;
+}
+.privacy_main h2{
+  font-size: 32px;
+  font-weight: 700;
+}
+@media only screen and (max-width:880px){
+  .viewproject-main1{
+    padding: 50px 80px;
+  }
+  .main_terms{
+    padding: 60px 30px;
+  }
+  .privacy_main{
+    padding: 50px 30px;
+  }
+  .viewproject-flex1{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .viewproject-right-main{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  .viewproject-left-main{
+    width: 100%;
+  }
+}
+@media only screen and (max-width:450px){
+  .viewproject-main1{
+    padding: 50px 50px;
+  }
+  
+}
