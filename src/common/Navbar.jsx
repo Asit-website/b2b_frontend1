@@ -408,7 +408,7 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                   
                 </li>
                 </OutsideClickHandler>
-                <li><a href="">Manufacturers</a></li>
+                <li><NavLink to="/manufacture">Manufacturers</NavLink></li>
                 <li><NavLink to="/Project">Projects</NavLink></li>
                 <li><NavLink to="/budget">Budgeting</NavLink></li>
                 <li><NavLink to="/pricing">Subscription</NavLink></li>

@@ -44,7 +44,7 @@ const Pricing = () => {
     "content-type": "application/json"
   }
 
-  const response = await fetch("http://localhost:5000/api/create-checkout-session" , {
+  const response = await fetch("https://backend.bln.obtechenterprise.com/api/create-checkout-session" , {
     method:"POST" ,
     headers: headers , 
     body: JSON.stringify(body)
