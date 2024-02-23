@@ -305,20 +305,20 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                                 <p onClick={()=>{serviceHandler("Interior Designers"); setPoint(!point)}} className="para_text">Interior Designers</p>
                               </div>
                               <div>
-                                <p onClick={()=>{serviceHandler("Fense"); setPoint(!point)}} className="para_text">Fense</p>
+                                <p onClick={()=>{serviceHandler("Fense"); setPoint(!point)}} className="para_text">Fence</p>
                               </div>
                               <div>
                              <p    onClick={()=>{serviceHandler("Main Contractors"); setPoint(!point)}} className="para_text">Main Contractors</p>
                               </div>
-                              <div>
+                              {/* <div>
                                 <p onClick={()=>{serviceHandler("Hauling & Excavating"); setPoint(!point)}} className="para_text">Hauling & Excavating</p>
-                              </div>
+                              </div> */}
                             </div>
 
                             <div className="drop_c">
-                              <div>
+                              {/* <div>
                                 <p onClick={()=>{serviceHandler("Main contractors"); setPoint(!point)}} className="para_text">Main contractors</p>
-                              </div>
+                              </div> */}
                               <div>
                                 <p onClick={()=>{serviceHandler("Hauling & excavating"); setPoint(!point)}} className="para_text">Hauling & excavating</p>
                               </div>
@@ -352,9 +352,9 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                               <div>
                                 <p onClick={()=>{serviceHandler("Fire protection"); setPoint(!point)}} className="para_text">Fire protection</p>
                               </div>
-                              <div>
+                              {/* <div>
                                 <p onClick={()=>{serviceHandler("Roofing contractors");setPoint(!point)}} className="para_text">Roofing contractors</p>
-                              </div>
+                              </div> */}
                             </div>
 
                             <div className="drop_c">
@@ -362,10 +362,10 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
                                 <p onClick={()=>{serviceHandler("Painting contractors"); setPoint(!point)}} className="para_text">Painting contractors</p>
                               </div>
 
-                              <div>
+                              {/* <div>
                                 <p onClick={()=>{serviceHandler("Roofing contractors"); setPoint(!point)}} className="para_text">Roofing contractors</p>
-                              </div>
-                              <div>
+                              </div> */}
+                              <div>  
                                 {" "}
                                 <p onClick={()=>{serviceHandler("Glass works"); setPoint(!point)}} className="para_text">Glass works</p>
                               </div>
