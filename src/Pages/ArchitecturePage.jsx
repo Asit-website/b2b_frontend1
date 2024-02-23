@@ -49,6 +49,7 @@ function ArchitecturePage() {
 
           {/* right side */}
           <div className="arctS1Right">
+            
             {/* <img src={senerio} alt="" /> */}
           </div>
         </div>
