@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import left1 from "../image/home_left1.png";
 import join1 from "../image/join1.png";
 import join2 from "../image/join2.png";
@@ -16,94 +16,156 @@ import rating from "../image/rating.png"
 import ring1 from '../image/ring1.svg'
 import ring2 from '../image/ring2.svg'
 import ring3 from '../image/ring3.svg'
+import ss from '../image/shs.png';
+import sks from '../image/sks.png';
 import { useMain } from "../hooks/useMain";
 import { useNavigate } from "react-router-dom";
+// import { Splide, SplideSlide } from "@splidejs/react-splide";
+// import "@splidejs/react-splide/css";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const data = [
-  "Civil contractors","Architects","Consulting Engineers","Interior Designers","Fense","Main Contractors","Hauling & Excavating","Main contractors","Hauling & excavating","Structural contractors","Masonry","Carpenters","Concrete pouring","Mechanical contractors","Electrical contractors","Plumbing contractors","Fire protection","Roofing contractors","Painting contractors","Glass works","Drainage contractors","Garden /Lawn works","Wall Ceiling","Insulation","Realtors","Lenders","Investors","Owners"
+  "Civil contractors", "Architects", "Consulting Engineers", "Interior Designers", "Fence", "Main Contractors", "Hauling & Excavating", "Structural contractors", "Masonry", "Carpenters", "Concrete pouring", "Mechanical contractors", "Electrical contractors", "Plumbing contractors", "Fire protection", "Roofing contractors", "Painting contractors", "Glass works", "Drainage contractors", "Garden /Lawn works", "Wall Ceiling", "Insulation", "Realtors", "Lenders", "Investors", "Owners"
 ]
 
 
-const Home = ({pop,setPop,notify }) => {
-  const { fetchUserCategory , fetchAllLocation , fetchProjectByLoc } = useMain();
+const Home = ({ pop, setPop, notify }) => {
+  const [open, setOpen] = useState(false);
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
+  const [open4, setOpen4] = useState(false);
+  const [open5, setOpen5] = useState(false);
+  const [open6, setOpen6] = useState(false);
+  const [open7, setOpen7] = useState(false);
+  const [open8, setOpen8] = useState(false);
+  const [open9, setOpen9] = useState(false);
+  const [open10, setOpen10] = useState(false);
+  const [open11, setOpen11] = useState(false);
+  const [open12, setOpen12] = useState(false);
+  const stylePerr = {
+    display: open ? "block" : "none",
+  };
+  const stylePerr1 = {
+    display: open1 ? "block" : "none",
+  };
+  const stylePerr2 = {
+    display: open2 ? "block" : "none",
+  };
+  const stylePerr3 = {
+    display: open3 ? "block" : "none",
+  };
+  const stylePerr4 = {
+    display: open4 ? "block" : "none",
+  };
+  const stylePerr5 = {
+    display: open5 ? "block" : "none",
+  };
+  const stylePerr6 = {
+    display: open6 ? "block" : "none",
+  };
+  const stylePerr7 = {
+    display: open7 ? "block" : "none",
+  };
+  const stylePerr8 = {
+    display: open8 ? "block" : "none",
+  };
+  const stylePerr9 = {
+    display: open9 ? "block" : "none",
+  };
+  const stylePerr10 = {
+    display: open10 ? "block" : "none",
+  };
+  const stylePerr11 = {
+    display: open11 ? "block" : "none",
+  };
+  const stylePerr12 = {
+    display: open12 ? "block" : "none",
+  };
+
+  const { fetchUserCategory, fetchAllLocation, fetchProjectByLoc } = useMain();
 
   const navigate = useNavigate();
 
   const [openModal, setOpenModal] = useState(false);
 
-  const [searchArch , setSearchArch] = useState("");
+  const [searchArch, setSearchArch] = useState("");
 
-  const [searchLocation , setSearchLocation] = useState("");
+  const [searchLocation, setSearchLocation] = useState("");
 
-  const [allLocation , setAllLocation] = useState([]);
+  const [allLocation, setAllLocation] = useState([]);
 
 
-   const getUsersByCategoryHandler = async()=>{
-    try{
+  const getUsersByCategoryHandler = async () => {
+    try {
 
-      if(searchArch === ""){
-        return 
+      if (searchArch === "") {
+        return
       }
       const ans = await fetchUserCategory({
-      category:searchArch
+        category: searchArch
       });
 
       if (ans?.status) {
-      
-        navigate("/architecturePage", { state: { data: ans?.data, title: searchArch }});
-      
-        } else {
+
+        navigate("/architecturePage", { state: { data: ans?.data, title: searchArch } });
+
+      } else {
         alert("Something went wrong");
       }
 
 
-    } catch(error){
+    } catch (error) {
       console.log(error);
     }
-   }
+  }
 
-   const getAllLocation = async()=>{
-    try{
+  const getAllLocation = async () => {
+    try {
 
       const ans = await fetchAllLocation();
-       console.log("loc" ,ans);
-     if(ans?.status){
+      console.log("loc", ans);
+      if (ans?.status) {
 
-       setAllLocation(ans?.locations);
+        setAllLocation(ans?.locations);
       }
 
 
-    } catch(error){
+    } catch (error) {
       console.log(error);
     }
-   }
+  }
 
-   const getProjectByLocation = async()=>{
-    try{
+  const getProjectByLocation = async () => {
+    try {
 
-      if(searchLocation === ""){
-        return 
+      if (searchLocation === "") {
+        return
       }
       const ans = await fetchProjectByLoc({
-      location:searchLocation
+        location: searchLocation
       });
 
       if (ans?.status) {
-      
-        navigate("/architecturePage", { state: { data: ans?.data, title: searchLocation }});      
-        } else {
+
+        navigate("/architecturePage", { state: { data: ans?.data, title: searchLocation } });
+      } else {
         alert("Something went wrong");
       }
 
 
-    } catch(error){
+    } catch (error) {
       console.log(error);
     }
-   }
-  
-   useEffect(()=>{
+  }
+
+  useEffect(() => {
     getAllLocation();
-   },[])
+  }, [])
+
+
 
   return (
     <>
@@ -205,34 +267,34 @@ const Home = ({pop,setPop,notify }) => {
                 </form>
               </div> */}
 
-<select className="searchLocation" required name="searchLocation" id="" value={searchLocation} onChange={(e)=>setSearchLocation(e.target.value)}>
-                  <option value="Search Location">Search Location </option>
-                  {
-                    allLocation.map((item ,index)=>(
-                      <option value={item} key={index}>{item}</option>
-                    ))
-                  }
-                  
-                </select>
+              <select className="searchLocation" required name="searchLocation" id="" value={searchLocation} onChange={(e) => setSearchLocation(e.target.value)}>
+                <option value="Search Location">Search Location </option>
+                {
+                  allLocation.map((item, index) => (
+                    <option value={item} key={index}>{item}</option>
+                  ))
+                }
 
-            
+              </select>
+
+
               <div className="serchFind">
                 <img src={find} alt="" />
-                <select required name="searchArch" id="" value={searchArch} onChange={(e)=>setSearchArch(e.target.value)}>
+                <select required name="searchArch" id="" value={searchArch} onChange={(e) => setSearchArch(e.target.value)}>
                   <option value="Search Architects">Search Architects </option>
                   {
-                    data.map((item ,index)=>(
+                    data.map((item, index) => (
                       <option value={item} key={index}>{item}</option>
                     ))
                   }
-                  
+
                 </select>
-               
+
                 {/* <img src={find2} alt="" /> */}
               </div>
 
-              <button onClick={()=>{
-                if(searchLocation !== ""){
+              <button onClick={() => {
+                if (searchLocation !== "") {
                   getProjectByLocation();
                 }
                 else {
@@ -241,10 +303,10 @@ const Home = ({pop,setPop,notify }) => {
               }}>
                 <span>Search</span>
               </button>
-              
+
             </div>
 
-          
+
           </div>
 
           <div className="home_banner2">
@@ -408,9 +470,9 @@ const Home = ({pop,setPop,notify }) => {
                       stroke-width="0.5"
                     />
                   </svg>
-                  <p>Fense</p>
+                  <p>Fence</p>
                 </div>
-                <div className="inner-card">
+                <div style={{ visibility: "hidden" }} className="inner-card">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -435,50 +497,14 @@ const Home = ({pop,setPop,notify }) => {
                   </svg>
                   <p>Main Contractors</p>
                   <div className="newi">
-                      <p>New</p>
+                    <p>New</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="card1">
               <div className="card1_content">
-                <div className="inner-card">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6.00016"
-                      cy="5.99998"
-                      r="2.22727"
-                      fill="#2C868F"
-                      stroke="#2C868F"
-                    />
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="5.75"
-                      stroke="#2C868F"
-                      stroke-width="0.5"
-                    />
-                  </svg>
-                  <p>Hauling & Excavating</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <path
-                      d="M8.39998 8L5.33331 4.93333L6.26665 4L10.2666 8L6.26665 12L5.33331 11.0667L8.39998 8Z"
-                      fill="#fff"
-                    />
-                  </svg>
-                </div>
+
                 <div className="inner-card">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -504,7 +530,7 @@ const Home = ({pop,setPop,notify }) => {
                   </svg>
                   <p>Main Contractors</p>
                   <div className="newi">
-                      <p>New</p>
+                    <p>New</p>
                   </div>
                 </div>
                 <div className="inner-card">
@@ -581,6 +607,43 @@ const Home = ({pop,setPop,notify }) => {
                     />
                   </svg>
                   <p>Masonry</p>
+                </div>
+                <div style={{ visibility: "hidden" }} className="inner-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                  >
+                    <circle
+                      cx="6.00016"
+                      cy="5.99998"
+                      r="2.22727"
+                      fill="#2C868F"
+                      stroke="#2C868F"
+                    />
+                    <circle
+                      cx="6"
+                      cy="6"
+                      r="5.75"
+                      stroke="#2C868F"
+                      stroke-width="0.5"
+                    />
+                  </svg>
+                  <p>Hauling & Excavating</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M8.39998 8L5.33331 4.93333L6.26665 4L10.2666 8L6.26665 12L5.33331 11.0667L8.39998 8Z"
+                      fill="#fff"
+                    />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -844,7 +907,7 @@ const Home = ({pop,setPop,notify }) => {
                       <p>New</p>
                   </div> */}
                 </div>
-                <div className="inner-card">
+                <div style={{ opacity: "0" }} className="inner-card">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -1126,7 +1189,7 @@ const Home = ({pop,setPop,notify }) => {
                   </svg>
                   <p>Owners</p>
                 </div>
-                <div style={{visibility:"hidden"}} className="inner-card">
+                <div style={{ visibility: "hidden" }} className="inner-card">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -1194,7 +1257,7 @@ const Home = ({pop,setPop,notify }) => {
                   </p>
                 </div>
                 <div className="back_section1">
-                    <img src={ring1} alt="" />
+                  <img src={ring1} alt="" />
                 </div>
               </div>
             </div>
@@ -1204,11 +1267,11 @@ const Home = ({pop,setPop,notify }) => {
                   <span>Find</span>
                   <h2 className="narrows">Narrow results and shortlist top picks</h2>
                   <p>
-                  Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
+                    Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
                   </p>
                 </div>
                 <div className="back_section2">
-                   <img src={ring2} alt="" />
+                  <img src={ring2} alt="" />
                 </div>
               </div>
             </div>
@@ -1218,16 +1281,49 @@ const Home = ({pop,setPop,notify }) => {
                   <span>Decide</span>
                   <h2 className="farrows">Read in-depth verified reviews</h2>
                   <p>
-                  Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
+                    Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
                   </p>
                 </div>
                 <div className="back_section3">
-                    <img src={ring3} alt="" />
+                  <img src={ring3} alt="" />
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="building_man">
+          <div className="main_builds">
+               <div className="read_in">
+                    <h2>Read in-depth verified reviews</h2>
+                    <p>Access reliable insights with in-depth verified reviews. Make informed decisions by leveraging firsthand experiences from industry professionals, ensuring confidence in your choices within the construction marketplace.</p>
+               </div>
+          </div>
+      </div>
+
+      <div className="fielding_man">
+          <div className="main_fileding">
+               <div className="read_in">
+                   <h2>Narrow results and shortlist top picks</h2>
+                   <p>Effortlessly find the best fit on BuildLink Network. Narrow results using smart filters, ensuring you shortlist top picks tailored to your construction needs. Streamline your decision-making for project success.</p>
+                   <div className="read_img">
+                      <img src={ss} alt="shs" />
+                   </div>
+               </div>
+          </div>
+      </div>
+
+      <div className="fielding_man fielding_man1">
+          <div className="main_fileding">
+               <div className="read_in">
+                   <h2>Browse Over 100K service providers.</h2>
+                   <p>Explore a vast network of service providers. Discover industry professionals, suppliers, and contractors to fulfill your construction needs efficiently and connect with experts in the field.</p>
+                   <div className="read_img">
+                      <img src={sks} alt="shs" />
+                   </div>
+               </div>
+          </div>
       </div>
 
       <div id="home_solution">
@@ -1292,183 +1388,651 @@ const Home = ({pop,setPop,notify }) => {
               </div>
             </div>
           </div>
-          <div className="Home_marking">
 
-            <div className="Home_marking_right">
-              <img src={right1} alt="" />
-            </div>
 
-            <div className="Home_marking_left">
+          <Carousel
+            autoPlay="true"
+            infiniteLoop="true"
+            interval="4000"
+            autoFocus="true"
 
-              <div className="Home_marking_content">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="52"
-                  height="42"
-                  viewBox="0 0 52 42"
-                  fill="none"
-                >
-                  <path
-                    d="M29.5887 42V29.3706C29.5887 21.4406 31.4441 14.979 35.1549 9.98601C38.9634 4.8951 44.5784 1.56643 52 0V9.54545C48.6798 10.3287 46.0432 11.7972 44.0901 13.951C42.1371 16.007 40.8676 18.5035 40.2817 21.4406H49.0704V42H29.5887ZM0 42V29.3706C0 21.4406 1.8554 14.979 5.5662 9.98601C9.37465 4.8951 14.9408 1.56643 22.2648 0V9.54545C18.9446 10.3287 16.308 11.7972 14.3549 13.951C12.4019 16.007 11.1324 18.5035 10.5465 21.4406H19.3352V42H0Z"
-                    fill="#161B32"
-                  />
-                </svg>
-                <p>
-                  BuildLink Network makes it easy to track estimates and keep in
-                  touch with general contractors.
-                </p>
-                <span>BEN TERRY, Director of Marketing</span>
+          >
+            <div className="Home_marking">
+
+              <div className="Home_marking_right">
+                <img src={right1} alt="" />
+              </div>
+
+              <div className="Home_marking_left">
+
+                <div className="Home_marking_content">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="52"
+                    height="42"
+                    viewBox="0 0 52 42"
+                    fill="none"
+                  >
+                    <path
+                      d="M29.5887 42V29.3706C29.5887 21.4406 31.4441 14.979 35.1549 9.98601C38.9634 4.8951 44.5784 1.56643 52 0V9.54545C48.6798 10.3287 46.0432 11.7972 44.0901 13.951C42.1371 16.007 40.8676 18.5035 40.2817 21.4406H49.0704V42H29.5887ZM0 42V29.3706C0 21.4406 1.8554 14.979 5.5662 9.98601C9.37465 4.8951 14.9408 1.56643 22.2648 0V9.54545C18.9446 10.3287 16.308 11.7972 14.3549 13.951C12.4019 16.007 11.1324 18.5035 10.5465 21.4406H19.3352V42H0Z"
+                      fill="#161B32"
+                    />
+                  </svg>
+                  <p>
+                    BuildLink Network transformed how I find projects. The targeted matching system connected me with ideal opportunities, and the collaborative network boosted my business. A game-changer for residential contractors!
+                  </p>
+                  <span>Jane T., Residential Contractor</span>
+                </div>
+
               </div>
 
             </div>
 
-          </div>
+
+            <div className="Home_marking">
+
+              <div className="Home_marking_right">
+                <img src={right1} alt="" />
+              </div>
+
+              <div className="Home_marking_left">
+
+                <div className="Home_marking_content">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="52"
+                    height="42"
+                    viewBox="0 0 52 42"
+                    fill="none"
+                  >
+                    <path
+                      d="M29.5887 42V29.3706C29.5887 21.4406 31.4441 14.979 35.1549 9.98601C38.9634 4.8951 44.5784 1.56643 52 0V9.54545C48.6798 10.3287 46.0432 11.7972 44.0901 13.951C42.1371 16.007 40.8676 18.5035 40.2817 21.4406H49.0704V42H29.5887ZM0 42V29.3706C0 21.4406 1.8554 14.979 5.5662 9.98601C9.37465 4.8951 14.9408 1.56643 22.2648 0V9.54545C18.9446 10.3287 16.308 11.7972 14.3549 13.951C12.4019 16.007 11.1324 18.5035 10.5465 21.4406H19.3352V42H0Z"
+                      fill="#161B32"
+                    />
+                  </svg>
+                  <p>
+                    As a commercial supplier, BuildLink Network amplified our visibility. The marketplace showcases and dynamic features enhanced our product reach. This platform is pivotal for expanding our business in the industry.
+                  </p>
+                  <span>Mike S., Commercial Supplier</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div className="Home_marking">
+
+              <div className="Home_marking_right">
+                <img src={right1} alt="" />
+              </div>
+
+              <div className="Home_marking_left">
+
+                <div className="Home_marking_content">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="52"
+                    height="42"
+                    viewBox="0 0 52 42"
+                    fill="none"
+                  >
+                    <path
+                      d="M29.5887 42V29.3706C29.5887 21.4406 31.4441 14.979 35.1549 9.98601C38.9634 4.8951 44.5784 1.56643 52 0V9.54545C48.6798 10.3287 46.0432 11.7972 44.0901 13.951C42.1371 16.007 40.8676 18.5035 40.2817 21.4406H49.0704V42H29.5887ZM0 42V29.3706C0 21.4406 1.8554 14.979 5.5662 9.98601C9.37465 4.8951 14.9408 1.56643 22.2648 0V9.54545C18.9446 10.3287 16.308 11.7972 14.3549 13.951C12.4019 16.007 11.1324 18.5035 10.5465 21.4406H19.3352V42H0Z"
+                      fill="#161B32"
+                    />
+                  </svg>
+                  <p>
+                    BuildLink Network's insights are invaluable. The data-driven approach helped us anticipate market trends, leading to smarter decisions. The platform is an essential tool for project managers navigating the construction landscape.
+                  </p>
+                  <span>Sarah B., Project Manager</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div className="Home_marking">
+
+<div className="Home_marking_right">
+  <img src={right1} alt="" />
+</div>
+
+<div className="Home_marking_left">
+
+  <div className="Home_marking_content">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="52"
+      height="42"
+      viewBox="0 0 52 42"
+      fill="none"
+    >
+      <path
+        d="M29.5887 42V29.3706C29.5887 21.4406 31.4441 14.979 35.1549 9.98601C38.9634 4.8951 44.5784 1.56643 52 0V9.54545C48.6798 10.3287 46.0432 11.7972 44.0901 13.951C42.1371 16.007 40.8676 18.5035 40.2817 21.4406H49.0704V42H29.5887ZM0 42V29.3706C0 21.4406 1.8554 14.979 5.5662 9.98601C9.37465 4.8951 14.9408 1.56643 22.2648 0V9.54545C18.9446 10.3287 16.308 11.7972 14.3549 13.951C12.4019 16.007 11.1324 18.5035 10.5465 21.4406H19.3352V42H0Z"
+        fill="#161B32"
+      />
+    </svg>
+    <p>
+    BuildLink Network is my go-to for industry connections. The collaborative networking feature has opened doors to meaningful partnerships. It's more than a platform; it's a community that fuels success in construction.
+    </p>
+    <span>John M., Construction Professional</span>
+  </div>
+
+</div>
+
+</div>
+          </Carousel>
+
+
         </div>
       </div>
 
       {/* new sECTION */}
       <div id="shareExpe">
 
-       <div className="shareExCont">
-       
-       {/* left side */}
-       <div className="shExLeft">
+        <div className="shareExCont">
 
-        <h2>Share your experience and make B2B buying more transparent</h2>
-        <p>Leave a review of the business partners you’ve worked with over the years. Make your voice heard and help other business leaders make a confident choice.
-</p>
+          {/* left side */}
+          <div className="shExLeft">
 
-<button><span>Write a Review</span></button>
-        
-       </div>
+            <h2>Share your experience and make B2B buying more transparent</h2>
+            <p>Leave a review of the business partners you’ve worked with over the years. Make your voice heard and help other business leaders make a confident choice.
+            </p>
 
-       {/* right side */}
-       <div className="shExRight">
-
-        <div className="shEXrIcONT">
-
-       
-
-        {/* left side */}
-        <div className="shERiLef">
-
-          {/* first  */}
-          <div className="sinRev">
-                 
-                 <p className="headRev">As a project manager, I've used various B2B construction platforms, but this website stands out for its user-friendly interface. The layout is intuitive, making it incredibly easy to navigate through different services and products. Finding what I need takes minimal time, and the detailed descriptions of each item help in making the right choices for our projects. The efficiency and ease of use have made this my go-to resource for construction needs.</p>
-
-                 <div className="ReProRating">
-
-                <div className="rePro">
-
-                  <img src={p1} alt="" />
-                  <span>James Peterson</span>
-              
-
-                 </div>
-
-                 <div className="rating">
-                  <img src={rating} alt="" />
-                  <span>04/08/23</span>
-                 </div>
-                 
-                 </div>
-
-                 
+            <button><span>Write a Review</span></button>
 
           </div>
 
-          {/* second  */}
-          <div className="sinRev">
-                 
-                 <p className="headRev">As a project manager, I've used various B2B construction platforms, but this website stands out for its user-friendly interface. The layout is intuitive, making it incredibly easy to navigate through different services and products. Finding what I need takes minimal time, and the detailed descriptions of each item help in making the right choices for our projects. The efficiency and ease of use have made this my go-to resource for construction needs.</p>
+          {/* right side */}
+          <div className="shExRight">
 
-                 <div className="ReProRating">
+            <div className="shEXrIcONT">
 
-                <div className="rePro">
 
-                  <img src={p1} alt="" />
-                  <span>Carlos Alvarez</span>
-              
 
-                 </div>
+              {/* left side */}
+              <div className="shERiLef">
 
-                 <div className="rating">
-                  <img src={rating} alt="" />
-                  <span>04/08/23</span>
-                 </div>
-                 
-                 </div>
+                {/* first  */}
+                <div className="sinRev">
 
-                 
+                  <p className="headRev">As a project manager, I've used various B2B construction platforms, but this website stands out for its user-friendly interface. The layout is intuitive, making it incredibly easy to navigate through different services and products. Finding what I need takes minimal time, and the detailed descriptions of each item help in making the right choices for our projects. The efficiency and ease of use have made this my go-to resource for construction needs.</p>
+
+                  <div className="ReProRating">
+
+                    <div className="rePro">
+
+                      <img src={p1} alt="" />
+                      <span>James Peterson</span>
+
+
+                    </div>
+
+                    <div className="rating">
+                      <img src={rating} alt="" />
+                      <span>04/08/23</span>
+                    </div>
+
+                  </div>
+
+
+
+                </div>
+
+                {/* second  */}
+                <div className="sinRev">
+
+                  <p className="headRev">As a project manager, I've used various B2B construction platforms, but this website stands out for its user-friendly interface. The layout is intuitive, making it incredibly easy to navigate through different services and products. Finding what I need takes minimal time, and the detailed descriptions of each item help in making the right choices for our projects. The efficiency and ease of use have made this my go-to resource for construction needs.</p>
+
+                  <div className="ReProRating">
+
+                    <div className="rePro">
+
+                      <img src={p1} alt="" />
+                      <span>Carlos Alvarez</span>
+
+
+                    </div>
+
+                    <div className="rating">
+                      <img src={rating} alt="" />
+                      <span>04/08/23</span>
+                    </div>
+
+                  </div>
+
+
+
+                </div>
+
+              </div>
+
+              {/* right side */}
+              <div className="shErRig">
+
+                {/* first  */}
+                <div className="sinRev">
+
+                  <p className="headRev">The user experience on this B2B construction website is top-notch. Navigating through various services and finding exactly what I need is incredibly straightforward.</p>
+
+                  <div className="ReProRating">
+
+                    <div className="rePro">
+
+                      <img src={p1} alt="" />
+                      <span>Anita Desai</span>
+
+
+                    </div>
+
+                    <div className="rating">
+                      <img src={rating} alt="" />
+                      <span>04/08/23</span>
+                    </div>
+
+                  </div>
+
+
+
+                </div>
+
+                {/* second  */}
+                <div className="sinRev">
+
+                  <p className="headRev">As a project manager, I've used various B2B construction platforms, but this website stands out for its user-friendly interface. The layout is intuitive, making it incredibly easy to navigate through different services and products. Finding what I need takes minimal time, and the detailed descriptions of each item help in making the right choices for our projects. The efficiency and ease of use have made this my go-to resource for construction needs.</p>
+
+                  <div className="ReProRating">
+
+                    <div className="rePro">
+
+                      <img src={p1} alt="" />
+                      <span>Grace Liu</span>
+
+
+                    </div>
+
+                    <div className="rating">
+                      <img src={rating} alt="" />
+                      <span>04/08/23</span>
+                    </div>
+
+                  </div>
+
+
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
-        {/* right side */}
-        <div className="shErRig">
+      </div>
 
-          {/* first  */}
-          <div className="sinRev">
-                 
-                 <p className="headRev">The user experience on this B2B construction website is top-notch. Navigating through various services and finding exactly what I need is incredibly straightforward.</p>
-
-                 <div className="ReProRating">
-
-                <div className="rePro">
-
-                  <img src={p1} alt="" />
-                  <span>Anita Desai</span>
-              
-
-                 </div>
-
-                 <div className="rating">
-                  <img src={rating} alt="" />
-                  <span>04/08/23</span>
-                 </div>
-                 
-                 </div>
-
-                 
-
+      <div className="setacv" id="Accordion_section_pricing">
+        <div className="Accordion_section_pricing_detail">
+          <div className="Accordion_section_pricing_head">
+            <h2>Frequently asked questions</h2>
           </div>
+          <div id="accordion-collapse" data-accordion="collapse">
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-1">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right    gap-3 "
+                  data-accordion-target="#accordion-collapse-body-1"
+                  aria-expanded="true"
+                  aria-controls="accordion-collapse-body-1"
+                  onClick={() => setOpen(!open)}
+                >
+                  <span>How is project management and communication handled by your platform?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-1"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-1"
+                style={stylePerr}
+              >
+                <div className="p-4  inner_div">
+                  <p className="">
+                    BuildLink Network employs advanced project management and communication features to streamline collaboration. Users can create, monitor, and update projects within the platform, ensuring transparency. Integrated messaging and collaboration tools facilitate real-time communication among stakeholders, fostering efficient project coordination. The Autodesk Construction Cloud integration enhances data control, reducing errors and enhancing overall project management effectiveness.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-2">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3 "
+                  data-accordion-target="#accordion-collapse-body-2"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-2"
+                  onClick={() => setOpen1(!open1)}
+                >
+                  <span>Can this platform be used for commercial purpose?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-2"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-2"
+                style={stylePerr1}
+              >
+                <div className="p-4 inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Yes, BuildLink Network is designed for commercial purposes within the construction industry. It caters to a wide range of professionals, including contractors, suppliers, project managers, and more, facilitating collaboration, project management, and networking to support commercial activities within the construction sector.
 
-          {/* second  */}
-          <div className="sinRev">
-                 
-                 <p className="headRev">As a project manager, I've used various B2B construction platforms, but this website stands out for its user-friendly interface. The layout is intuitive, making it incredibly easy to navigate through different services and products. Finding what I need takes minimal time, and the detailed descriptions of each item help in making the right choices for our projects. The efficiency and ease of use have made this my go-to resource for construction needs.</p>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-3">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3 "
+                  data-accordion-target="#accordion-collapse-body-3"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-3"
+                  onClick={() => setOpen2(!open2)}
+                >
+                  <span>How can I showcase my products on the platform? </span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-3"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-3"
+                style={stylePerr2}
+              >
+                <div className="p-4   inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    A: Simply create a profile, upload product details in the marketplace showcase, and enhance visibility among potential buyers.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-4">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right  gap-3 "
+                  data-accordion-target="#accordion-collapse-body-4"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-4"
+                  onClick={() => setOpen3(!open3)}
+                >
+                  <span>Is the platform suitable for small businesses? </span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-4"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-4"
+                style={stylePerr3}
+              >
+                <div className="p-4  inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Yes, BuildLink Network accommodates businesses of all sizes, providing opportunities for networking, project matching, and product showcasing.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3 "
+                  data-accordion-target="#accordion-collapse-body-5"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-5"
+                  onClick={() => setOpen4(!open4)}
+                >
+                  <span>
+                    How does the platform handle data security?
+                  </span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-5"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-5"
+                style={stylePerr4}
+              >
+                <div className="p-4 inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    BuildLink Network prioritizes data security, implementing robust measures to safeguard user information and ensure a secure online environment.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3"
+                  data-accordion-target="#accordion-collapse-body-6"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-6"
+                  onClick={() => setOpen5(!open5)}
+                >
+                  <span>Can I track the performance of my projects on the platform?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-6"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-6"
+                style={stylePerr5}
+              >
+                <div className="p-4   inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Yes, utilize the platform's analytics tools to track project performance, evaluate key metrics, and make data-driven decisions.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                 <div className="ReProRating">
+            {/* ===========6th swe========= */}
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3"
+                  data-accordion-target="#accordion-collapse-body-6"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-6"
+                  onClick={() => setOpen6(!open6)}
+                >
+                  <span>Is there customer support available?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-6"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-6"
+                style={stylePerr6}
+              >
+                <div className="p-4   inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Yes, BuildLink Network offers customer support to address inquiries, provide assistance, and ensure a positive user experience.
 
-                <div className="rePro">
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                  <img src={p1} alt="" />
-                  <span>Grace Liu</span>
-              
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3"
+                  data-accordion-target="#accordion-collapse-body-6"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-6"
+                  onClick={() => setOpen7(!open7)}
+                >
+                  <span>Can I collaborate with other professionals outside my network? </span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-6"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-6"
+                style={stylePerr7}
+              >
+                <div className="p-4   inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Absolutely, the platform encourages collaborative networking, allowing users to connect with a diverse range of industry professionals beyond their immediate network.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                 </div>
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3"
+                  data-accordion-target="#accordion-collapse-body-6"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-6"
+                  onClick={() => setOpen8(!open8)}
+                >
+                  <span>How does the platform assist in vendor management? </span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-6"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-6"
+                style={stylePerr8}
+              >
+                <div className="p-4   inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    BuildLink Network simplifies vendor management through features like verified reviews, ensuring users make informed decisions when selecting suppliers for their projects.
 
-                 <div className="rating">
-                  <img src={rating} alt="" />
-                  <span>04/08/23</span>
-                 </div>
-                 
-                 </div>
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                 
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3"
+                  data-accordion-target="#accordion-collapse-body-6"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-6"
+                  onClick={() => setOpen9(!open9)}
+                >
+                  <span>What advantages does Autodesk Construction Cloud integration bring? </span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-6"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-6"
+                style={stylePerr9}
+              >
+                <div className="p-4   inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    The integration enhances data management, reduces data silos, and provides centralized control, ensuring consistency and efficiency in project workflows.
+                  </p>
+                </div>
+              </div>
+            </div>
 
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3"
+                  data-accordion-target="#accordion-collapse-body-6"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-6"
+                  onClick={() => setOpen10(!open10)}
+                >
+                  <span>How can I stay updated on market trends within the platform?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-6"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-6"
+                style={stylePerr10}
+              >
+                <div className="p-4   inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Leverage the platform's data insights feature, offering real-time information on market trends, helping users stay informed and make strategic decisions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3"
+                  data-accordion-target="#accordion-collapse-body-6"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-6"
+                  onClick={() => setOpen11(!open11)}
+                >
+                  <span>Can I customize my profile for targeted networking? </span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-6"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-6"
+                style={stylePerr11}
+              >
+                <div className="p-4   inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                    Yes, users can customize their profiles to highlight specific expertise, facilitating targeted networking opportunities aligned with their business goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border  border-#D8DBEB-200 rounded-xl acc_div">
+              <h2 id="accordion-collapse-heading-5">
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full p-4 font-medium rtl:text-right gap-3"
+                  data-accordion-target="#accordion-collapse-body-6"
+                  aria-expanded="false"
+                  aria-controls="accordion-collapse-body-6"
+                  onClick={() => setOpen12(!open12)}
+                >
+                  <span>How do Buildlink network ensure project quality and safty ?</span>
+                </button>
+              </h2>
+              <div
+                id="accordion-collapse-body-6"
+                className="hidden"
+                aria-labelledby="accordion-collapse-heading-6"
+                style={stylePerr12}
+              >
+                <div className="p-4   inner_div">
+                  <p className="text-#596080-500 dark:text-#596080-400">
+                  BuildLink Network prioritizes project quality and safety by integrating robust collaboration tools, enabling real-time communication among stakeholders. The platform's adherence to industry standards, data-driven insights, and document management features ensure compliance. With Autodesk Construction Cloud integration, it fosters centralized data control, reducing errors and enhancing overall project quality and safety.
+
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
-
-        </div>
-
-       </div>
-
-       </div>
-
       </div>
 
       <div id="home_last_section">
@@ -1481,11 +2045,11 @@ const Home = ({pop,setPop,notify }) => {
               <h2>Connect with your next client on BuildLink Network</h2>
               <p>
                 Get in front of millions of active B2B buyers worldwide inside
-                the leading global business services marketplace. 
+                the leading global business services marketplace.
               </p>
-              <button onClick={()=>{
-                  localStorage.getItem('b2b_user') ? navigate('/personalInformation') : notify("danger","need to signin before creating profile")
-             }}><span>Create a Profile</span></button>
+              <button onClick={() => {
+                localStorage.getItem('b2b_user') ? navigate('/personalInformation') : notify("danger", "need to signin before creating profile")
+              }}><span>Create a Profile</span></button>
             </div>
 
             <div className="home_last_section_second">
@@ -1499,8 +2063,8 @@ const Home = ({pop,setPop,notify }) => {
                 Tell us how BuildLink Network helps in your process, and you
                 could be featured on this page.
               </p>
-              <a onClick={()=>{
-                  localStorage.getItem('b2b_user') ? navigate('/personalInformation') : notify("error","need to signin before creating profile")
+              <a onClick={() => {
+                localStorage.getItem('b2b_user') ? navigate('/personalInformation') : notify("error", "need to signin before creating profile")
               }} href="#"> Create a Profile</a>
             </div>
 

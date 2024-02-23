@@ -85,17 +85,13 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
                                         <div className="inp1">
                                             <label htmlFor="categoryies">Category</label>
                                             <select name="categoryies" id="categoryies" onChange={handleChange} value={value.categoryies}>
-                                              
-                                            
                                                 <option>Civil contractors</option>
                                                 <option>Architects</option>
                                                 <option>Consulting Engineers</option>
                                                 <option>Interior Designers</option>
-                                                <option>Fense</option>
+                                                <option>Fence</option>
                                                 <option>Main Contractors</option>
                                                 <option>Hauling & Excavating</option>
-                                                <option>Main contractors</option>
-                                                <option>Hauling & excavating</option>
                                                 <option>Structural contractors</option>
                                                 <option>Masonry</option>
                                                 <option>Carpenters</option>
@@ -115,8 +111,6 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
                                                 <option>Lenders</option>
                                                 <option>Investors</option>
                                                 <option>Owners</option>
-                                               
-
                                             </select>
                                         </div>
                                     </div>

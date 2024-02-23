@@ -95,7 +95,9 @@ const About = () => {
                       </div>
                   </div>
             </div>
-
+             
+             <div className='tyyyo'>
+                <h2 className='renim'>Ready To get started</h2>
             <div className="our_mission">
                 <div className="main_mission">
                       <h2>Our Mission</h2>
@@ -108,6 +110,7 @@ const About = () => {
                       <h2> Our Vision</h2>
                       <p>To be the global leader in transforming the construction industry through cutting-edge technology and collaborative solutions. We envision a world where every construction stakeholder, regardless of geographic location, can seamlessly connect, collaborate, and thrive on our platform. Our vision is to create a dynamic ecosystem that not only meets the current needs of the construction industry but anticipates and adapts to future challenges. By continually innovating and leveraging the power of technology, we aspire to be the platform of choice, driving positive change and shaping the future of construction on a global scale.</p>
                 </div>
+            </div>
             </div>
 
             <Footer />
