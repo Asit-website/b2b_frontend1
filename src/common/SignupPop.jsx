@@ -34,8 +34,8 @@ const SignupPop = ({ setSignupPop, setPop,notify }) => {
             setUser(ans.user);
             localStorage.setItem('b2b_user', JSON.stringify(ans?.data));
             // localStorage.setItem('b2b_token', ans.token);
-            // navigate("/");
-            setPop(true)
+            navigate("/welcome");
+            // setPop(true)
             setSignupPop(false);
         }
     }

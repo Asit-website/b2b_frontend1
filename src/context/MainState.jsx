@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MainContext from "./MainContext";
 
-const baseUrl = 'http://localhost:5000';
-// const baseUrl = 'https://backend.bln.obtechenterprise.com/';
+// const baseUrl = 'http://localhost:5000';
+const baseUrl = 'https://backend.bln.obtechenterprise.com/';
 
 
 
@@ -455,9 +455,21 @@ const MainState = (props) => {
     }
   }
 
+  const getSubscription = async () => {
+    const resp = await fetch(`${baseUrl}/subscribe/getsubscribe`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'token': localStorage.getItem('b2b_token')
+      }
+    });
+    const data = await resp.json();
+    return data;
+  };
+
 
   return (
-    <MainContext.Provider value={{ login, getProjectDetailById, fetchUserCategory, register, updateProject, getUsers, user, setUser, updateUser, verify, sendOtp, submitOtp, changePassword, deleteImage, resetPassword, projectPostImage, projectDeleteImg, postProject, getProjects, deleteProject, getProjects1, fetchAllLocation, fetchUserByLoc  ,fetchUserByLocArc}}>
+    <MainContext.Provider value={{ login, getProjectDetailById, fetchUserCategory, register, updateProject, getUsers, user, setUser, updateUser, verify, sendOtp, submitOtp, changePassword, deleteImage, resetPassword, projectPostImage, projectDeleteImg, postProject, getProjects, deleteProject, getProjects1, fetchAllLocation, fetchUserByLoc  ,fetchUserByLocArc, getSubscription}}>
       {props.children}
     </MainContext.Provider>
   );

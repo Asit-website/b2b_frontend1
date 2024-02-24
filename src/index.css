@@ -1015,7 +1015,9 @@ html,body {
 
 .back_section1 img {
   position: absolute;
-  bottom: 2px;
+  max-width: 270px;
+  width: 100%;
+  /* bottom: 0px; */
 }
 
 #home_product .home_product_container .home_product_cards .card_content .back_section2 {
@@ -1031,7 +1033,9 @@ html,body {
 
 .back_section2 img {
   position: absolute;
-  bottom: 2px;
+  /* bottom: 2px; */
+  max-width: 270px;
+  width: 100%;
 }
 
 #home_product .home_product_container .home_product_cards .card_content .back_section3 {
@@ -1048,7 +1052,8 @@ html,body {
 
 .back_section3 img {
   position: absolute;
-  bottom: 2px;
+  max-width: 270px;
+  /* bottom: 2px; */
 }
 
 #home_solution {
@@ -1160,9 +1165,32 @@ html,body {
 }
 
 #home_solution .home_solution_container .solution_content {
-  margin-top: 80px;
+  /* margin-top: 80px; */
 }
-
+.welcome_page{
+  background-color: #285F74;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+ }
+ .welcome_sect{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+ }
+ .welcome_sect h3{
+  color: white !important;
+  font-weight: 600;
+  font-size: 35px;
+  text-align: center;
+}
+.welcome_sect span{
+  font-weight: 400;
+  font-size: 30px;
+  text-decoration: underline;
+  color: white !important;
+}
 #home_solution .home_solution_container .solution_content .inner_details h2 {
   color: #2C868F;
   text-align: center;
