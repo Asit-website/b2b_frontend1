@@ -60,7 +60,6 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
     try{
 
       const resp = await fetchUserCategory({category:cat});
-      console.log("serv" , resp);
 
       if (resp?.status) {
       
