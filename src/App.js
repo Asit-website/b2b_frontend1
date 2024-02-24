@@ -39,6 +39,7 @@ import Message from "./components/Message";
 import TermsAndCondition from "./components/TermsAndCondition";
 import Privacy from "./components/Privacy";
 import Manufacture from "./components/Manufacture";
+import Welcome from "./components/Welcome";
 
 
 function App() {
@@ -208,6 +209,7 @@ useEffect(()=>{
 
             <Route path="/success" element={<SuccessPage />} />
             <Route path="/failure" element={<CancelPage />} />
+            <Route path="/welcome" element={<Welcome setPop={setPop}/>}/>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>

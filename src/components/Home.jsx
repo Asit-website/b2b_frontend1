@@ -18,6 +18,7 @@ import ring2 from '../image/ring2.svg'
 import ring3 from '../image/ring3.svg'
 import ss from '../image/shs.png';
 import sks from '../image/sks.png';
+import depth from '../image/depth.jpg'
 import { useMain } from "../hooks/useMain";
 import { useNavigate } from "react-router-dom";
 // import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -1285,7 +1286,8 @@ const Home = ({ pop, setPop, notify }) => {
                   </p>
                 </div>
                 <div className="back_section1">
-                  <img src={ring1} alt="" />
+                  {/* <img src={ring1} alt="" /> */}
+                  <img src={sks} alt="sks" />
                 </div>
               </div>
             </div>
@@ -1299,7 +1301,8 @@ const Home = ({ pop, setPop, notify }) => {
                   </p>
                 </div>
                 <div className="back_section2">
-                  <img src={ring2} alt="" />
+                  {/* <img src={ring2} alt="" /> */}
+                  <img src={ss} alt="ss" />
                 </div>
               </div>
             </div>
@@ -1313,7 +1316,8 @@ const Home = ({ pop, setPop, notify }) => {
                   </p>
                 </div>
                 <div className="back_section3">
-                  <img src={ring3} alt="" />
+                  {/* <img src={ring3} alt="" /> */}
+                  <img src={depth} alt="" />
                 </div>
               </div>
             </div>
@@ -1321,7 +1325,7 @@ const Home = ({ pop, setPop, notify }) => {
         </div>
       </div>
 
-      <div className="building_man">
+      {/* <div className="building_man">
           <div className="main_builds">
                <div className="read_in">
                     <h2>Read in-depth verified reviews</h2>
@@ -1352,11 +1356,11 @@ const Home = ({ pop, setPop, notify }) => {
                    </div>
                </div>
           </div>
-      </div>
+      </div> */}
 
       <div id="home_solution">
         <div className="home_solution_container">
-          <div className="home_solution_container_buttons">
+          {/* <div className="home_solution_container_buttons">
             <button className="btn_first">
               <span>
                 General <br />
@@ -1393,7 +1397,7 @@ const Home = ({ pop, setPop, notify }) => {
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
           <div className="solution_content">
             <h2>The trusted solution for</h2>
             <p>

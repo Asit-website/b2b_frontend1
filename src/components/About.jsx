@@ -29,6 +29,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+           
             <div className="builLink_network">
                 <div className="builLink_sect">
                     <div className="main_buildLink">
@@ -48,6 +49,22 @@ const About = () => {
                             <h3>Innovation at the Core</h3>
                             <p>We embrace cutting-edge technology to ensure that our platform remains at the forefront of industry trends. From advanced search functionalities to real-time collaboration tools, we provide the tools you need to stay ahead.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className='tyyyo'>
+                <h2 className='renim'>Ready To get started</h2>
+                <div className="our_mission">
+                    <div className="main_mission">
+                        <h2>Our Mission</h2>
+                        <p>To empower and connect construction stakeholders worldwide through an innovative and collaborative digital marketplace. We are dedicated to fostering transparency, efficiency, and sustainable growth within the construction industry by providing a unified platform that enhances communication, streamlines processes, and facilitates strategic partnerships. Our mission is to revolutionize the way construction professionals collaborate, access resources, and propel the industry towards a future of unparalleled efficiency and success.</p>
+                    </div>
+                </div>
+
+                <div className="our_mission">
+                    <div className="main_mission">
+                        <h2> Our Vision</h2>
+                        <p>To be the global leader in transforming the construction industry through cutting-edge technology and collaborative solutions. We envision a world where every construction stakeholder, regardless of geographic location, can seamlessly connect, collaborate, and thrive on our platform. Our vision is to create a dynamic ecosystem that not only meets the current needs of the construction industry but anticipates and adapts to future challenges. By continually innovating and leveraging the power of technology, we aspire to be the platform of choice, driving positive change and shaping the future of construction on a global scale.</p>
                     </div>
                 </div>
             </div>
@@ -87,32 +104,14 @@ const About = () => {
                 </div>
             </div>
             <div className="ready_main">
-                  <div className="ready">
-                      <div className="ready_div">
-                          <h4>Ready to get started? </h4>
-                          <h2>Share your experience & make profile</h2>
-                          <button>Get in touch with us</button>
-                      </div>
-                  </div>
-            </div>
-             
-             <div className='tyyyo'>
-                <h2 className='renim'>Ready To get started</h2>
-            <div className="our_mission">
-                <div className="main_mission">
-                      <h2>Our Mission</h2>
-                      <p>To empower and connect construction stakeholders worldwide through an innovative and collaborative digital marketplace. We are dedicated to fostering transparency, efficiency, and sustainable growth within the construction industry by providing a unified platform that enhances communication, streamlines processes, and facilitates strategic partnerships. Our mission is to revolutionize the way construction professionals collaborate, access resources, and propel the industry towards a future of unparalleled efficiency and success.</p>
+                <div className="ready">
+                    <div className="ready_div">
+                        <h4>Ready to get started? </h4>
+                        <h2>Share your experience & make profile</h2>
+                        <button>Get in touch with us</button>
+                    </div>
                 </div>
             </div>
-
-            <div className="our_mission">
-                <div className="main_mission">
-                      <h2> Our Vision</h2>
-                      <p>To be the global leader in transforming the construction industry through cutting-edge technology and collaborative solutions. We envision a world where every construction stakeholder, regardless of geographic location, can seamlessly connect, collaborate, and thrive on our platform. Our vision is to create a dynamic ecosystem that not only meets the current needs of the construction industry but anticipates and adapts to future challenges. By continually innovating and leveraging the power of technology, we aspire to be the platform of choice, driving positive change and shaping the future of construction on a global scale.</p>
-                </div>
-            </div>
-            </div>
-
             <Footer />
         </>
     )
