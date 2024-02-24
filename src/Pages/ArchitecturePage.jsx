@@ -19,16 +19,15 @@ function ArchitecturePage() {
   const location = useLocation();
 
   const state = location.state;
-
+ 
   const [srcArchiData, setSrcArchiData] = useState();
 
   useEffect(() => {
     if (state) {
       setSrcArchiData(state?.data);
     }
-  }, [])
+  }, [state])
 
-  console.log("srha" , srcArchiData);
 
   return (
     <>

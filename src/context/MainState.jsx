@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import MainContext from "./MainContext";
 
-// const baseUrl = 'http://localhost:5000';
-const baseUrl = 'https://backend.bln.obtechenterprise.com/';
+const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'https://backend.bln.obtechenterprise.com/';
 
 
 
 const MainState = (props) => {
-  const [user, setUser] = useState({})
+
+  const [user, setUser] = useState({});
 
   const login = async ({ email, password }) => {
     const resp = await fetch(`${baseUrl}/user/login`, {
@@ -65,6 +66,8 @@ const MainState = (props) => {
     formdata.append('insta', insta);
     formdata.append("city", city)
     const token = localStorage.getItem('b2b_token');
+
+    console.log("userId" ,userId);
 
     const resp = await fetch(`${baseUrl}/user/updateUser/${userId}`, {
       method: 'PUT',
@@ -358,8 +361,6 @@ const MainState = (props) => {
         },
       });
 
-      console.log("res" ,resp);
-
       if (!resp.ok) {
         throw new Error('Network response was not ok');
       }
@@ -414,18 +415,36 @@ const MainState = (props) => {
     }
   }
 
-  const fetchProjectByLoc = async ({ location }) => {
+  const fetchUserByLoc = async ({ location }) => {
     const token = localStorage.getItem('b2b_token');
 
     try {
 
-      const resp = await fetch(`${baseUrl}/project/fetchProjectByLocation`, {
-        method: 'POST',
+      const resp = await fetch(`${baseUrl}/user/getUserByLocation/${location}`, {
+        method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ location: location })
+      });
+
+      return await resp.json();
+    }
+    catch (error) {
+      console.error('There was an error!', error);
+      throw error;
+    }
+  }
+
+  const fetchUserByLocArc = async ({ location  , category}) => {
+    const token = localStorage.getItem('b2b_token');
+      console.log("c" ,location , category);
+    try {
+
+      const resp = await fetch(`${baseUrl}/user/getUserByLocArc/${location}/${category}`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
       });
 
       return await resp.json();
@@ -437,12 +456,8 @@ const MainState = (props) => {
   }
 
 
-
-
-
-
   return (
-    <MainContext.Provider value={{ login, getProjectDetailById, fetchUserCategory, register, updateProject, getUsers, user, setUser, updateUser, verify, sendOtp, submitOtp, changePassword, deleteImage, resetPassword, projectPostImage, projectDeleteImg, postProject, getProjects, deleteProject, getProjects1, fetchAllLocation, fetchProjectByLoc }}>
+    <MainContext.Provider value={{ login, getProjectDetailById, fetchUserCategory, register, updateProject, getUsers, user, setUser, updateUser, verify, sendOtp, submitOtp, changePassword, deleteImage, resetPassword, projectPostImage, projectDeleteImg, postProject, getProjects, deleteProject, getProjects1, fetchAllLocation, fetchUserByLoc  ,fetchUserByLocArc}}>
       {props.children}
     </MainContext.Provider>
   );

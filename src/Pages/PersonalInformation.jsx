@@ -52,8 +52,10 @@ function PersonalInformation({ notify, userImage, setUserImage, imageId, setImag
     //   return;
     // }
 
-    const ans = await updateUser({ ...value, userId: value._id });
+    console.log("value" ,value._id);
 
+    const ans = await updateUser({ ...value, userId: value._id });
+     console.log("ans" ,ans);
 
     if (ans?.data?.img?.url) {
       setUserImage(ans?.data?.img?.url);

@@ -85,7 +85,7 @@ const Home = ({ pop, setPop, notify }) => {
     display: open12 ? "block" : "none",
   };
 
-  const { fetchUserCategory, fetchAllLocation, fetchProjectByLoc } = useMain();
+  const { fetchUserCategory, fetchAllLocation, fetchUserByLoc , fetchUserByLocArc } = useMain();
 
   const navigate = useNavigate();
 
@@ -122,31 +122,17 @@ const Home = ({ pop, setPop, notify }) => {
     }
   }
 
-  const getAllLocation = async () => {
-    try {
 
-      const ans = await fetchAllLocation();
-      console.log("loc", ans);
-      if (ans?.status) {
-
-        setAllLocation(ans?.locations);
-      }
-
-
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  const getProjectByLocation = async () => {
+  const getUserByLocation = async () => {
     try {
 
       if (searchLocation === "") {
         return
       }
-      const ans = await fetchProjectByLoc({
+      const ans = await fetchUserByLoc({
         location: searchLocation
       });
+
 
       if (ans?.status) {
 
@@ -161,6 +147,45 @@ const Home = ({ pop, setPop, notify }) => {
     }
   }
 
+
+  const getUserByLocArc = async()=>{
+    try {
+      const ans = await fetchUserByLocArc({
+        location: searchLocation , 
+        category: searchArch
+      });
+
+      console.log("an" ,ans);
+
+      if (ans?.status) {
+        navigate("/architecturePage", { state: { data: ans?.data, title: searchArch } });
+      } else {
+        alert("Something went wrong");
+      }
+
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+    
+  const getAllLocation = async () => {
+    try {
+
+      const ans = await fetchAllLocation();
+      if (ans?.status) {
+        setAllLocation(ans?.locations);
+      }
+
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // to get aall location 
   useEffect(() => {
     getAllLocation();
   }, [])
@@ -294,8 +319,11 @@ const Home = ({ pop, setPop, notify }) => {
               </div>
 
               <button onClick={() => {
-                if (searchLocation !== "") {
-                  getProjectByLocation();
+                if(searchLocation !== "" && searchArch !== ""){
+                  getUserByLocArc();
+                }
+               else if (searchLocation !== "") {
+                  getUserByLocation();
                 }
                 else {
                   getUsersByCategoryHandler();
