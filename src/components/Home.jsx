@@ -19,6 +19,9 @@ import ring3 from '../image/ring3.svg'
 import ss from '../image/shs.png';
 import sks from '../image/sks.png';
 import depth from '../image/depth.jpg'
+import handsome from '../image/handsome.jpg';
+import handsome1 from '../image/handsome1.jpg';
+import handsome3 from '../image/handsome3.jpg';
 import { useMain } from "../hooks/useMain";
 import { useNavigate } from "react-router-dom";
 // import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -1279,9 +1282,10 @@ const Home = ({ pop, setPop, notify }) => {
                   <span>Search</span>
                   <h2>Browse 280K service providers</h2>
                   <p>
-                    Explore our global network of trusted partners from 1,500+
+                    {/* Explore our global network of trusted partners from 1,500+
                     business categories. Find the right company or service in
-                    minutes.
+                    minutes. */}
+                    Explore a vast network of service providers. Discover industry professionals, suppliers, and contractors to fulfill your construction needs efficiently and connect with experts in the field.
                   </p>
                 </div>
                 <div className="back_section1">
@@ -1296,7 +1300,8 @@ const Home = ({ pop, setPop, notify }) => {
                   <span>Find</span>
                   <h2 className="narrows">Narrow results and shortlist top picks</h2>
                   <p>
-                    Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
+                    {/* Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes. */}
+                    Effortlessly find the best fit on BuildLink Network. Narrow results using smart filters, ensuring you shortlist top picks tailored to your construction needs. Streamline your decision-making for project success.
                   </p>
                 </div>
                 <div className="back_section2">
@@ -1311,7 +1316,8 @@ const Home = ({ pop, setPop, notify }) => {
                   <span>Decide</span>
                   <h2 className="farrows">Read in-depth verified reviews</h2>
                   <p>
-                    Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes.
+                    {/* Explore our global network of trusted partners from 1,500+ business categories. Find the right company or service in minutes. */}
+                    Access reliable insights with in-depth verified reviews. Make informed decisions by leveraging firsthand experiences from industry professionals, ensuring confidence in your choices within the construction marketplace.
                   </p>
                 </div>
                 <div className="back_section3">
@@ -1431,7 +1437,7 @@ const Home = ({ pop, setPop, notify }) => {
             <div className="Home_marking">
 
               <div className="Home_marking_right">
-                <img src={right1} alt="" />
+                <img src={handsome} alt="" />
               </div>
 
               <div className="Home_marking_left">
@@ -1463,7 +1469,7 @@ const Home = ({ pop, setPop, notify }) => {
             <div className="Home_marking">
 
               <div className="Home_marking_right">
-                <img src={right1} alt="" />
+                <img src={handsome1} alt="" />
               </div>
 
               <div className="Home_marking_left">
@@ -1495,7 +1501,7 @@ const Home = ({ pop, setPop, notify }) => {
             <div className="Home_marking">
 
               <div className="Home_marking_right">
-                <img src={right1} alt="" />
+                <img src={handsome3} alt="" />
               </div>
 
               <div className="Home_marking_left">
