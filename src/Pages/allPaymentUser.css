@@ -1,0 +1,64 @@
+.allPymntWrap{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 10rem;
+
+}
+
+.pmntCont{
+    max-width: 1440px;
+    width: 100%;
+    padding: 50px 0px;
+    height: 100%;
+ margin: 0 auto;
+ display: flex;
+ flex-direction: column;
+ 
+ gap: 40px;
+}
+
+.singletYPE{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.singletYPE .subTyep{
+   font-weight: 600;
+   font-family: 'Inter', sans-serif !important;
+   font-size: 24px;
+
+}
+.singletYPE .noUser{
+   font-weight: 500;
+   font-family: 'Inter', sans-serif !important;
+   font-size: 20px;
+
+}
+.singletYPE .allUsers{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+
+
+}
+.singletYPE .allUsers .singleUser{
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+
+}
+.singletYPE .allUsers .singleUser p{
+font-weight: 500;
+font-size: 18px;
+font-family: 'Inter', sans-serif !important;
+
+
+}
+.singletYPE .allUsers .singleUser span{
+font-weight: 400;
+font-size: 16px;
+font-family: 'Inter', sans-serif !important;
+
+
+}

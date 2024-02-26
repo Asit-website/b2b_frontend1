@@ -170,7 +170,6 @@ const Home = ({ pop, setPop, notify }) => {
     }
   }
 
-
     
   const getAllLocation = async () => {
     try {

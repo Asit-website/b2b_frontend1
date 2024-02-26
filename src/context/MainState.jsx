@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MainContext from "./MainContext";
 
-// const baseUrl = 'http://localhost:5000';
-const baseUrl = 'https://backend.bln.obtechenterprise.com/';
+const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'https://backend.bln.obtechenterprise.com/';
 
 
 
@@ -11,6 +11,8 @@ const MainState = (props) => {
   const [user, setUser] = useState({});
 
   const login = async ({ email, password }) => {
+    
+    console.log("email" ,email , password , baseUrl);
     const resp = await fetch(`${baseUrl}/user/login`, {
       method: 'POST',
       headers: {
@@ -19,6 +21,7 @@ const MainState = (props) => {
       body: JSON.stringify({ email, password })
     });
     const data = await resp.json();
+    console.log("data",data);
     // setUser(data);
     return data;
   };
@@ -467,9 +470,44 @@ const MainState = (props) => {
     return data;
   };
 
+const saveUserDetail = async({parsedSessionDetail ,userId})=>{
+  const token = localStorage.getItem('b2b_token');
+
+  
+  const { subscription_type} = parsedSessionDetail;
+
+      const resp = await fetch(`${baseUrl}/subscribe/saveUserPayment/${userId}`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        } , 
+        body: JSON.stringify({subscription_type})
+      });
+      const data =await resp.json();
+      return data;
+
+
+}
+
+const paymentUserFetch = async()=>{
+  const token = localStorage.getItem('b2b_token');
+  
+      const resp = await fetch(`${baseUrl}/subscribe/fetchAllPayment`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        } , 
+      });
+      const data =await resp.json();
+      return data;
+
+
+}
+
 
   return (
-    <MainContext.Provider value={{ login, getProjectDetailById, fetchUserCategory, register, updateProject, getUsers, user, setUser, updateUser, verify, sendOtp, submitOtp, changePassword, deleteImage, resetPassword, projectPostImage, projectDeleteImg, postProject, getProjects, deleteProject, getProjects1, fetchAllLocation, fetchUserByLoc  ,fetchUserByLocArc, getSubscription}}>
+    <MainContext.Provider value={{ login, getProjectDetailById, fetchUserCategory, register, updateProject, getUsers, user, setUser, updateUser, verify, sendOtp, submitOtp, changePassword, deleteImage, resetPassword, projectPostImage, projectDeleteImg, postProject, getProjects, deleteProject, getProjects1, fetchAllLocation, fetchUserByLoc  ,fetchUserByLocArc, getSubscription , saveUserDetail , paymentUserFetch}}>
       {props.children}
     </MainContext.Provider>
   );
