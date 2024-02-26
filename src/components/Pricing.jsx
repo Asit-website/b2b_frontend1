@@ -3,7 +3,7 @@ import gt1 from "../image/pricing_img.svg";
 import t from "../image/try.svg";
 import Footer from "../common/Footer";
 import { useMain } from '../hooks/useMain';
-
+import ds from '../image/ds.jpg';
 import { loadStripe } from '@stripe/stripe-js';
 
 const Pricing = () => {
@@ -87,7 +87,7 @@ const Pricing = () => {
 
     // https://backend.bln.obtechenterprise.com
     
-    const response = await fetch("http://localhost:5000/api/create-checkout-session", {
+    const response = await fetch("https://backend.bln.obtechenterprise.com/api/create-checkout-session", {
       method: "POST",
       headers: headers,
       body: JSON.stringify(body)
@@ -690,10 +690,9 @@ const Pricing = () => {
           <div className="intro_flex">
             <div className="intro-left">
               <div className="intro_div">
-                <h2>Introducing the new AI Stylist</h2>
+                <h2>Constructing Dreams in 3D: Where Vision Meets Precision for Construction Professionals.</h2>
                 <p>
-                  Create an AI-powered project brief and send to best-fit <br />
-                  services providers all at once
+                Start constructing your dreams with precision – unlock the power of 3D vision for unparalleled excellence in your construction projects
                 </p>
                 <div className="intro_btn">
                   <button className="try_btn">
@@ -708,7 +707,7 @@ const Pricing = () => {
             </div>
             <div className="intro_right">
               <div className="intro_img">
-                <img src={gt1} alt="gt1" />
+                <img src={ds} alt="gt1" />
               </div>
             </div>
           </div>
