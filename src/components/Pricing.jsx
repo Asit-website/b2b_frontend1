@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import gt1 from "../image/pricing_img.svg";
 import t from "../image/try.svg";
 import Footer from "../common/Footer";
+import { useMain } from '../hooks/useMain';
 
 import { loadStripe } from '@stripe/stripe-js';
 
@@ -58,19 +59,35 @@ const Pricing = () => {
   const stylePerr12 = {
     display: open12 ? "block" : "none",
   };
+
+  const [value, setValue] = useState({});
+
+  useEffect(() => {
+    let user1 = JSON?.parse(localStorage.getItem("b2b_user"));
+    setValue({ ...user1, password: "" });
+  }, [localStorage.getItem("b2b_user")]);
+
+
   // for payment integration 
-  const makePayment = async (amount) => {
+  const makePayment = async (amount , type) => {
     const stripe = await loadStripe("pk_test_51OmCLvSBps3k53HfMHZGby0kGGTZ5KTUVUpjkwUIO905MFoqNHtd0PWRj4KeMdVud0bCpsdHQSmetCHwtfaD1mnk003JvDFm9z");
 
     const body = {
-      amount: amount
+      amount: amount , 
+      subscription_type:type , 
+       userId : value._id
     }
+
+    const token = localStorage.getItem('b2b_token');
 
     const headers = {
-      "content-type": "application/json"
+      "content-type": "application/json" , 
+      'Authorization': `Bearer ${token}`
     }
 
-    const response = await fetch("https://backend.bln.obtechenterprise.com/api/create-checkout-session", {
+    // https://backend.bln.obtechenterprise.com
+    
+    const response = await fetch("http://localhost:5000/api/create-checkout-session", {
       method: "POST",
       headers: headers,
       body: JSON.stringify(body)
@@ -78,7 +95,7 @@ const Pricing = () => {
 
     const session = await response.json();
 
-    console.log("session", session);
+    localStorage.setItem('sessionDetail', JSON.stringify(session));
 
     //  redirect 
     const result = stripe.redirectToCheckout({
@@ -90,6 +107,28 @@ const Pricing = () => {
     }
 
   }
+
+  const {getSubscription} = useMain();
+
+   const [allCardDetail , setAllCardDetail] = useState([]);
+
+   const fetchCartPrice = async()=>{
+    try{
+
+      const resp = await getSubscription();
+
+      if(resp.status){
+        setAllCardDetail(resp?.data);
+      }
+
+    } catch(error){
+      console.log(error);
+    }
+   }
+
+   useEffect(()=>{
+   fetchCartPrice();
+   },[])
 
   return (
     <>
@@ -107,11 +146,11 @@ const Pricing = () => {
         <div id="procard">
           <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
             <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
-              Basic
+              {allCardDetail[0]?.subscription_type}
             </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
               <span className="text-m font-large text-gray-500 dark:text-gray-400 ser">
-                USD $0/month
+                USD ${allCardDetail[0]?.subsciption_price}/month
               </span>
             </div>
             <h2 className="proh2">Included in Basic:</h2>
@@ -151,7 +190,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
-                  Unlimited online review collection
+                {allCardDetail[0]?.desc1}
                 </span>
               </li>
               <li className="flex">
@@ -189,7 +228,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
-                  Project Capacity: Up to 2 concurrent projects
+                {allCardDetail[0]?.desc2}
                 </span>
               </li>
               <li className="flex">
@@ -227,7 +266,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
-                  Basic Project Management Features
+                {allCardDetail[0]?.desc3}
                 </span>
               </li>
               <li className="flex ">
@@ -265,7 +304,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal text-gray-500 ms-3">
-                  Limited Access to Premium Templates
+                {allCardDetail[0]?.desc4}
                 </span>
               </li>
             </ul>
@@ -281,15 +320,17 @@ const Pricing = () => {
           </div>
         </div>
 
+        {/* another card  */}
+
         <div id="procard">
           <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
             <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
-              Pro
+            {allCardDetail[1]?.subscription_type}
             </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
               <span className="text-m ser font-large text-gray-500 dark:text-gray-400">
-                USD $350/month
-              </span>
+              USD ${allCardDetail[1]?.subsciption_price}/month  
+                          </span>
             </div>
             <h2 className="proh2">All benefits of Basic, and:</h2>
             <ul role="list" className="space-y-3 trt mb-12">
@@ -328,7 +369,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
-                  Unlimited online review collection
+                {allCardDetail[1]?.desc1}
                 </span>
               </li>
               <li className="flex">
@@ -366,7 +407,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
-                  Project Capacity: Up to 2 concurrent projects
+                {allCardDetail[1]?.desc2}
                 </span>
               </li>
               <li className="flex">
@@ -404,7 +445,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
-                  Basic Project Management Features
+                {allCardDetail[1]?.desc3}
                 </span>
               </li>
               <li className="flex ">
@@ -442,12 +483,12 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 ms-3">
-                  Limited Access to Premium Templates
+                {allCardDetail[1]?.desc4}
                 </span>
               </li>
             </ul>
             <button
-              onClick={() => makePayment(350)}
+              onClick={() => makePayment(allCardDetail[1]?.subsciption_price , allCardDetail[1]?.subscription_type)}
               type="button"
               className="probutton bg-#FCFDFD-600 hover:bg-#2C868F-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
             >
@@ -459,6 +500,8 @@ const Pricing = () => {
           </div>
         </div>
 
+        {/* another */}
+
         <div id="procard" className="proding">
           <div className="headery">
             <h2>Recommended</h2>
@@ -466,11 +509,11 @@ const Pricing = () => {
           <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 ">
 
             <h5 className="mb-1 text-xxl font-large text-Basic-500 dark:text-Basic-400 proh5">
-              Enterprise
+            {allCardDetail[2]?.subscription_type}
             </h5>
             <div className="flex items-baseline text-gray-900 dark:text-white">
               <span className="text-m font-large text-gray-500 dark:text-gray-400 ser">
-                USD $125/month
+              USD ${allCardDetail[2]?.subsciption_price}/month 
               </span>
             </div>
             <h2 className="proh2">All benefits of Basic, and:</h2>
@@ -510,7 +553,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal text-gray-500 dark:text-gray-400 ms-3">
-                  Unlimited online review collection
+                {allCardDetail[2]?.desc1}
                 </span>
               </li>
               <li className="flex">
@@ -548,7 +591,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
-                  Project Capacity: Up to 2 concurrent projects
+                {allCardDetail[2]?.desc2}
                 </span>
               </li>
               <li className="flex">
@@ -586,7 +629,7 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 dark:text-gray-400 ms-3">
-                  Basic Project Management Features
+                {allCardDetail[2]?.desc3}
                 </span>
               </li>
               <li className="flex ">
@@ -624,11 +667,11 @@ const Pricing = () => {
                   </defs>
                 </svg>
                 <span className="text-base font-normal  text-gray-500 ms-3">
-                  Limited Access to Premium Templates
+                {allCardDetail[2]?.desc4}
                 </span>
               </li>
             </ul>
-            <button onClick={() => makePayment(125)}
+            <button onClick={() => makePayment(allCardDetail[2]?.subsciption_price ,  allCardDetail[2]?.subscription_type)}
               type="button"
               className="probutton bg-#FCFDFD-600 hover:bg-#2C868F-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-3 inline-flex justify-center w-full text-center"
             >
@@ -1033,6 +1076,7 @@ const Pricing = () => {
           </div>
         </div>
       </div>
+
       <div className="ready_main">
         <div className="ready">
           <div className="ready_div">

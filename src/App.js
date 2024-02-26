@@ -40,6 +40,7 @@ import TermsAndCondition from "./components/TermsAndCondition";
 import Privacy from "./components/Privacy";
 import Manufacture from "./components/Manufacture";
 import Welcome from "./components/Welcome";
+import AllPaymentUser from "./Pages/AllPaymentUser";
 
 
 function App() {
@@ -171,7 +172,8 @@ useEffect(()=>{
             <Route path="/project/:id" element={<Viewproject/>}/>
             <Route path="/success" element={<Message/>}/>
             <Route path="/terms" element={<TermsAndCondition/>}/>
-            <Route path="/privacy" element={<Privacy/>}/>
+            <Route path="/
+            " element={<Privacy/>}/>
             <Route path="/manufacture" element={<Manufacture/>}/>
             {user && (
               <>
@@ -210,6 +212,7 @@ useEffect(()=>{
             <Route path="/success" element={<SuccessPage />} />
             <Route path="/failure" element={<CancelPage />} />
             <Route path="/welcome" element={<Welcome setPop={setPop}/>}/>
+            <Route path="/allPaymentUser" element={<AllPaymentUser />}  />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>

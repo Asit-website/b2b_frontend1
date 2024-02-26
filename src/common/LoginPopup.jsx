@@ -18,8 +18,9 @@ const LoginPopup = ({setSignupPop,setPop,setForgot,notify}) => {
         e.preventDefault();
 
         const ans = await login(value);
-        console.log(ans);
-        // console.log(ans.)
+       
+         console.log("login" ,ans);
+
         notify(ans.status, ans.message);
         if (ans.status) {
             setUser(ans.user);
