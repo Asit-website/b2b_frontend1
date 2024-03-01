@@ -22,6 +22,7 @@ import depth from '../image/depth.jpg'
 import handsome from '../image/handsome.jpg';
 import handsome1 from '../image/handsome1.jpg';
 import handsome3 from '../image/handsome3.jpg';
+import sindur from '../image/sindur.jpg';
 import { useMain } from "../hooks/useMain";
 import { useNavigate } from "react-router-dom";
 // import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -136,7 +137,8 @@ const Home = ({ pop, setPop, notify }) => {
       const ans = await fetchUserByLoc({
         location: searchLocation
       });
-
+     
+      console.log("ans",ans)
 
       if (ans?.status) {
 
@@ -1278,7 +1280,7 @@ const Home = ({ pop, setPop, notify }) => {
           <div className="home_product_cards">
             <div className="card">
               <div className="card_content">
-                <div className="inner-card">
+                <div className="inner-card ipp">
                   <span>Search</span>
                   <h2>Browse 280K service providers</h2>
                   <p>
@@ -1296,7 +1298,7 @@ const Home = ({ pop, setPop, notify }) => {
             </div>
             <div className="card">
               <div className="card_content">
-                <div className="inner-card">
+                <div className="inner-card ipp">
                   <span>Find</span>
                   <h2 className="narrows">Narrow results and shortlist top picks</h2>
                   <p>
@@ -1312,7 +1314,7 @@ const Home = ({ pop, setPop, notify }) => {
             </div>
             <div className="card">
               <div className="card_content">
-                <div className="inner-card">
+                <div className="inner-card ipp">
                   <span>Decide</span>
                   <h2 className="farrows">Read in-depth verified reviews</h2>
                   <p>
@@ -1501,7 +1503,7 @@ const Home = ({ pop, setPop, notify }) => {
             <div className="Home_marking">
 
               <div className="Home_marking_right">
-                <img src={handsome3} alt="" />
+                <img src={sindur} alt="sindur" />
               </div>
 
               <div className="Home_marking_left">
@@ -1532,7 +1534,7 @@ const Home = ({ pop, setPop, notify }) => {
             <div className="Home_marking">
 
 <div className="Home_marking_right">
-  <img src={right1} alt="" />
+  <img src={handsome3} alt="" />
 </div>
 
 <div className="Home_marking_left">

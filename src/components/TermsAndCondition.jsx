@@ -224,7 +224,7 @@ const TermsAndCondition = () => {
                         As a user you may always contact us if you believe that your data protection rights have been impaired. Our Company will carefully examine your concern and take the possible precautions. BUILDLINK NETWORK also obliged to protect the confidentiality of your other personal data obtained in connection with your request.
 
                         22. ARBITRATION
-                        In case of any disputes, as User you agree and accept to contact with us at support@bln.obtechenterprise.com, to resolve disputes as we stated above. Arbitration is an available solution to resolve disputes through out-of-court remedies effectively, quickly, and at a lower cost.
+                        In case of any disputes, as User you agree and accept to contact with us at support@buildlinknetwork.com, to resolve disputes as we stated above. Arbitration is an available solution to resolve disputes through out-of-court remedies effectively, quickly, and at a lower cost.
 
                         In this case, both sides agree that the rules of arbitration of the “The Texas Arbitration Act” and the applying the law of the United States of America. There shall be one arbitrator and each party shall bear its own costs. You agree that the arbitrator may order an injunction if appropriate and you agree not to require any posting of a bond or similar requirement in such case.
 
@@ -252,7 +252,7 @@ const TermsAndCondition = () => {
                         Copyright License is subject to the terms of this Agreement. All materials on this Site are copyrighted and protected by worldwide copyright laws and other provisions. All copyrights and other intellectual property rights of the materials on our Service, especially the BUILDLINK NETWORK website, are reserved. Please be aware that, unauthorized use may violate copyright and trademark and privacy laws and result in severe civil and criminal penalties.
 
                         27. CONTACT INFORMATION
-                        Please contact us at support@bln.obtechenterprise.com with any questions regarding this Agreement.
+                        Please contact us at support@buildlinknetwork.com with any questions regarding this Agreement.
 
 
                         Privacy Policy
@@ -470,7 +470,7 @@ const TermsAndCondition = () => {
 
 
                         23-) Contact Information
-                        If you have any questions regarding these Privacy Policy, please contact us at support@bln.obtechenterprise.com
+                        If you have any questions regarding these Privacy Policy, please contact us at support@buildlinknetwork.com
 
 
                     </p>
