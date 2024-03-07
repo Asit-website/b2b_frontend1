@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import son from '../image/son.svg'
 import Footer from '../common/Footer'
 import yt from '../image/yt.svg'
-const Budegting = () => {
+const Budegting = ({setShowNavbar}) => {
+
+    useEffect(()=>{
+        setShowNavbar(false);
+    },[])
+
     return (
         <>
-            <div className="main_budget">
+            <div onClick={()=>setShowNavbar(false)} className="main_budget">
                 <div className="budget_man">
                     <div className="budget_under">
                         <div className="budget_flex">

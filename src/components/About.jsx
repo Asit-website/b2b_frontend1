@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import about from '../image/about.svg';
 import gt1 from '../image/gt1.svg';
 import join1 from "../image/join1.png";
@@ -8,10 +8,16 @@ import join4 from "../image/join4.png";
 import join5 from "../image/join5.png";
 import join6 from "../image/join6.png";
 import Footer from '../common/Footer';
-const About = () => {
+const About = ({setShowNavbar}) => {
+
+    useEffect(()=>{
+        setShowNavbar(false);
+    },[])
+
+
     return (
         <>
-            <div className="about_main">
+            <div onClick={()=>setShowNavbar(false)} className="about_main">
                 <div className="about">
                     <div className="about_flex">
                         <div className="about_left">

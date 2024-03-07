@@ -130,10 +130,11 @@ const getUser = async()=>{
 
 useEffect(()=>{
    getUser();
+
 },[])
 
   return (
-    <div className={`${showNavbar && "heightAdjust"}`}>
+    <div  className={`${showNavbar && "heightAdjust"}`}>
       <MainState>
         <Router>
           <Navbar
@@ -162,19 +163,19 @@ useEffect(()=>{
               path="/"
               element={<Home pop={pop} setPop={setPop} notify={notify} />}
             />
-            <Route path="/about" element={<About />} />
-            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About setShowNavbar={setShowNavbar} />} />
+            <Route path="/pricing" element={<Pricing setShowNavbar={setShowNavbar} />} />
             <Route path="/allProject" element={<AllProject />} />
             <Route path="/architecturePage" element={<ArchitecturePage />} />
-            <Route path="/budget" element={<Budegting />} />
-            <Route path="/biding" element={<Biding />} />
-            <Route path="/project" element={<Project/>}/>
+            <Route path="/budget" element={<Budegting setShowNavbar={setShowNavbar} />} />
+            <Route path="/biding" element={<Biding setShowNavbar={setShowNavbar} />} />
+            <Route path="/project" element={<Project setShowNavbar={setShowNavbar}  />}/>
             <Route path="/project/:id" element={<Viewproject/>}/>
             <Route path="/success" element={<Message/>}/>
             <Route path="/terms" element={<TermsAndCondition/>}/>
             <Route path="/
             " element={<Privacy/>}/>
-            <Route path="/manufacture" element={<Manufacture/>}/>
+            <Route path="/manufacture"  element={<Manufacture  setShowNavbar={setShowNavbar} />}/>
             {user && (
               <>
                 {" "}
