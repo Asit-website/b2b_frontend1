@@ -45,6 +45,10 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
     display: click ? "block" : "none"
   }
 
+  
+  
+
+
   const navigate = useNavigate();
 
   const [point, setPoint] = useState(false)
@@ -461,9 +465,9 @@ const Navbar = ({ pop, setPop, signupPop, setSignupPop, forgot, setForgot, otpPo
               ))
             } */}
 
-          <p>Services</p>
-          <p>Manufacturers</p>
-          <p>Projects</p>
+          {/* <p>Services</p> */}
+          <p><NavLink to="/manufacture">Manufacturers</NavLink></p>
+          <p><NavLink to="/Project">Projects</NavLink></p>
           <NavLink to="/budget"><p>Budgeting</p></NavLink>
           <NavLink to="/pricing"><p>Subscription</p></NavLink>
           <NavLink to="/biding"><p>Bidding</p></NavLink>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import BuildLinkNetwork from "../image/BuildLinkNetwork.png";
 import { useMain } from '../hooks/useMain';
-const Project = () => {
+const Project = ({setShowNavbar}) => {
     const [project,setProject] = useState([]);
     const navigate = useNavigate();
     const {getProjects1} = useMain();
@@ -19,9 +19,14 @@ const Project = () => {
         // setTotal(ans.count);
         // setLoadFlag1(false);
       };
+
+      useEffect(()=>{
+        setShowNavbar(false);
+      },[])
+      
   return (
    <>
-      <div className="main_projects">
+      <div onClick={()=>setShowNavbar(false)} className="main_projects">
           <div className="project_man">
                <div className="project_main">
                    <div className="project_flex">

@@ -6,7 +6,7 @@ import { useMain } from '../hooks/useMain';
 import ds from '../image/ds.jpg';
 import { loadStripe } from '@stripe/stripe-js';
 
-const Pricing = () => {
+const Pricing = ({setShowNavbar}) => {
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
@@ -66,6 +66,10 @@ const Pricing = () => {
     let user1 = JSON?.parse(localStorage.getItem("b2b_user"));
     setValue({ ...user1, password: "" });
   }, [localStorage.getItem("b2b_user")]);
+
+  useEffect(()=>{
+    setShowNavbar(false);
+  },[])
 
 
   // for payment integration 
@@ -132,7 +136,7 @@ const Pricing = () => {
 
   return (
     <>
-      <div id="today_section">
+      <div onClick={()=>setShowNavbar(false)} id="today_section">
         <div className="today_container">
           <div className="today_head">
             <h1>One simple solution for contractors and design pros</h1>
