@@ -161,7 +161,7 @@ useEffect(()=>{
           <Routes>
             <Route
               path="/"
-              element={<Home pop={pop} setPop={setPop} notify={notify} />}
+              element={<Home pop={pop} setShowNavbar={setShowNavbar} setPop={setPop} notify={notify} />}
             />
             <Route path="/about" element={<About setShowNavbar={setShowNavbar} />} />
             <Route path="/pricing" element={<Pricing setShowNavbar={setShowNavbar} />} />
