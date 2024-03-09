@@ -13,6 +13,7 @@ const MainState = (props) => {
   const login = async ({ email, password }) => {
     
     console.log("email" ,email , password , baseUrl);
+    
     const resp = await fetch(`${baseUrl}/user/login`, {
       method: 'POST',
       headers: {
