@@ -36,7 +36,7 @@ const data = [
 ]
 
 
-const Home = ({ pop, setPop, notify }) => {
+const Home = ({ pop, setPop, notify , setShowNavbar }) => {
   const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
@@ -198,7 +198,7 @@ const Home = ({ pop, setPop, notify }) => {
 
 
   return (
-    <>
+    <div onClick={()=>setShowNavbar(false)}>
 
       {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button>
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
@@ -2112,7 +2112,7 @@ const Home = ({ pop, setPop, notify }) => {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

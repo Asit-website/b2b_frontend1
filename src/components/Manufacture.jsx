@@ -1,11 +1,17 @@
 // import { Footer } from 'flowbite-react'
 import Footer from '../common/Footer'
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const Manufacture = () => {
+const Manufacture = ({setShowNavbar}) => {
+
+  useEffect(()=>{
+   setShowNavbar(false);
+  },[])
+
+  
   return (
     <>
-       <div className="main_manufacture">
+       <div onClick={()=>setShowNavbar(false)} className="main_manufacture">
             <div className="manufactre_banner">
                   <div className="manufacture_sect">
                        <h1>Products & Building Materials</h1>

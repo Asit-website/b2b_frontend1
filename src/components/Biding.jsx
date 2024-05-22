@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import son from '../image/son.svg'
 import Footer from '../common/Footer'
 import yt from '../image/yt.svg'
 import kicking from '../image/kicking.svg'
 import { useNavigate } from 'react-router-dom'
-const Biding = () => {
+const Biding = ({setShowNavbar}) => {
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
@@ -30,9 +30,15 @@ const Biding = () => {
     const stylePerr5 = {
         display: open5 ? "block" : "none",
     };
+
+
+     useEffect(()=>{
+        setShowNavbar(false);
+     },[])
+
     return (
         <>
-            <div className="main_budget">
+            <div onClick={()=>setShowNavbar(false)} className="main_budget">
                 <div className="budget_man">
                     <div className="budget_under">
                         <div className="budget_flex">
