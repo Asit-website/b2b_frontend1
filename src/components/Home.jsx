@@ -1256,7 +1256,7 @@ const Home = ({ pop, setPop, notify , setShowNavbar }) => {
       <div id="home_Join">
         <div className="home_join_container">
           <div className="home_join_content">
-            <h2>Join over 5000+ Contractors using Building Connected</h2>
+            <h2>Become a part of the BuildLink Network, where over 12,000 contractors are already benefiting from the platform.</h2>
             <div className="home_join_section">
               <img src={join1} alt="" />
               <img src={join2} alt="" />
@@ -1406,11 +1406,9 @@ const Home = ({ pop, setPop, notify , setShowNavbar }) => {
             </button>
           </div> */}
           <div className="solution_content">
-            <h2>The trusted solution for</h2>
+            <h2>Positioned to transform the landscape of preconstruction demands.</h2>
             <p>
-              Powering preconstruction every day for over 1,000,000 of the
-              world’s top <br />
-              subcontractors
+            The trusted and dependable solution for over 500,000 subcontractors.
             </p>
             <div className="total_details">
               <div className="inner_details">

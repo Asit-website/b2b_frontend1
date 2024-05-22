@@ -5140,7 +5140,15 @@ p {
     justify-content: center;
     align-items: center;
   }
-
+  .ViewProject-main{
+    padding: 50px 45px 80px 45px;
+  }
+  .ViewProject-flex h1{
+    width: 100%;
+  }
+  .viewproject-map-img iframe{
+    width: 100% !important;
+  }
   .manufactre_banner {
     padding: 40px 40px;
   }
